@@ -8,3 +8,9 @@
 yes | nohup cp -Rfav /home/sites/* /home/backup >> /tmp/cplog.log 2>&1&
 ```
 ***
+#### Git: Adding your SSH key to the ssh-agent
+```
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
+***
