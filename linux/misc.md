@@ -20,3 +20,7 @@ ssh-add ~/.ssh/id_rsa
 find . -type f -name '*.php' -not -path "*/vendor/*" | xargs egrep -n -i "(fwrite|fputs|fputcsv) *\("
 ```
 ***
+#### Lint PHP files that are staged on git
+```
+( ( (git diff --name-only origin/master $GIT_COMMIT ) | grep .php$ ) | xargs -n1 echo php -l | bash ) | grep -v "No syntax errors detected" && echo "PHP Syntax error(s) detected"
+```
