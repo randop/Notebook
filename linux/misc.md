@@ -1,7 +1,7 @@
 #### Copy files on background process
 + recursive
 + verbose
-+ preserve all
++ preserve all (mode, ownership, timestamps, context, links, xattr, etc.)
 + log progress and results
 + confirm overwrite silently
 ```
