@@ -14,3 +14,9 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
 ***
+#### Find in content of PHP files
++ exclude vendor folder
+```
+find . -type f -name '*.php' -not -path "*/vendor/*" | xargs egrep -n -i "(fwrite|fputs|fputcsv) *\("
+```
+***
