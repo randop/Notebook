@@ -12,7 +12,8 @@
   </a>
 </p>
 
-> The repository of my notes on various topics and interest. This is for learning and sharing purposes.
+> The repository of my notes on various topics and interest. 
+This is for learning and sharing purposes.
 
 ### 🏠 [Homepage](https://github.com/randop/Notebook#readme)
 
