@@ -1,4 +1,7 @@
 #### Copy files on background process
++ recursive
++ verbose
++ preserve all
 + log progress and results
 + confirm overwrite silently
 ```
