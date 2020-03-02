@@ -24,6 +24,7 @@ fun main(args: Array<String>) {
     println(3 * 4)
     println(12 / 6)
     println(22.0 / 7.0)
+    println(1 + 1_000_000)
 
     /* Remainder operations */
     println(28 % 10)
@@ -61,8 +62,19 @@ fun main(args: Array<String>) {
     println("Return " + "of " + "Jesus.")
     println("Return".plus(" of").plus(" Jesus."))
 
+    //String template
+    println("Hello $name")
+
+    //Multi-line strings
+    val verse = """
+        But he answered and said, It is written, Man shall not live by bread alone, 
+        but by every word that proceedeth out of the mouth of God.
+        - Matthew 4:4
+    """.trimIndent()
+    println(verse)
+
     /***
-     * Order of operations
+    Order of operations:
     +------------+-----------------+------------------------+
     | Precedence |      Title      |        Symbols         |
     +------------+-----------------+------------------------+
