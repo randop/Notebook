@@ -22,6 +22,12 @@ docker run -it --name jekyll -p 0.0.0.0:9000:9000 -v /c/Users/Rax/devshare/sites
 #### PHP
 ```
 docker run -it --name php7dev -p 0.0.0.0:9000:9000 -v /c/Users/Rax/devshare/randop:/var/www/html php:7-alpine /bin/sh
+docker run -it --name phpdev -p 0.0.0.0:8080:8080 -v /c/Users/Rax/devshare/randop:/projects php /bin/sh
+```
+
+#### Python
+```
+docker run --name pydev -it python /bin/bash
 ```
 
 #### Sonic
@@ -33,4 +39,15 @@ docker run -p 1491:1491 -v /c/Users/Rax/devshare/sonic/config.cfg:/etc/sonic.cfg
 ```
 docker run -d -p 1080:1080 -p 1025:1025 --name mailcatcher schickling/mailcatcher
 docker run -d -p 1081:1080 -p 1026:1025 --name mailcatcher2 schickling/mailcatcher
+```
+
+#### MySQL
+```
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+docker run --name mysqldev -e MYSQL_ROOT_PASSWORD=mysql -e MYSQL_ROOT_PASSWORD=mysql -e MYSQL_DATABASE=bookman -p 0.0.0.0:3306:3306 -d mysql
+```
+
+#### Adminer
+```
+docker run -p 8336:8080 -e ADMINER_DEFAULT_SERVER=192.168.186.192 adminer
 ```
