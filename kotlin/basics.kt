@@ -73,6 +73,26 @@ fun main(args: Array<String>) {
     """.trimIndent()
     println(verse)
 
+    //Multi-line strings
+    val bigString = """
+        |You can have a string
+        |that contains multiple
+        |lines
+        |by
+        |doing this.
+        """.trimMargin()
+    println(bigString)
+
+    /* Pairs */
+    val coordinates: Pair<Int, Int> = Pair(2, 3)
+    val coordinatesInferred = Pair(2, 3) //inferred
+    val coordinatesWithTo = 2 to 3 //concise
+    println("Coordinates: ${coordinates.first},${coordinates.second}")
+
+    /* Triple */
+    val coordinates3D = Triple(2, 3, 1)
+    println("3D Coordinates: ${coordinates3D.first},${coordinates3D.second},${coordinates3D.third}")
+
     /***
     Order of operations:
     +------------+-----------------+------------------------+
@@ -94,5 +114,25 @@ fun main(args: Array<String>) {
     |            | Spread operator | *                      |
     | Lowest     | Assignment      | =, +=, -=, *=, /=, %=  |
     +------------+-----------------+------------------------+
+
+    Integer types:
+    +-------+------+----------------------+---------------------+
+    | Type  | Bits |      Min value       |      Max value      |
+    +-------+------+----------------------+---------------------+
+    | Long  |   64 | -9223372036854775808 | 9223372036854775807 |
+    | Int   |   32 |          -2147483648 |          2147483647 |
+    | Short |   16 |               -32768 |               32767 |
+    | Byte  |    8 |                 -128 |                 127 |
+    +-------+------+----------------------+---------------------+
+
+    Floating-point and other types
+    +---------+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    |  Type   | Bits |                                                                       Notes                                                                        |
+    +---------+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Double  |   64 | 16-17 significant digits (same as float in Python)                                                                                                 |
+    | Float   |   32 | 6-7 significant digits                                                                                                                             |
+    | Char    |   16 | UTF-16 code unit (see the section on strings - in most cases, this is one Unicode character, but it might be just one half of a Unicode character) |
+    | Boolean |    8 | true or false                                                                                                                                      |
+    +---------+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
      ***/
 }
