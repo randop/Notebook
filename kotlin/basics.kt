@@ -1,5 +1,7 @@
 package com.randolphledesma
 
+import java.util.*
+
 fun main(args: Array<String>) {
     println("Hello World!")
 
@@ -31,6 +33,12 @@ fun main(args: Array<String>) {
     println(1 shl 3)
     println(32 shr 2)
 
+    /* Comparison operations */
+    println(3 < 4);
+    println(3 == 4);
+    println(4 >= 3);
+    println(4 != 3);
+
     /* Range operator */
     for (i in 1..14 step 3) {
         println(i)
@@ -43,4 +51,32 @@ fun main(args: Array<String>) {
     c.supertypes.forEach { e -> println(e) }
     val words = listOf("Bible", "alpha", "omega")
     println(words.map(String::length))
+
+    /* Lambda operator */
+    val someWords = arrayOf("kind", "massive", "atom", "car", "blue")
+    Arrays.sort(someWords) { s1: String, s2: String -> s1.compareTo(s2) }
+    println(Arrays.toString(someWords))
+
+    /***
+     * Order of operations
+    +------------+-----------------+------------------------+
+    | Precedence |      Title      |        Symbols         |
+    +------------+-----------------+------------------------+
+    | Highest    | Postfix         | ++, --, ., ?., ?       |
+    |            | Prefix          | -, +, ++, --, !, label |
+    |            | Type RHS        | :, as, as?             |
+    |            | Multiplicative  | *, /, %                |
+    |            | Additive        | +, -                   |
+    |            | Range           | ..                     |
+    |            | Infix function  | simpleIdentifier       |
+    |            | Elvis           | ?:                     |
+    |            | Named checks    | in, !in, is, !is       |
+    |            | Comparison      | <, >, <=, >=           |
+    |            | Equality        | ==, !==                |
+    |            | Conjunction     | &&                     |
+    |            | Disjunction     | ||                     |
+    |            | Spread operator | *                      |
+    | Lowest     | Assignment      | =, +=, -=, *=, /=, %=  |
+    +------------+-----------------+------------------------+
+     ***/
 }
