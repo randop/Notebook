@@ -21,4 +21,7 @@ fun main(args: Array<String>) {
     println(3 - 2)
     println(3 * 4)
     println(12 / 6)
+    println(22.0 / 7.0)
+    println(28 % 10)
+    println("%.0f".format(19.0 % 9.0))
 }
