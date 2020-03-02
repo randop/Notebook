@@ -57,6 +57,10 @@ fun main(args: Array<String>) {
     Arrays.sort(someWords) { s1: String, s2: String -> s1.compareTo(s2) }
     println(Arrays.toString(someWords))
 
+    /* String concatenations */
+    println("Return " + "of " + "Jesus.")
+    println("Return".plus(" of").plus(" Jesus."))
+
     /***
      * Order of operations
     +------------+-----------------+------------------------+
