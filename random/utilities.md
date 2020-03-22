@@ -23,3 +23,17 @@ for i in *.mp4; do ffmpeg -i "$i" -b:a 192K -vn "${i%.*}.mp3"; done
 ```
 apt-cache policy redis-server
 ```
+
+#### How to force kill process in Linux
+Use pidof command to find the process ID of a running program or app
+```
+pidoff appname
+```
+To kill process in Linux with PID:
+```
+kill -9 pid
+```
+To kill process in Linux with application name:
+```
+killall -9 appname
+```
