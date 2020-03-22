@@ -18,3 +18,8 @@ iptables -I INPUT 5 -i ens3 -p tcp --dport 8080 -m state --state NEW,ESTABLISHED
 ```
 for i in *.mp4; do ffmpeg -i "$i" -b:a 192K -vn "${i%.*}.mp3"; done
 ```
+
+#### Check package version (Ubuntu)
+```
+apt-cache policy redis-server
+```
