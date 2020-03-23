@@ -37,3 +37,8 @@ To kill process in Linux with application name:
 ```
 killall -9 appname
 ```
+
+#### Pretty-print JSON in Python
+```
+python -m json.tool < file.json
+```
