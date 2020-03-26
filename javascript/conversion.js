@@ -12,3 +12,7 @@ Object.defineProperty(Number.prototype,'fileSize',{value:function(a,b,c,d){
 console.log((186457865).fileSize()); // default IEC (power 1024)
 //177.82 MiB
 //KiB,MiB,GiB,TiB,PiB,EiB,ZiB,YiB
+
+console.log((186457865).fileSize(1)); //1,true for SI (power 1000)
+//186.46 MB 
+//kB,MB,GB,TB,PB,EB,ZB,YB
