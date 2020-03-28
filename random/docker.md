@@ -56,3 +56,9 @@ docker run -p 8336:8080 -e ADMINER_DEFAULT_SERVER=192.168.186.192 adminer
 ```
 docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore
 ```
+
+#### Gradle
+```
+docker volume create --name gradle-cache
+docker run -it --name gradledev -p 0.0.0.0:8080:8080 -v /c/Users/Rax/devshare/exercism:/exercism gradle /bin/sh
+```
