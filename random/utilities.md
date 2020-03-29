@@ -42,3 +42,11 @@ killall -9 appname
 ```
 python -m json.tool < file.json
 ```
+
+#### FRPS
+```
+sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 8888 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 7777 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -I INPUT 5 -i ens3 -p udp --dport 7777 -m state --state NEW,ESTABLISHED -j ACCEPT
+nohup /home/ubuntu/frp/frps -c /home/ubuntu/frp/frps.ini >> /home/ubuntu/frps.log 2>&1&
+```
