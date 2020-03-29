@@ -43,10 +43,18 @@ killall -9 appname
 python -m json.tool < file.json
 ```
 
+#### Allow SSH in firewall (iptables)
+```
+sudo iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+```
+
 #### FRPS
 ```
 sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 8888 -m state --state NEW,ESTABLISHED -j ACCEPT
 sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 7777 -m state --state NEW,ESTABLISHED -j ACCEPT
 sudo iptables -I INPUT 5 -i ens3 -p udp --dport 7777 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 7474 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -I INPUT 5 -i ens3 -p udp --dport 7474 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 8484 -m state --state NEW,ESTABLISHED -j ACCEPT
 nohup /home/ubuntu/frp/frps -c /home/ubuntu/frp/frps.ini >> /home/ubuntu/frps.log 2>&1&
 ```
