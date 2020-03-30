@@ -58,3 +58,8 @@ sudo iptables -I INPUT 5 -i ens3 -p udp --dport 7474 -m state --state NEW,ESTABL
 sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 8484 -m state --state NEW,ESTABLISHED -j ACCEPT
 nohup /home/ubuntu/frp/frps -c /home/ubuntu/frp/frps.ini >> /home/ubuntu/frps.log 2>&1&
 ```
+
+#### Who using the port?
+```
+lsof -i tcp:3000 
+```
