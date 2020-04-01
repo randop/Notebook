@@ -24,3 +24,8 @@ find . -type f -name '*.php' -not -path "*/vendor/*" | xargs egrep -n -i "(fwrit
 ```
 ( ( (git diff --name-only origin/master $GIT_COMMIT ) | grep .php$ ) | xargs -n1 echo php -l | bash ) | grep -v "No syntax errors detected" && echo "PHP Syntax error(s) detected"
 ```
+***
+#### Mount VMWare shared filesystem
+```
+sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000
+```
