@@ -62,6 +62,12 @@ docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/event
 docker volume create --name gradle-cache
 docker run -it --name gradledev -p 0.0.0.0:8080:8080 -v gradle-cache:/home/gradle/.gradle -v /c/Users/Rax/devshare/microservices:/microservices gradle /bin/bash
 ```
+
+#### Redis
+```
+docker run --name redisdev -p 0.0.0.0:6379:6379 -d redis
+```
+
 #### Export image
 ```
 docker save -o eventstore.tar eventstore/eventstore
