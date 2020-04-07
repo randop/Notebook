@@ -11,10 +11,10 @@ fun main(args: Array<String>) {
         println(value)
 
         try {
-            val lockID = acquireLockWithTimeout(jedis, "test", 1000, 3000)
+            val lockID = acquireLockWithTimeout(jedis, "test", 1000, 15000)
             println(lockID)
 
-            val lockID2 = acquireLockWithTimeout(jedis, "test", 1000, 3000)
+            val lockID2 = acquireLockWithTimeout(jedis, "test", 1000, 15000)
             println(lockID2)
         }
         catch(e: RuntimeException) {
