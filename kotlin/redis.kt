@@ -10,6 +10,10 @@ fun main(args: Array<String>) {
         val value = jedis.get("foo")
         println(value)
 
+        jedis.incr("rfl")
+        val value2 = jedis.get("rfl")
+        println(value2)
+
         try {
             val lockID = acquireLockWithTimeout(jedis, "test", 1000, 15000)
             println(lockID)
@@ -20,7 +24,8 @@ fun main(args: Array<String>) {
         catch(e: RuntimeException) {
             println(e)
         }
-
+        
+        jedis.close()
     } catch (e: RuntimeException) {
         println(e)
     }
