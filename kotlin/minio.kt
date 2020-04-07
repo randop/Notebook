@@ -9,6 +9,12 @@ fun main(args: Array<String>) {
         } else {
             println("bucket does not exist")
         }
+
+        val results = minioClient.listObjects("mailbox")
+        for (result in results) {
+            val item = result.get()
+            println("${item.lastModified()}, ${item.size()}, ${item.objectName()}");
+        }
     } catch (e: RuntimeException) {
         println(e)
     }
