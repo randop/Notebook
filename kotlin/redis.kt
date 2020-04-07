@@ -34,7 +34,7 @@ fun main(args: Array<String>) {
 fun acquireLockWithTimeout(conn: Jedis, lockName: String, acquireTimeout: Long, lockTimeout: Long): String? {
     val identifier = UUID.randomUUID().toString()
     val lockKey = "lock:$lockName"
-    val lockExpire = (lockTimeout / 1000).toInt()
+    val lockExpire = lockTimeout.toInt() / 1000
 
     val end = System.currentTimeMillis() + acquireTimeout
     while (System.currentTimeMillis() < end) {
