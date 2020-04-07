@@ -29,3 +29,8 @@ find . -type f -name '*.php' -not -path "*/vendor/*" | xargs egrep -n -i "(fwrit
 ```
 sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000
 ```
+***
+#### Discover IP address
+```
+ip a
+```
