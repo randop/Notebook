@@ -66,6 +66,7 @@ docker run -it --name gradledev -p 0.0.0.0:8080:8080 -v gradle-cache:/home/gradl
 #### Redis
 ```
 docker run --name redisdev -p 0.0.0.0:6379:6379 -d redis
+docker run -it --rm redis redis-cli -h 192.168.186.192
 ```
 
 #### Export image
