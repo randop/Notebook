@@ -69,6 +69,15 @@ docker run --name redisdev -p 0.0.0.0:6379:6379 -d redis
 docker run -it --rm redis redis-cli -h 192.168.186.192
 ```
 
+#### Minio
+```
+docker run -p 0.0.0.0:9000:9000 minio/minio server /data
+docker volume create --name minio
+docker run -it --rm -v minio:/root/.mc minio/mc config host add rfl http://192.168.186.192:9000 minioadmin minioadmin
+docker run -it --rm -v minio:/root/.mc minio/mc config host ls rfl
+docker run -it --rm -v minio:/root/.mc minio/mc mb rfl/mailbox
+```
+
 #### Export image
 ```
 docker save -o eventstore.tar eventstore/eventstore
