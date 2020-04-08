@@ -34,3 +34,9 @@ sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000
 ```
 ip a
 ```
+***
+#### Check disk caching
+[https://eventstore.org/blog/20131218/disabling-disk-caching-in-ubuntu/](https://eventstore.org/blog/20131218/disabling-disk-caching-in-ubuntu/)
+```
+sudo hdparm -i /dev/sda
+```
