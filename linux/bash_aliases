@@ -3,3 +3,4 @@ alias la='ls -A'
 alias l='ls -CF'
 alias gitgud='git add .;git ci -m updates;git push origin'
 alias ssha='ssh-add ~/.ssh/id_rsa'
+alias ytdl="youtube-dl -f best -o '%(title)s.%(ext)s' --restrict-filenames"
