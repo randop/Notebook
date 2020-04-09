@@ -63,3 +63,8 @@ nohup /home/ubuntu/frp/frps -c /home/ubuntu/frp/frps.ini >> /home/ubuntu/frps.lo
 ```
 lsof -i tcp:3000 
 ```
+
+#### Run ShadowFatJar (vertx)
+```
+java -jar gateway-1.0.0-SNAPSHOT-fat.jar run com.example.gateway.Server
+```
