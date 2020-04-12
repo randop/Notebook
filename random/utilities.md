@@ -68,3 +68,8 @@ lsof -i tcp:3000
 ```
 java -jar gateway-1.0.0-SNAPSHOT-fat.jar run com.example.gateway.Server
 ```
+
+#### Write a new event at EventStore
+```
+curl -i -d '{"data":"Randolph"}' "http://192.168.186.192:2113/streams/test" -H "Content-Type:application/json" -H "ES-EventType: Programmed" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u admin:changeit
+```
