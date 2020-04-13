@@ -93,3 +93,7 @@ docker load --input evenstore.tar
 docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.6.2
 curl -X GET "192.168.186.192:9200/_cat/nodes?v&pretty"
 ```
+#### Elasticsearch (daemon mode)
+```
+docker run --name elasticsearch -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.6.2
+```
