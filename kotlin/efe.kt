@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     }
 }
 
-fun SQLiteDatabase.inTransaction(func: SQLiteDatabase.() -> Unit) {
+inline fun SQLiteDatabase.inTransaction(func: SQLiteDatabase.() -> Unit) {
     beginTransaction()
     try {
         func()
