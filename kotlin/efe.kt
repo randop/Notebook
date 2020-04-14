@@ -8,8 +8,8 @@ fun main(args: Array<String>) {
     }
 
     preferences.edit {
-        putString("foo", "bar")
-        putString("fizz", "buzz")
+        set("foo" to "bar")
+        set("fizz" to "buzz")
         remove("username")
     }
 }
@@ -29,3 +29,5 @@ inline fun SharedPreferences.edit(func: SharedPreferences.Editor.() -> Unit) {
     editor.func()
     editor.apply()
 }
+
+fun SharedPreferences.Editor.set(pair: Pair<String, String>) = putString(pair.first, pair.second)
