@@ -10,3 +10,12 @@ pip install tensorflow-cpu
 curl https://data.keithito.com/data/speech/tacotron-20180906.tar.gz | tar xzC /tmp
 python3 demo_server.py --checkpoint /tmp/tacotron-20180906/model.ckpt
 ```
+
+```
+docker pull tensorflow/tensorflow:1.15.2-py3
+docker run --name tensordev -it -v /home/rfledesma/projects:/projects -p 9000:9000 tensorflow/tensorflow:1.15.2-py3 /bin/bash
+cd /projects
+git clone https://github.com/keithito/tacotron.git
+cd /projects/tacotron
+pip install -r requirements.txt
+```
