@@ -4,11 +4,11 @@
 
 fun main(args: Array<String>) {
     db.inTransaction {
-        db.delete("users", "first_name = ?", arrayOf("Ran"))
+        delete("users", "first_name = ?", arrayOf("Ran"))
     }
 }
 
-fun SQLiteDatabase.inTransaction(func: () -> Unit) {
+fun SQLiteDatabase.inTransaction(func: SQLiteDatabase.() -> Unit) {
     beginTransaction()
     try {
         func()
