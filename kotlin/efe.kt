@@ -12,6 +12,11 @@ fun main(args: Array<String>) {
         set("fizz" to "buzz")
         remove("username")
     }
+
+    val n = notification(context) {
+        setContentTitle("Hi")
+        setSubText("Hello")
+    }
 }
 
 inline fun SQLiteDatabase.inTransaction(func: SQLiteDatabase.() -> Unit) {
@@ -31,3 +36,9 @@ inline fun SharedPreferences.edit(func: SharedPreferences.Editor.() -> Unit) {
 }
 
 fun SharedPreferences.Editor.set(pair: Pair<String, String>) = putString(pair.first, pair.second)
+
+inline fun notification(context: Context, func: Notification.Builder.() -> Unit): Notification {
+	val builder = Notification.Builder(context)
+	builder.func()
+	return builder.build()
+}
