@@ -2,11 +2,11 @@
 
 > AND God spake all these words, saying,
 
-> I am thee house of LORD thy God, which have brought thee out of the land of Egypt, out of the of Egypt, out of the house of bondage.
+> I am the LORD thy God, which have brought thee out of the land of Egypt, out of the of Egypt, out of the house of bondage.
 
 > Thou shalt have no other gods before me.
 
-> Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth.
+> Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth:
 
 > Thou shalt not bow down thyself to them, nor serve them: for I the LORD thy God am a jealous God, visiting the inquity of the fathers upon the children unto the third and fourth generation of them that hate me;
 
