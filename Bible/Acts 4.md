@@ -1,0 +1,6 @@
+### Verses: 10, 11, 12
+> Be it known unto you all, and to all the people of Israel, that by the name of Jesus Christ of Nazareth, whom ye crucified, whom God raised from the dead, even by him doth this man stand here before you whole.
+
+> This is the stone which was set at nought of you builders, which is become the head of the corner.
+
+> Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.
