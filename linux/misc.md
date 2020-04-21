@@ -40,3 +40,9 @@ ip a
 ```
 sudo hdparm -i /dev/sda
 ```
+***
+#### Merging video and audio, with audio re-encoding
+http://crazedmuleproductions.blogspot.com/2005/12/using-ffmpeg-to-combine-audio-and.html
+```
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4
+```
