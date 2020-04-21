@@ -5,3 +5,4 @@ alias gitgud='git add .;git ci -m updates;git push origin'
 alias ssha='ssh-add ~/.ssh/id_rsa'
 alias ytdl="youtube-dl -f best -o '%(title)s.%(ext)s' --restrict-filenames"
 alias ytdl160="youtube-dl -f 160 -o '%(title)s.%(ext)s' --restrict-filenames"
+alias ytdl249="youtube-dl -f 249 -o '%(title)s.%(ext)s' --restrict-filenames"
