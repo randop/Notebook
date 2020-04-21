@@ -97,3 +97,8 @@ curl -X GET "192.168.186.192:9200/_cat/nodes?v&pretty"
 ```
 docker run --name elasticsearch -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.6.2
 ```
+
+#### Syncthing
+```
+docker run --name sync -d -p 8384:8384 -p 22000:22000 -v /datapool:/var/syncthing syncthing/syncthing:latest
+```
