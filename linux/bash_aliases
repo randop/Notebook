@@ -6,3 +6,4 @@ alias ssha='ssh-add ~/.ssh/id_rsa'
 alias ytdl="youtube-dl -f best -o '%(title)s.%(ext)s' --restrict-filenames"
 alias ytdl160="youtube-dl -f 160 -o '%(title)s_video_only.%(ext)s' --restrict-filenames"
 alias ytdl249="youtube-dl -f 249 -o '%(title)s_audio_only.%(ext)s' --restrict-filenames"
+alias ytdl133="youtube-dl -f 133 -o '%(title)s_audio_only.%(ext)s' --restrict-filenames"
