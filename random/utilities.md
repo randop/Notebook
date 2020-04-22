@@ -73,3 +73,10 @@ java -jar gateway-1.0.0-SNAPSHOT-fat.jar run com.example.gateway.Server
 ```
 curl -i -d '{"data":"Randolph"}' "http://192.168.186.192:2113/streams/test" -H "Content-Type:application/json" -H "ES-EventType: Programmed" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u admin:changeit
 ```
+
+#### Convert media to mp3
+https://opensource.com/article/17/6/ffmpeg-convert-media-file-formats
+https://stackoverflow.com/questions/3255674/convert-audio-files-to-mp3-using-ffmpeg
+```
+ffmpeg -i audiowebm -acodec libmp3lame -b:a 160k audio.mp3
+```
