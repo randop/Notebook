@@ -80,3 +80,15 @@ https://stackoverflow.com/questions/3255674/convert-audio-files-to-mp3-using-ffm
 ```
 ffmpeg -i audiowebm -acodec libmp3lame -b:a 160k audio.mp3
 ```
+
+#### To permanently disable snap packages:
+```
+sudo systemctl stop snapd.service
+sudo systemctl disable snapd.service
+```
+
+#### To reenable snap packages:
+```
+sudo systemctl reenable snapd.service
+sudo systemctl start snapd.service
+```
