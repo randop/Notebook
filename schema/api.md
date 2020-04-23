@@ -30,5 +30,6 @@ resources:
         accountId
         to
         from
-
+        number
+        direction
     )
