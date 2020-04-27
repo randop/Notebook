@@ -54,7 +54,7 @@ docker run -p 8336:8080 -e ADMINER_DEFAULT_SERVER=192.168.186.192 adminer
 
 #### Eventstore
 ```
-docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 -d eventstore/eventstore
+docker run --name esdev -it -p 2113:2113 -p 1113:1113 -d eventstore/eventstore
 ```
 
 #### Gradle
