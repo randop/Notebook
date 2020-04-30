@@ -29,7 +29,7 @@ resources:
         id
         accountId
         to
-        from
-        number
+        from,
+        number,
         direction
     )
