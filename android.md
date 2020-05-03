@@ -23,11 +23,17 @@ Remove the existing application on the phone.
     The device might have stale dexed jars that don't match the current version (dexopt error).
 
 #### Root Cause:
-The dex file gets larger then buffer size
+The dex file gets larger then buffer size.
 
 #### Solution:
-1. Configure the app for multidex support. Refer this link to use it: https://developer.android.com/tools/building/multidex.html
-2. Change proguard settings to minifyEnabled = true
+Fix for INSTALL_FAILED_DEXOPT issue when trying to run project on android device that is running Android 5.0
+1. Add the following options at gradle.properties
+```
+android.enableD8=false
+android.enableD8.desugaring= false
+```
+2. Configure the app for multidex support. Refer this link to use it: https://developer.android.com/tools/building/multidex.html
+3. Change proguard settings to minifyEnabled = true
 ```
 buildTypes {
     release {
