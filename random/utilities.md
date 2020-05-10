@@ -95,5 +95,5 @@ sudo systemctl start snapd.service
 
 #### Convert audio to mp3 and slice by specified duration
 ```
-ffmpeg -ss 00:00:38 -t 00:07:17 -i Geto_Boys_-_Damn_It_Feels_Good_To_Be_A_Gangsta_Live_Looping_--_THROWBACK_THURSDAY_Week_30_audio_only.m4a -acodec libmp3lame -b:a 160k Geto_Boys_-_Damn_It_Feels_Good_To_Be_A_Gangsta_Live.mp3
+ffmpeg -i Geto_Boys_-_Damn_It_Feels_Good_To_Be_A_Gangsta_Live_Looping_--_THROWBACK_THURSDAY_Week_30_audio_only.m4a -ss 00:00:38 -to 00:07:17 -acodec libmp3lame -b:a 160k Geto_Boys_-_Damn_It_Feels_Good_To_Be_A_Gangsta_Live.mp3
 ```
