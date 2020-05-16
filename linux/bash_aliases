@@ -9,5 +9,6 @@ alias ytdl249a="youtube-dl -f 249 -o '%(title)s_audio_only.%(ext)s' --restrict-f
 alias ytdl133v="youtube-dl -f 133 -o '%(title)s_video_only.%(ext)s' --restrict-filenames"
 alias ytdl140a="youtube-dl -f 140 -o '%(title)s_audio_only.%(ext)s' --restrict-filenames"
 alias ytdl480v="youtube-dl -f 135 -o '%(title)s_video_only.%(ext)s' --restrict-filenames"
-alias ytdl4k60fps="youtube-dl -f 337+bestaudio -o '%(title)s.%(ext)s' --restrict-filenames"
+alias ytdl4kHDR="youtube-dl -f 337+bestaudio -o '%(title)s.%(ext)s' --restrict-filenames"
+alias ytdl4k60fps="youtube-dl -f 315+bestaudio -o '%(title)s.%(ext)s' --restrict-filenames"
 alias nb='cd /datapool/codes/Notebook'
