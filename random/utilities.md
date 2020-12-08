@@ -97,3 +97,8 @@ sudo systemctl start snapd.service
 ```
 ffmpeg -i Geto_Boys_-_Damn_It_Feels_Good_To_Be_A_Gangsta_Live_Looping_--_THROWBACK_THURSDAY_Week_30_audio_only.m4a -ss 00:00:38 -to 00:07:17 -acodec libmp3lame -b:a 160k Geto_Boys_-_Damn_It_Feels_Good_To_Be_A_Gangsta_Live.mp3
 ```
+
+#### Download mp3 from YT
+```
+youtube-dl -o '%(title)s.%(ext)s' --restrict-filenames -x --audio-format mp3 https://www.youtube.com/playlist?list=PLL4itf8rGtj5lwP2jQ_yuQFhDlY6q_bg8
+```
