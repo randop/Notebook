@@ -102,3 +102,9 @@ ffmpeg -i Geto_Boys_-_Damn_It_Feels_Good_To_Be_A_Gangsta_Live_Looping_--_THROWBA
 ```
 youtube-dl -o '%(title)s.%(ext)s' --restrict-filenames -x --audio-format mp3 https://www.youtube.com/playlist?list=PLL4itf8rGtj5lwP2jQ_yuQFhDlY6q_bg8
 ```
+
+#### Convert gif to mp4
+https://unix.stackexchange.com/questions/40638/how-to-do-i-convert-an-animated-gif-to-an-mp4-or-mv4-on-the-command-line
+```
+ffmpeg -i animated.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2"
+```
