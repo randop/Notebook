@@ -108,3 +108,16 @@ https://unix.stackexchange.com/questions/40638/how-to-do-i-convert-an-animated-g
 ```
 ffmpeg -i animated.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.mp4
 ```
+
+#### Test iOS Push notifications
+```
+curl --http2 --cert ./myapp-push-cert.pem \
+-H "apns-topic: com.example.yourapp.bundleID" \
+-d '{"aps":{"alert":"Hello from APNs!","sound":"default"}}' \
+https://api.development.push.apple.com/3/device/ab8293ad24537c838539ba23457183bfed334193518edf258385266422013ac0d
+```
+
+### Download playlist from YT
+```
+youtube-dl -f best -o '%(title)s.%(ext)s' --yes-playlist --restrict-filenames "https://www.youtube.com/watch?v=oM6rec6pB8Q&list=PLBn46jL5tTbakD9loiOlSpB1uljRkB1UW"
+```
