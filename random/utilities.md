@@ -119,5 +119,5 @@ https://api.development.push.apple.com/3/device/ab8293ad24537c838539ba23457183bf
 
 ### Download playlist from YT
 ```
-youtube-dl -f best -o '%(title)s.%(ext)s' --yes-playlist --restrict-filenames "https://www.youtube.com/watch?v=oM6rec6pB8Q&list=PLBn46jL5tTbakD9loiOlSpB1uljRkB1UW"
+youtube-dl -f best -o '%(title)s.%(ext)s' --restrict-filenames --yes-playlist "https://www.youtube.com/watch?v=oM6rec6pB8Q&list=PLBn46jL5tTbakD9loiOlSpB1uljRkB1UW"
 ```
