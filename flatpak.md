@@ -1,3 +1,4 @@
+```
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user install flathub org.onlyoffice.desktopeditors
 flatpak --user install flathub us.zoom.Zoom
@@ -38,3 +39,4 @@ flatpak --user install flathub fr.romainvigier.MetadataCleaner
 flatpak --user install flathub org.gnome.Builder
 flatpak --user install flathub com.github.liferooter.textpieces
 flatpak --user install flathub org.cvfosammmm.Setzer
+```
