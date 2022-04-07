@@ -42,3 +42,8 @@ flatpak --user install flathub org.cvfosammmm.Setzer
 flatpak --user install flathub rest.insomnia.Insomnia
 flatpak --user install flathub com.belmoussaoui.Authenticator
 ```
+
+## Games
+```
+flatpak install flathub com.github._0negal.Viper
+```
