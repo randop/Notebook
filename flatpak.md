@@ -46,4 +46,5 @@ flatpak --user install flathub com.belmoussaoui.Authenticator
 ## Games
 ```
 flatpak install flathub com.github._0negal.Viper
+flatpak install flathub org.wesnoth.Wesnoth
 ```
