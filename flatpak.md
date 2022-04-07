@@ -39,4 +39,6 @@ flatpak --user install flathub fr.romainvigier.MetadataCleaner
 flatpak --user install flathub org.gnome.Builder
 flatpak --user install flathub com.github.liferooter.textpieces
 flatpak --user install flathub org.cvfosammmm.Setzer
+flatpak --user install flathub rest.insomnia.Insomnia
+flatpak --user install flathub com.belmoussaoui.Authenticator
 ```
