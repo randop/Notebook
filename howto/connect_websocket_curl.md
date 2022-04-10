@@ -1,4 +1,4 @@
-# Connect and test websocket server using curl
+# How to connect and test a websocket server using curl
 ```
 curl --include --no-buffer \
     --header "Connection: keep-alive, Upgrade" \
