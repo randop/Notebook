@@ -1,4 +1,4 @@
-# Health check a websocket server
+# Health check a websocket server using curl
 ```
 curl --include --no-buffer \
     --header "Connection: close" \
