@@ -15,7 +15,7 @@ https://www.rapidtables.com/code/text/ascii-table.html
 
 */
 ```
-```
+```cpp
 #include <iostream>
 #include <termios.h>
 #include <unistd.h>
@@ -81,7 +81,7 @@ Project setup:
 4.) Connect the Arduino TX pin to USB UART RX pin
 5.) Connect the Arduino RX pin to USB UART TX pin
 ```
-```
+```c
 #include <SoftwareSerial.h>
 
 byte buf[6]={1,37,67,12,76,0};
