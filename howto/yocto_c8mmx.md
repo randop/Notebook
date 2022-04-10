@@ -29,5 +29,5 @@ sudo apt build-dep qemu
 ```
 DISTRO=fsl-imx-xwayland MACHINE=myd-imx8mm source myir-setup-release.sh -b build-xwayland
 ```
-===
+---
 > [http://d.myirtech.com/MYD-C8MMX/](http://d.myirtech.com/MYD-C8MMX/)
