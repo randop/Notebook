@@ -3,6 +3,11 @@
 ```
 yum install gnome-tweak-tool gnome-shell-extension-no-hot-corner
 ```
+or
+```
+dnf install gnome-tweak-tool gnome-shell-extension-no-hot-corner
+```
+
 ## Instructions
 1. Navigate to Activities -> Show Applications -> Utilities -> Tweaks
 2. Go to Extensions
