@@ -1,0 +1,38 @@
+table {
+    font-size: 32px;
+    border-collapse: collapse;
+}
+
+.black {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
+th {
+    font-size: 24px;
+}
+
+tr:nth-child(even) {
+    background: #e2e3e5; 
+}
+
+tr:nth-child(even) td {
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+}
+
+td {
+    text-align: center;
+    padding: 6px;
+}
+
+.ibcard {
+    background: #fff3cd;                    
+}
+
+.win {
+    background: #2ECC40;
+}
