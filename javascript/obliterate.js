@@ -1,3 +1,7 @@
+/**
+ * Run this script on your browsers console to obliterate annoying signup wall and blurring on websites 
+ */
+
 javascript: (function() {
     (function() {
         var i, elements = document.querySelectorAll('body *');
