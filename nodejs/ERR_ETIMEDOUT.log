@@ -1,0 +1,19 @@
+npm verb node v16.15.0
+npm verb npm  v8.5.5
+npm ERR! code ETIMEDOUT
+npm ERR! syscall read
+npm ERR! errno ETIMEDOUT
+npm ERR! network Invalid response body while trying to fetch https://registry.npmjs.org/@jest%2ftransform: read ETIMEDOUT
+npm ERR! network This is a problem related to network connectivity.
+npm ERR! network In most cases you are behind a proxy or have bad network settings.
+npm ERR! network 
+npm ERR! network If you are behind a proxy, please make sure that the
+npm ERR! network 'proxy' config is set properly.  See: 'npm help config'
+npm verb exit 1
+npm timing npm Completed in 590685ms
+npm verb unfinished npm timer reify 1651218371500
+npm verb unfinished npm timer reify:loadTrees 1651218371550
+npm verb code 1
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2022-04-29T07_46_11_185Z-debug-0.log
