@@ -1,0 +1,5 @@
+# Retrieve udev information of CP2102 USB to UART Bridge Controller
+# udevadm info -a /dev/ttyUSB0
+# 
+# Rules Configuration file at /usr/lib/udev/rules.d/99-custom-persistent-usb-tty.rules
+SUBSYSTEM=="tty", ATTRS{idProduct}=="ea60", ATTRS{idVendor}=="10c4", ATTRS{serial}=="0001", SYMLINK+="ttyUART0"
