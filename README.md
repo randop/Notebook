@@ -24,7 +24,10 @@ This is for learning and sharing purposes.
 * Website: [randolphledesma.com](https://randolphledesma.com)
 * Github: [@randop](https://github.com/randop)
 
+### Types of screws, screw heads, washers and nuts
+![Types of screws, screw heads, washers and nuts](https://github.com/randop/Notebook/blob/master/assets/types-of-screws-screw-heads-washers-and-nuts.jpg?raw=true)
+
 ## 📝 License
 
-Copyright © 2021 [Randolph Ledesma](https://github.com/randop).<br />
+Copyright © 2022 [Randolph Ledesma](https://github.com/randop).<br />
 This project is [MIT](https://github.com/randop/javascript-projects/blob/master/LICENSE) licensed.
