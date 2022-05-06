@@ -21,8 +21,10 @@ This is for learning and sharing purposes.
 
 👤 **Randolph Ledesma**
 
-* Website: [randolphledesma.com](https://randolphledesma.com)
-* Github: [@randop](https://github.com/randop)
+* 📱 +1 (415) 754-3092
+* 🌐 [https://randop.github.io/](https://randop.github.io/)
+* 👷 [https://www.linkedin.com/in/randolphledesma/](https://www.linkedin.com/in/randolphledesma/)
+* 📍 Philippines
 
 ### Types of screws, screw heads, washers and nuts
 ![Types of screws, screw heads, washers and nuts](https://github.com/randop/Notebook/blob/master/assets/types-of-screws-screw-heads-washers-and-nuts.jpg?raw=true)
