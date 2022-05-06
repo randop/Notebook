@@ -35,6 +35,9 @@ This is for learning and sharing purposes.
 ### Hex screws sizes
 ![Picture of hex screws sizes](https://github.com/randop/Notebook/blob/master/assets/hex-screws-sizes.jpg?raw=true)
 
+### Personal Computer (PC) M3 screw set specifications
+![Picture of Personal Computer (PC) M3 screw set specifications](https://github.com/randop/Notebook/blob/master/assets/pc-m3-screws.png?raw=true)
+
 ## 📝 License
 
 Copyright © 2022 [Randolph Ledesma](https://github.com/randop).<br />
