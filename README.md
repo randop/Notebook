@@ -27,7 +27,10 @@ This is for learning and sharing purposes.
 * 📍 Philippines
 
 ### Types of screws, screw heads, washers and nuts
-![Types of screws, screw heads, washers and nuts](https://github.com/randop/Notebook/blob/master/assets/types-of-screws-screw-heads-washers-and-nuts.jpg?raw=true)
+![Picture of Types of screws, screw heads, washers and nuts](https://github.com/randop/Notebook/blob/master/assets/types-of-screws-screw-heads-washers-and-nuts.jpg?raw=true)
+
+### How to read a metric screw
+![Picture of How to read a metric screw](https://github.com/randop/Notebook/blob/master/assets/How-to-Read-a-Metric-Screw-Thread-Callout.png?raw=true)
 
 ## 📝 License
 
