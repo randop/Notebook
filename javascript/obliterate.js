@@ -18,7 +18,7 @@ function obliterate() {
 
 setInterval(function obliterateTimer() {
     obliterate();
-}, 500);
+}, 100);
 setTimeout(function obliterateRun() {
     obliterate();
 },1);
