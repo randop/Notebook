@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/gnome-screenshot -a && /usr/bin/notify-send -u normal -t 10000 -i info 'Screenshot' "Taken capture $(date)"
