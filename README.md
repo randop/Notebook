@@ -32,6 +32,9 @@ This is for learning and sharing purposes.
 ### How to read a metric screw
 ![Picture of How to read a metric screw](https://github.com/randop/Notebook/blob/master/assets/How-to-Read-a-Metric-Screw-Thread-Callout.png?raw=true)
 
+### Hex screws sizes
+![Picture of hex screws sizes](https://github.com/randop/Notebook/blob/master/assets/hex-screws-sizes.jpg?raw=true)
+
 ## 📝 License
 
 Copyright © 2022 [Randolph Ledesma](https://github.com/randop).<br />
