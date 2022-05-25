@@ -43,6 +43,7 @@ flatpak --user install flathub rest.insomnia.Insomnia
 flatpak --user install flathub com.belmoussaoui.Authenticator
 flatpak --user install flathub org.gnome.SoundRecorder
 flatpak --user install flathub com.github.maoschanz.drawing
+flatpak --user install flathub org.mozilla.Thunderbird
 ```
 
 ## Games
