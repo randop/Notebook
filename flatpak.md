@@ -50,6 +50,7 @@ flatpak --user install flathub com.github.Eloston.UngoogledChromium
 flatpak --user install flathub com.ultimaker.cura
 flatpak --user install flathub io.github.congard.qnvsm
 flatpak --user install flathub com.leinardi.gwe
+flatpak --user install flathub io.github.arunsivaramanneo.GPUViewer
 ```
 
 ## Games
