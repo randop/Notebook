@@ -46,6 +46,7 @@ flatpak --user install flathub com.github.maoschanz.drawing
 flatpak --user install flathub org.mozilla.Thunderbird
 flatpak --user install flathub fr.handbrake.ghb
 flatpak --user install flathub org.gaphor.Gaphor
+flatpak --user install flathub com.github.Eloston.UngoogledChromium
 ```
 
 ## Games
