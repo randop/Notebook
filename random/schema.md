@@ -1,0 +1,6 @@
+```sql
+CREATE TABLE bookmarks (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    href TEXT NOT NULL    
+) ENGINE=InnoDB;
+```
