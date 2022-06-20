@@ -7,15 +7,10 @@
   <a href="https://github.com/randop/Notebook/graphs/commit-activity">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" target="_blank" />
   </a>
-  <a href="https://github.com/randop/Notebook/blob/master/LICENSE">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
-  </a>
 </p>
 
-> The repository of my notes on various topics and interest. 
-This is for learning and sharing purposes.
-
 ### 🏠 [Homepage](https://github.com/randop/Notebook#readme)
+#### The repository of my notes on various topics and interest. This is for learning and sharing purposes.
 
 ## Author
 
@@ -27,16 +22,16 @@ This is for learning and sharing purposes.
 * 📍 Philippines
 
 ### Types of screws, screw heads, washers and nuts
-![Picture of Types of screws, screw heads, washers and nuts](https://github.com/randop/Notebook/blob/master/assets/types-of-screws-screw-heads-washers-and-nuts.jpg?raw=true)
+![Picture of Types of screws, screw heads, washers and nuts](https://gitlab.com/randop/notebook/-/raw/main/assets/types-of-screws-screw-heads-washers-and-nuts.jpg?inline=true)
 
 ### How to read a metric screw
-![Picture of How to read a metric screw](https://github.com/randop/Notebook/blob/master/assets/How-to-Read-a-Metric-Screw-Thread-Callout.png?raw=true)
+![Picture of How to read a metric screw](https://gitlab.com/randop/notebook/-/raw/main/assets/How-to-Read-a-Metric-Screw-Thread-Callout.png?inline=true)
 
 ### Hex screws sizes
-![Picture of hex screws sizes](https://github.com/randop/Notebook/blob/master/assets/hex-screws-sizes.jpg?raw=true)
+![Picture of hex screws sizes](https://gitlab.com/randop/notebook/-/raw/main/assets/hex-screws-sizes.jpg?inline=true)
 
 ### Personal Computer (PC) M3 screw set specifications
-![Picture of Personal Computer (PC) M3 screw set specifications](https://github.com/randop/Notebook/blob/master/assets/pc-m3-screws.png?raw=true)
+![Picture of Personal Computer (PC) M3 screw set specifications](https://gitlab.com/randop/notebook/-/raw/main/assets/pc-m3-screws.png?inline=true)
 
 ## 📝 License
 
