@@ -1,0 +1,10 @@
+# Retrieve udev information of network interface
+# udevadm info -a /sys/class/net/enp0s0
+# 
+# Change mac address with macchanger Linux command
+# macchanger -m 58:6B:14:E2:00:88 enp0s0
+# https://linuxconfig.org/change-mac-address-with-macchanger-linux-command
+
+# Configuration file at /usr/lib/udev/rules.d/59-custom-persistent-net.rules
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTRS{vendor}=="0x10ec", ATTR{address}=="0a:e0:af:a1:08:20", ATTR{type}=="1", NAME="enp0s0", PROGRAM="/sbin/ip link set %k address 58:6B:14:E2:00:88"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTRS{idProduct}=="7720", ATTRS{idVendor}=="0b95", ATTRS{serial}=="0006FB", ATTRS{product}=="AX88772A", ATTR{type}=="1", NAME="enp187s0", PROGRAM="/sbin/ip link set %k address 58:6B:14:DB:84:32"

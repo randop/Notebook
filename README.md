@@ -21,10 +21,24 @@ This is for learning and sharing purposes.
 
 👤 **Randolph Ledesma**
 
-* Website: [randolphledesma.com](https://randolphledesma.com)
-* Github: [@randop](https://github.com/randop)
+* 📱 +1 (415) 754-3092
+* 🌐 [https://randop.github.io/](https://randop.github.io/)
+* 👷 [https://www.linkedin.com/in/randolphledesma/](https://www.linkedin.com/in/randolphledesma/)
+* 📍 Philippines
+
+### Types of screws, screw heads, washers and nuts
+![Picture of Types of screws, screw heads, washers and nuts](https://github.com/randop/Notebook/blob/master/assets/types-of-screws-screw-heads-washers-and-nuts.jpg?raw=true)
+
+### How to read a metric screw
+![Picture of How to read a metric screw](https://github.com/randop/Notebook/blob/master/assets/How-to-Read-a-Metric-Screw-Thread-Callout.png?raw=true)
+
+### Hex screws sizes
+![Picture of hex screws sizes](https://github.com/randop/Notebook/blob/master/assets/hex-screws-sizes.jpg?raw=true)
+
+### Personal Computer (PC) M3 screw set specifications
+![Picture of Personal Computer (PC) M3 screw set specifications](https://github.com/randop/Notebook/blob/master/assets/pc-m3-screws.png?raw=true)
 
 ## 📝 License
 
-Copyright © 2021 [Randolph Ledesma](https://github.com/randop).<br />
+Copyright © 2022 [Randolph Ledesma](https://github.com/randop).<br />
 This project is [MIT](https://github.com/randop/javascript-projects/blob/master/LICENSE) licensed.

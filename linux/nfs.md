@@ -1,0 +1,1 @@
+mount -t nfs ledesma.localdomain:/home/randop
