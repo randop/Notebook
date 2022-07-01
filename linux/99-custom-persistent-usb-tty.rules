@@ -3,3 +3,5 @@
 # 
 # Rules Configuration file at /usr/lib/udev/rules.d/99-custom-persistent-usb-tty.rules
 SUBSYSTEM=="tty", ATTRS{idProduct}=="ea60", ATTRS{idVendor}=="10c4", ATTRS{serial}=="0001", SYMLINK+="ttyUART0", MODE="0666"
+SUBSYSTEM=="tty", ATTRS{idProduct}=="2303", ATTRS{idVendor}=="067b", SYMLINK+="ttyUARTPL2303", MODE="0666"
+SUBSYSTEM=="tty", ATTRS{idProduct}=="7523", ATTRS{idVendor}=="1a86", SYMLINK+="ttyARDUINO1", MODE="0666"

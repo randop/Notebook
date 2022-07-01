@@ -1,0 +1,29 @@
+# Mini Quad Remote Control
+
+> /dev/ttyUSB0 2400,8N1
+```
+00000000 00 5B 4B CF CF CF 4F 7B   4B 7B CF CF CF           .[K...O{K{...
+00000000 00 4B 4B CF CF CF 4F 7B   4B 7B CF CF CF           .KK...O{K{...
+00000000 00 4B 4B CF CF CF 4F 7B   4B 7B CF CF CF           .KK...O{K{...
+00000000 00 4B 4B CF CF CF 4F 4B   4B CF CF CF CF 00 FF     .KK...OKK......
+```
+
+> /dev/ttyUSB0 1200,8N1
+```
+00000000 00 66 6F 6F 66 6F 6F 00   FF 00 66 6F 6F 6E 76 6F  .foofoo...foonvo
+00000010 00 FF 00 66 6F 6F 6E 76   6F 00 FF 00 66 6F 6F 66  ...foonvo...foof
+00000020 66 6F 80 00 66 6F 6F 6F   66 6F 00 FF 00 66 6F 6F  fo..fooofo...foo
+00000030 F7 66 6F 00 FF 00 66 6F   6F F7 66 6F 00 66 6F 6F  .fo...foo.fo.foo
+00000040 F7 66 6F 00 66 6F 6F F7   66 6F 00 66 6F 6F F7 66  .fo.foo.fo.foo.f
+00000050 6F 00 66 6F 6F F7 66 6F   00 66 6F 6F 6F 66 6F 00  o.foo.fo.fooofo.
+00000060 FF 00 66 6F 6F 6E 6F 6F   00 66 6F 6F 6E 6F 6F 00  ..foonoo.foonoo.
+00000070 FF 00 66 6F 6F 6E 6F 6F   00 FF 00 66 6F 6F 66 66  ..foonoo...fooff
+00000080 6F 00 66 6F 6F 6E 76 6F   00 FF 00 66 6F 6F 6F 66  o.foonvo...fooof
+00000090 6F 00 FF 00 66 6F 6F F7   66 6F 00 FF 00 66 6F 6F  o...foo.fo...foo
+000000a0 76 76 6F 00 FF 00 66 6F   6F 76 6E 6F 00 FF 00 66  vvo...foovno...f
+000000b0 6F 6F 76 6E 6F 00 FF 00   66 6F 6F 6F 6E 6F 00 FF  oovno...fooono..
+000000c0 00 FF 00 66 6F 6F 66 6F   6F 00 FF 00 66 6F 6F 66  ...foofoo...foof
+000000d0 66 6F 00 66 6F 6F 66 6F   6F 00 FF 00 66 6F 6F 66  fo.foofoo...foof
+000000e0 6F 6F 00 FF 00 66 6F 6F   6E 76 6F 00 FF 00 66 6F  oo...foonvo...fo
+000000f0 6F 6E 6F 6F 00 FF 00 66   6F 6F 6E 6F 6F 00 FF     onoo...foonoo..
+```
