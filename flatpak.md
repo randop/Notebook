@@ -51,6 +51,7 @@ flatpak --user install flathub com.ultimaker.cura
 flatpak --user install flathub io.github.congard.qnvsm
 flatpak --user install flathub com.leinardi.gwe
 flatpak --user install flathub io.github.arunsivaramanneo.GPUViewer
+flatpak --user install flathub org.gnome.moserial
 ```
 
 ## Games
