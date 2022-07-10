@@ -1,15 +1,15 @@
 <h1 align="center">Welcome to my Notebook 👋</h1>
 <p>
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/randop/Notebook#readme">
+  <a href="https://gitlab.com/randop/notebook">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
   </a>
-  <a href="https://github.com/randop/Notebook/graphs/commit-activity">
+  <a href="https://gitlab.com/randop/notebook/-/commits/main">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" target="_blank" />
   </a>
 </p>
 
-### 🏠 [Homepage](https://github.com/randop/Notebook#readme)
+### 🏠 [Homepage](https://gitlab.com/randop/notebook)
 #### The repository of my notes on various topics and interest. This is for learning and sharing purposes.
 
 ## Author
@@ -35,4 +35,4 @@
 
 ## 📝 License
 
-Copyright © 2022 [Randolph Ledesma](https://gitlab.com/randop).
+Copyright © 2016 — 2022 [Randolph Ledesma](https://gitlab.com/randop).
