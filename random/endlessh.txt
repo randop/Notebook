@@ -1,0 +1,14 @@
+sudo apt install -y build-essential git iproute2 net-tools
+git clone https://github.com/skeeto/endlessh.git && cd endlessh && make
+sudo mv endlessh /usr/local/bin
+which endlessh
+sudo cp -v util/endlessh.service /etc/systemd/system
+sudo systemctl enable endlessh
+sudo mkdir -vp /etc/endlessh && sudo echo "Port 22" > /etc/endlessh/config
+sudo systemctl start endlessh
+ss -tulpn | grep endlessh
+
+
+sudo apt install -y endlessh
+sudo setcap 'cap_net_bind_service=+ep' /usr/bin/endlessh
+sudo mkdir -vp /etc/endlessh && sudo echo -v "Port 22" > /etc/endlessh/config
