@@ -75,7 +75,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-
 ;;; My configuration
 ;2022-07-06T07:00:00
 (beacon-mode +1)
@@ -94,7 +93,7 @@
 
 (defun insert_timestamp ()
    (interactive)
-   (insert (format-time-string "%Y-%m-%dT%H:%M:%S")))
+   (insert (format-time-string "%Y-%m-%dT%H:%M:%S.000Z")))
 
 (global-set-key (kbd "<f8>") 'insert_timestamp)
 (global-set-key (kbd "<f9>") 'magit)
