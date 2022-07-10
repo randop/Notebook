@@ -7,3 +7,12 @@ dd if=rhel-baseos-9.0-x86_64-dvd.iso \
 	bs=120k \
 	status=progress
 ```
+
+```
+dd if=OracleLinux-R9-U0-x86_64-dvd.iso \
+	of=/dev/sdb
+	conv=sync
+	oflag=sync \
+	bs=16k \
+	status=progress
+```
