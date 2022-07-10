@@ -1,0 +1,18 @@
+{
+  "name": "imgpdfgen",
+  "version": "1.0.0",
+  "description": "Generate PDF using pictures (jpg, png)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "image-size": "^1.0.1",
+    "jspdf": "^2.5.1",
+    "mmmagic": "^0.5.3",
+    "pdfjs": "^2.4.7",
+    "pdfkit": "^0.13.0"
+  }
+}
