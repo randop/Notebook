@@ -100,7 +100,7 @@ ffmpeg -i Geto_Boys_-_Damn_It_Feels_Good_To_Be_A_Gangsta_Live_Looping_--_THROWBA
 
 #### Download mp3 from YT
 ```
-youtube-dl -o '%(title)s.%(ext)s' --restrict-filenames -x --audio-format mp3 https://www.youtube.com/playlist?list=PLL4itf8rGtj5lwP2jQ_yuQFhDlY6q_bg8
+youtube-dl -f best -o '%(title)s.%(ext)s' --restrict-filenames -x --audio-format mp3 https://www.youtube.com/playlist?list=PLL4itf8rGtj5lwP2jQ_yuQFhDlY6q_bg8
 ```
 
 #### Convert gif to mp4
