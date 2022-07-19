@@ -17,10 +17,9 @@ Copyright © 2016 — 2022 Randolph Ledesma https://gitlab.com/randop
 #include <DallasTemperature.h>
 
 /***
- * Setup
+ * Setup sensor at digital pin 2 and initialize DallasTemperature
  ***/
 #define ONE_WIRE_BUS 2
-/********************************************************************/
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
