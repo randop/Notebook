@@ -16,3 +16,11 @@ dd if=OracleLinux-R9-U0-x86_64-dvd.iso \
 	bs=16k \
 	status=progress
 ```
+
+```
+dd if=Rocky-9.0-x86_64-dvd.iso \
+	of=/run/media/randop/Ventoy/Rocky-9.0-x86_64-dvd.iso \
+	bs=120k \
+	oflag=direct \
+	status=progress
+```
