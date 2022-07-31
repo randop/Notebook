@@ -24,3 +24,12 @@ dd if=Rocky-9.0-x86_64-dvd.iso \
 	oflag=direct \
 	status=progress
 ```
+
+```
+dd if=Rocky-9.0-x86_64-dvd.iso \
+	of=/dev/sda \
+	bs=120k \
+	oflag=direct \
+	conv=sync \
+	status=progress
+```
