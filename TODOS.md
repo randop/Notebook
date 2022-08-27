@@ -32,3 +32,13 @@ Read this answer in context 👍 1
 
 ## Silero Models: pre-trained enterprise-grade STT / TTS models
 [https://github.com/snakers4/silero-models.git](https://github.com/snakers4/silero-models.git)
+
+## nodegui
+```
+git clone https://github.com/nodegui/nodegui-starter
+cd nodegui-starter
+npm install
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORM=
+```
+
