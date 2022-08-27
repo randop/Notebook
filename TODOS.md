@@ -6,3 +6,26 @@
 
 ## how to disable Firefox prompt
 [https://support.mozilla.org/en-US/questions/1201904](https://support.mozilla.org/en-US/questions/1201904)
+```
+That is a message from the "Decoder Doctor' that is displayed as a notification bar if there is no suitable codec found to play the media file.
+
+    decoder.noCodecs.message = To play video, you may need to install Microsoft’s Media Feature Pack. 
+
+Does the Web Console (or Browser Console) show more detail about what codec is missing?
+
+I see see this pref present on the about:config page to switch verbose mode on/off.
+
+    media.decoder-doctor.verbose 
+
+The messages that are allows are specified via this pref:
+
+    media.decoder-doctor.notifications-allowed 
+
+I think that you can set this pref to an empty value (right-click and clear the current String value) to suppress the notifications.
+
+You can open the about:config page via the location/address bar. You can accept the warning and click "I accept the risk!" to continue.
+
+    http://kb.mozillazine.org/about:config 
+
+Read this answer in context 👍 1
+```
