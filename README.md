@@ -265,7 +265,10 @@ sudo systemctl status postgresql
 #### Redis and Memcached
 ```bash
 sudo apt install -y redis memcached
-sudo systemctl disable --now redis memcached
+
+# Disable docker service to optimize boot speed
+sudo systemctl disable redis
+sudo systemctl disable memcached
 sudo systemctl status redis memcached
 ```
 
