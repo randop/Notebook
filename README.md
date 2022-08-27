@@ -262,6 +262,13 @@ sudo systemctl disable --now postgresql
 sudo systemctl status postgresql
 ```
 
+#### Redis and Memcached
+```bash
+sudo apt install -y redis memcached
+sudo systemctl disable --now redis memcached
+sudo systemctl status redis memcached
+```
+
 ---
 ## How to code using NASM assembler (Assembly programming language)
 ```asm
