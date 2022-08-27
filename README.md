@@ -258,6 +258,8 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update
 sudo apt install -y postgresql-10 postgresql-10-postgis-3
+sudo systemctl disable --now postgresql
+sudo systemctl status postgresql
 ```
 
 ---
