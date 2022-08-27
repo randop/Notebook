@@ -163,7 +163,7 @@ sudo mv -v \
 	/etc/xdg/autostart.disabled
 sudo mv -v \
 	/etc/xdg/autostart/org.kde.discover.notifier.desktop \
-	/etc/xdg/autostart.disabled \
+	/etc/xdg/autostart.disabled
 sudo mv -v \
 	/etc/xdg/autostart/spice-vdagent.desktop \
 	/etc/xdg/autostart.disabled
