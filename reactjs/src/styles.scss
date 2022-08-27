@@ -1,0 +1,11 @@
+$primary-color: white;
+$bg: black;
+h1 {
+  color: $primary-color;
+  background-color: $bg;
+}
+
+.map-container{
+  height: 100vh;
+  width: 100%;
+}
