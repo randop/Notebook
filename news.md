@@ -1,0 +1,2 @@
+https://www.privacy.gov.ph/2021/11/npc-global-syndicate-behind-scam-text-surge-summons-telcos-banks-and-e-commerce-platforms/
+https://www.bloomberg.com/news/articles/2022-06-20/23-million-blocked-spam-messages-in-philippines-show-scam-threat
