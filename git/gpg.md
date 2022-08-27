@@ -11,4 +11,5 @@ git config --global user.email randolph+gitlab@hotmail.com
 git config --global user.name Randolph
 ssh -T git@gitlab.com
 chmod 400 ~/.ssh/config
+git log --show-signature
 ```
