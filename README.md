@@ -205,6 +205,19 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 # Install latest NodeJS LTS version
 nvm install --lts
 ```
+
+#### Development Tools
+```bash
+sudo apt install \
+	kate \
+	kwrite \
+	kdevelop \
+	meson \
+	clang \
+	build-essential \
+	pkg-config
+```
+
 ---
 ## How to code using NASM assembler (Assembly programming language)
 ```asm
