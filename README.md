@@ -156,16 +156,16 @@ sudo ufw status verbose
 
 sudo mkdir /etc/xdg/autostart.disabled
 sudo mv -v \
-	/etc/xdg/autostart/baloo_file.desktop
+	/etc/xdg/autostart/baloo_file.desktop \
 	/etc/xdg/autostart.disabled
 sudo mv -v \
-	/etc/xdg/autostart/geoclue-demo-agent.desktop
+	/etc/xdg/autostart/geoclue-demo-agent.desktop \
 	/etc/xdg/autostart.disabled
 sudo mv -v \
-	/etc/xdg/autostart/org.kde.discover.notifier.desktop
-	/etc/xdg/autostart.disabled
+	/etc/xdg/autostart/org.kde.discover.notifier.desktop \
+	/etc/xdg/autostart.disabled \
 sudo mv -v \
-	/etc/xdg/autostart/spice-vdagent.desktop
+	/etc/xdg/autostart/spice-vdagent.desktop \
 	/etc/xdg/autostart.disabled
 
 sudo apt update && sudo apt upgrade -y
