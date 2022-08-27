@@ -56,7 +56,7 @@ flatpak --user install flathub com.github.liferooter.textpieces
 flatpak --user install flathub com.github.rafostar.Clapper
 flatpak --user install flathub org.gnome.moserial
 flatpak --user install flathub net.codeindustry.MasterPDFEditor
-
+flatpak --user install flathub org.gnome.gitlab.somas.Apostrophe
 ```
 
 ## Games
