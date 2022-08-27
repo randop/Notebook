@@ -63,7 +63,7 @@ flatpak install flathub com.github._0negal.Viper
 flatpak install flathub org.wesnoth.Wesnoth
 ```
 
-## Fix Error: Permission denied
+## (SOLVED) Fix Error: Permission denied
 > [https://ask.fedoraproject.org/t/flatpak-install-org-signal-signal-error-permission-denied/10362](https://ask.fedoraproject.org/t/flatpak-install-org-signal-signal-error-permission-denied/10362)
 ```bash
 find ~/.local/share/flatpak -user root -or -group root
