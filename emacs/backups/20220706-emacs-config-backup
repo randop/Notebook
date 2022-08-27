@@ -1,0 +1,28 @@
+(require 'package)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cua-mode t)
+ '(package-selected-packages '(magit neotree auto-complete)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(setq dired-use-ls-dired nil)
+(ac-config-default)
+(global-auto-complete-mode t)
+(setenv "PATH" (concat (getenv "PATH") ":/export/home/randop/projects/tern/bin"))
+    (setq exec-path (append exec-path '("/export/home/randop/projects/tern/bin")))
+(add-to-list 'load-path "/export/home/randop/projects/tern/emacs/")
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
