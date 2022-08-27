@@ -266,10 +266,23 @@ sudo systemctl status postgresql
 ```bash
 sudo apt install -y redis memcached
 
-# Disable docker service to optimize boot speed
+# Disable redis and memcached service to optimize boot speed
 sudo systemctl disable redis
 sudo systemctl disable memcached
 sudo systemctl status redis memcached
+```
+
+#### RabbitMQ
+```bash
+sudo apt install -y rabbitmq-server
+sudo rabbitmqctl add_user 'username' 'password'
+sudo rabbitmqctl set_user_tags username administrator
+sudo rabbitmqctl set_permissions -p / username ".*" ".*" ".*"
+sudo rabbitmq-plugins enable rabbitmq_management
+
+# Disable rabbitmq service to optimize boot speed
+sudo systemctl disable rabbitmq-server
+sudo systemctl status rabbitmq-server
 ```
 
 ---
