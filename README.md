@@ -205,7 +205,41 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 # Install latest NodeJS LTS version
 nvm install --lts
 ```
+---
+## How to code using NASM assembler (Assembly programming language)
+```asm
+; Copyright© 1998—2022 Randolph Ledesma (randop at me.com)
+; $ nasm -g -f elf64 hello.asm
+; $ ld -o hello hello.o
+global _start
 
+section .data
+        str: db "Hello World, Randolph Ledesma", 0xA
+        STRSIZE: equ $ - str
+        STDOUT: equ 1
+
+section .text
+_start:
+        mov rax, 1
+        mov rdi, STDOUT
+        mov rsi, str
+        mov rdx, STRSIZE
+        syscall
+
+        mov rax, 60
+        syscall
+
+```
+#### Linux NASM
+```bash
+nasm -g -f elf64 hello.asm
+ld -o hello hello.o
+
+nasm -g -f elf64 demo.asm
+ld -o demo demo.o
+gcc -o [-no-pie] demo demo.o -v
+```
+---
 ## 📝 License
 
 Copyright © 2016 — 2022 [Randolph Ledesma](https://gitlab.com/randop).
