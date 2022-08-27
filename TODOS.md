@@ -29,3 +29,6 @@ You can open the about:config page via the location/address bar. You can accept 
 
 Read this answer in context 👍 1
 ```
+
+## Silero Models: pre-trained enterprise-grade STT / TTS models
+[https://github.com/snakers4/silero-models.git](https://github.com/snakers4/silero-models.git)
