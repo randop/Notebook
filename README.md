@@ -21,6 +21,9 @@
 * 👷 [https://www.linkedin.com/in/randop/](https://www.linkedin.com/in/randop/)
 * 📍 Philippines
 
+## 😆
+![How to save the pricess using 8 programming languages](https://gitlab.com/randop/notebook/-/raw/main/assets/git-the-princess.jpg?inline=true)
+
 ### Types of screws, screw heads, washers and nuts
 ![Picture of Types of screws, screw heads, washers and nuts](https://gitlab.com/randop/notebook/-/raw/main/assets/types-of-screws-screw-heads-washers-and-nuts.jpg?inline=true)
 
