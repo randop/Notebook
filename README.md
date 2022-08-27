@@ -218,6 +218,15 @@ sudo apt install \
 	pkg-config
 ```
 
+#### Docker
+```bash
+sudo apt install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+
 ---
 ## How to code using NASM assembler (Assembly programming language)
 ```asm
