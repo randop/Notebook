@@ -238,6 +238,18 @@ sudo apt install -y \
 	docker-ce-cli \
 	containerd.io \
 	docker-compose-plugin
+
+sudo usermod -aG docker $USER
+newgrp docker
+docker run hello-world
+
+# Disable docker service to optimize boot speed
+sudo systemctl disable docker.service
+sudo systemctl disable containerd.service
+
+# Enable docker
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
 ```
 
 ---
