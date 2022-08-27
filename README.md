@@ -189,7 +189,7 @@ export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/:~/.local/sha
 
 #### Emacs
 ```bash
-sudo apt install git emacs ripgrep fd-find
+sudo apt install -y git emacs ripgrep fd-find
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 ```
@@ -208,7 +208,7 @@ nvm install --lts
 
 #### Development Tools
 ```bash
-sudo apt install \
+sudo apt install -y \
 	kate \
 	kwrite \
 	kdevelop \
@@ -220,7 +220,7 @@ sudo apt install \
 
 #### Docker
 ```bash
-sudo apt install \
+sudo apt install -y \
     ca-certificates \
     curl \
     gnupg \
@@ -250,6 +250,14 @@ sudo systemctl disable containerd.service
 # Enable docker
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+```
+
+#### PostgreSQL
+```bash
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt update
+sudo apt install -y postgresql-10 postgresql-10-postgis-3
 ```
 
 ---
