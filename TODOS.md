@@ -42,3 +42,8 @@ export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORM=
 ```
 
+## Libvpx
+> [https://github.com/webmproject/libvpx](https://github.com/webmproject/libvpx)
+```
+wget https://vault.centos.org/centos/8/AppStream/x86_64/os/Packages/libvpx-1.7.0-8.el8.x86_64.rpm
+```
