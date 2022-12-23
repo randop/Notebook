@@ -111,46 +111,6 @@ sudo snap remove --purge core20
 sudo snap remove --purge snapd
 sudo apt purge --yes --auto-remove snapd
 
-sudo nano /etc/apt/preferences.d/nosnap.pref
-
-# /etc/apt/preferences.d/nosnap.pref
-Package: snapd
-Pin: release a=*
-Pin-Priority: -10
-
-sudo nano /etc/sysctl.d/80-ipv6-disable.conf
-
-# /etc/sysctl.d/80-ipv6-disable.conf
-net.ipv6.conf.all.disable_ipv6=1
-net.ipv6.conf.default.disable_ipv6=1
-net.ipv6.conf.lo.disable_ipv6=1
-
-sudo nano /etc/modprobe.d/edac-blacklist.conf
-
-# /etc/modprobe.d/edac-blacklist.conf
-blacklist i82975x_edac
-blacklist amd64_edac_mod
-blacklist skx_edac
-blacklist e752x_edac
-blacklist i5400_edac
-blacklist i3200_edac
-blacklist i5000_edac
-blacklist ie31200_edac
-blacklist edac_mce_amd
-blacklist i3000_edac
-blacklist sb_edac
-blacklist pnd2_edac
-blacklist i7core_edac
-blacklist i7300_edac
-blacklist x38_edac
-blacklist i5100_edac
-
-sudo nano /etc/modprobe.d/nouveau-blacklist.conf
-
-# /etc/modprobe.d/nouveau-blacklist.conf
-blacklist nouveau
-options nouveau modeset=0
-
 sudo ufw enable
 sudo ufw status verbose
 
@@ -173,6 +133,55 @@ sudo ubuntu-drivers autoinstall
 sudo update-initramfs -u
 ```
 
+### Disable IPv6
+```bash
+cat << EOF | sudo tee /etc/sysctl.d/80-ipv6-disable.conf
+net.ipv6.conf.all.disable_ipv6=1
+net.ipv6.conf.default.disable_ipv6=1
+net.ipv6.conf.lo.disable_ipv6=1
+EOF
+```
+
+### Nosnap
+```bash
+cat << EOF | sudo tee /etc/apt/preferences.d/nosnap.pref
+Package: snapd
+Pin: release a=*
+Pin-Priority: -10
+EOF
+```
+
+### Use Unbuffered DIMM
+```bash
+cat << EOF | sudo tee /etc/modprobe.d/edac-blacklist.conf
+blacklist i82975x_edac
+blacklist amd64_edac_mod
+blacklist skx_edac
+blacklist e752x_edac
+blacklist i5400_edac
+blacklist i3200_edac
+blacklist i5000_edac
+blacklist ie31200_edac
+blacklist edac_mce_amd
+blacklist i3000_edac
+blacklist sb_edac
+blacklist pnd2_edac
+blacklist i7core_edac
+blacklist i7300_edac
+blacklist x38_edac
+blacklist i5100_edac
+EOF
+```
+
+### Install NVIDIA drivers
+```bash
+sudo apt install -y libglvnd-dev
+cat << EOF | sudo tee /etc/modprobe.d/nouveau-blacklist.conf
+blacklist nouveau
+options nouveau modeset=0
+EOF
+```
+
 #### Flatpak
 ```bash
 flatpak --user \
@@ -180,11 +189,6 @@ flatpak --user \
 	https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak --user install org.mozilla.firefox
-
-nano ~/.bashrc
-# ~/.bashrc
-export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/:~/.local/share/flatpak/exports/share/
-
 ```
 
 #### Emacs
