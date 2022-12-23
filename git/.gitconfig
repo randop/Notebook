@@ -1,0 +1,27 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	mg = merge --no-ff
+	brdate = branch --sort=-committerdate
+	mgm = merge --no-ff --no-commit
+	dfc = diff-tree --no-commit-id --name-only -r
+	au = !git ls-files -v | grep \"^[[:lower:]]\"
+[github]
+    name = <name>
+    email = <email>
+[gitlab]
+    name = <name>
+    email = <email>
+[init]
+    templatedir = ~/.git-templates
+[user]
+	useConfigOnly = true
+	name = <name>
+	email = <email>
