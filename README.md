@@ -21,6 +21,15 @@
 * 👷 [https://www.linkedin.com/in/randop/](https://www.linkedin.com/in/randop/)
 * 📍 Philippines
 
+## Table of contents
+* [How to save the pricess using 8 programming languages](#how-to-save-the-pricess-using-8-programming-languages)
+* [Types of screws, screw heads, washers and nuts](#types-of-screws-screw-heads-washers-and-nuts)
+* [Hex screws sizes](#hex-screws-sizes)
+* [PC M3 screw set specifications](#personal-computer-pc-m3-screw-set-specifications)
+* [System Setup](#system-setup)
+* [How to code using NASM assembler](#how-to-code-using-nasm-assembler-assembly-programming-language)
+* [License](#-license)
+
 ## 😆
 ![How to save the pricess using 8 programming languages](https://gitlab.com/randop/notebook/-/raw/main/assets/git-the-princess.jpg?inline=true)
 
