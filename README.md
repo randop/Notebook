@@ -326,6 +326,6 @@ gcc -o [-no-pie] demo demo.o -v
 ---
 ## 📝 License
 
-Copyright © 2016 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
+Copyright © 2010 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
 Last updated on 2022-12-23T13:52:05.000Z
