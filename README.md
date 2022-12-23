@@ -173,7 +173,7 @@ blacklist i5100_edac
 EOF
 ```
 
-### Install NVIDIA drivers
+### nvidia
 ```bash
 sudo apt install -y libglvnd-dev
 cat << EOF | sudo tee /etc/modprobe.d/nouveau-blacklist.conf
@@ -261,7 +261,7 @@ sudo systemctl enable containerd.service
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update
-sudo apt install -y postgresql-10 postgresql-10-postgis-3
+sudo apt install -y postgresql-11 postgresql-11-postgis-3
 sudo systemctl disable --now postgresql
 sudo systemctl status postgresql
 ```
