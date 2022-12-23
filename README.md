@@ -262,6 +262,8 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update
 sudo apt install -y postgresql-11 postgresql-11-postgis-3
+
+# Disable postgresql to optimize boot speed
 sudo systemctl disable --now postgresql
 sudo systemctl status postgresql
 ```
