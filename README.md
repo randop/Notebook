@@ -292,7 +292,7 @@ sudo systemctl status rabbitmq-server
 ---
 ## How to code using NASM assembler (Assembly programming language)
 ```asm
-; Copyright© 1998—2022 Randolph Ledesma (randop at me.com)
+; Copyright© 1998—2023 Randolph Ledesma (randop at me.com)
 ; $ nasm -g -f elf64 hello.asm
 ; $ ld -o hello hello.o
 global _start
@@ -326,6 +326,6 @@ gcc -o [-no-pie] demo demo.o -v
 ---
 ## 📝 License
 
-Copyright © 2016 — 2022 [Randolph Ledesma](https://gitlab.com/randop).
+Copyright © 2016 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2022-08-27T15:44:05.000Z
+Last updated on 2022-12-23T13:52:05.000Z
