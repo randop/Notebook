@@ -339,4 +339,4 @@ gcc -o [-no-pie] demo demo.o -v
 
 Copyright © 2010 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2022-12-23T13:52:05.000Z
+Last updated on 2022-12-24T20:03:00.000Z
