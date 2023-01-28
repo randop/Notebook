@@ -195,7 +195,9 @@ EOF
 > Enable IOMMU support by setting the correct kernel parameter depending on the type of CPU in use:
 >
 > For Intel CPUs (VT-d) set `intel_iommu=on`
+>
 > For AMD CPUs (AMD-Vi) set `amd_iommu=on`
+>
 > You should also append the `iommu=pt` parameter. This will prevent Linux from touching devices which cannot be passed through.
 
 #### Flatpak
