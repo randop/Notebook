@@ -191,6 +191,13 @@ options nouveau modeset=0
 EOF
 ```
 
+### iommu
+> Enable IOMMU support by setting the correct kernel parameter depending on the type of CPU in use:
+>
+> For Intel CPUs (VT-d) set `intel_iommu=on`
+> For AMD CPUs (AMD-Vi) set `amd_iommu=on`
+> You should also append the `iommu=pt` parameter. This will prevent Linux from touching devices which cannot be passed through.
+
 #### Flatpak
 ```bash
 flatpak --user \
@@ -339,4 +346,4 @@ gcc -o [-no-pie] demo demo.o -v
 
 Copyright © 2010 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2022-12-24T20:03:00.000Z
+Last updated on 2023-01-28T18:11:55.000Z
