@@ -71,3 +71,9 @@ flatpak install flathub org.wesnoth.Wesnoth
 ```bash
 find ~/.local/share/flatpak -user root -or -group root
 ```
+
+## Delete app and data
+```bash
+flatpak uninstall --delete-data com.microsoft.Teams
+flatpak uninstall --delete-data com.skype.Client
+```
