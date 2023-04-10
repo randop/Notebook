@@ -72,6 +72,11 @@ flatpak install flathub org.wesnoth.Wesnoth
 find ~/.local/share/flatpak -user root -or -group root
 ```
 
+## Update app
+```bash
+flatpak update --user --app com.google.Chrome
+```
+
 ## Delete app and data
 ```bash
 flatpak uninstall --delete-data com.microsoft.Teams
