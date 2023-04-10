@@ -343,9 +343,40 @@ nasm -g -f elf64 demo.asm
 ld -o demo demo.o
 gcc -o [-no-pie] demo demo.o -v
 ```
+
+#### NVIDIA System Management Interface -- v525.60.11
+```bash
+user@linux:~/Downloads$ nvidia-smi
+Mon Apr 10 12:15:48 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.60.11    Driver Version: 525.60.11    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro P400         Off  | 00000000:02:00.0  On |                  N/A |
+| 34%   42C    P8    N/A /  N/A |    753MiB /  2048MiB |     31%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      1266      G   /usr/lib/xorg/Xorg                308MiB |
+|    0   N/A  N/A      1530      G   /usr/bin/kwin_x11                  73MiB |
+|    0   N/A  N/A      1599      G   /usr/bin/plasmashell               36MiB |
+|    0   N/A  N/A      8851      G   /app/lib/firefox/firefox          164MiB |
+|    0   N/A  N/A     48822      G   ...in,WebAssemblyTrapHandler       94MiB |
+|    0   N/A  N/A     81537      G   ...in,WebAssemblyTrapHandler       68MiB |
++-----------------------------------------------------------------------------+
+```
+
 ---
 ## 📝 License
 
 Copyright © 2010 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2023-04-08T14:38:54.000Z
+Last updated on 2023-04-10T12:20:07.000Z
