@@ -46,18 +46,51 @@
 ![Picture of Personal Computer (PC) M3 screw set specifications](https://gitlab.com/randop/notebook/-/raw/main/assets/pc-m3-screws.png?inline=true)
 
 ## System Setup
+
+### Debian 11.7 KDE Linux 5.10
+```bash
+wget --continue \
+    https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/11.7.0-live+nonfree/amd64/iso-hybrid/debian-live-11.7.0-amd64-kde+nonfree.iso
+```
+```
+https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/11.7.0-live+nonfree/amd64/iso-hybrid/SHA256SUMS
+
+c7e29da831bf995b58b92ddcb697afe364d4ee6739dfb2dd140faeabd6387887  debian-live-11.7.0-amd64-kde+nonfree.contents
+a94c2e662847829666b3accecd391d32593d113eb799b534f89c4fbb194c90ff  debian-live-11.7.0-amd64-kde+nonfree.iso
+5cacbd4154ac04bd455a7a1fc28c9c35563c5b3234bce8da73229fedd26b49a0  debian-live-11.7.0-amd64-kde+nonfree.log
+d77a71412573016911cce7c262eff5269a52b797940287f68376e1e71068240a  debian-live-11.7.0-amd64-kde+nonfree.packages
+```
+```
+https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/11.7.0-live+nonfree/amd64/iso-hybrid/SHA256SUMS.sign
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEE35ucSeqpKYQyWJ122ofoDWKUvpsFAmRNgpoACgkQ2ofoDWKU
+vpsQqg//bhegKEK4AXN2PbPBmD4rTurToa0h2cUKtYNoo3+ac8qgAL0qKFCYZoSv
+dFwtAS9o3IHFolGYPjOsYbZpZxB+Ot4Z5PjmidYLDEazIYqTPM2P2K6DOZwH0c8A
+ooaFVRrW/V3VAegLJq2gEr0aUVuKYdWDEdyAY6BIaWH1R6cORhwTDqIsrTSDQoEm
+D1XRitHrpLNgBHgLZK0pO1PaOgKkj4BCXmyaCyqrzZXMWO4ScNW+GH8GJuH3Wvvc
+/BDKjicC4dvey6ujhDYGNN9orq4no4I6uHJoNUzAGwXsz7essIsakgRAcMT/wSTe
+/tno9ihyYqSP3QrPJYnJNm7M1aHVkeCi5bEJJDMqPt7gli10wRnN2GqEsmPBhmrb
+OXskSOFBes02W6oZwn5pPOJlH6IlveHOdXH0W5sq3rk5MvGW77nAt+u6muwnpqE/
+2Dm1OnqxCOIntr5y0E+iXzNS55hmXnLZw1tcCqCQwPY6aT+8numV4CsjaF5patAi
+yWo4Xv0M8kLsCysxNPNgOy5eQ/XMvrsic8Isu4t9dPkaSbVGb8lgYqyBLBF4Y62Z
+cnRDl6SSFrLl4INDNUjEgVb+3+pmh/mEHeqBbPo9tH5/SrUIst+GIKHQgErrJuOb
+gJfx+gc/r4MyG1594UFuQLsy0Y4Q90HOMlGj3xHQOSLFAdcao6U=
+=lnC1
+-----END PGP SIGNATURE-----
+```
+
 #### Ubuntu Studio 22.04.1 Linux Operating System
 ```bash
 wget --continue \
 	https://cdimage.ubuntu.com/ubuntustudio/releases/22.04.1/release/ubuntustudio-22.04.1-dvd-amd64.iso
 ```
-
 ```
 https://cdimage.ubuntu.com/ubuntustudio/releases/22.04.1/release/SHA256SUMS
 
 3fe6fa9a17fa7a4b34b2ec7ff3b9500d354ca644aedcc37096b923f14247f504 *ubuntustudio-22.04.1-dvd-amd64.iso
 ```
-
 ```
 https://cdimage.ubuntu.com/ubuntustudio/releases/22.04.1/release/SHA256SUMS.gpg
 
@@ -77,7 +110,6 @@ SG8OcYBDaqNgsGd+qEyyFUi7t6g+X3l0VXTe+2xz9b5Qde1PEu52PDBYXeT7Rd77
 PHgrqSxI3FFNIj1wWiG5iWJxD2MuG/upOdfg6k210/Np2wwd3i0=
 =QlUg
 -----END PGP SIGNATURE-----
-
 ```
 
 #### OS Tweaks
