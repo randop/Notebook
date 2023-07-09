@@ -374,9 +374,15 @@ Mon Apr 10 12:15:48 2023
 +-----------------------------------------------------------------------------+
 ```
 
+#### Curl
+##### View contents of remote file 
+```bash
+curl -1sLf 'https://gitlab.com/randop/notebook/-/raw/main/README.md?inline=false'
+```
+
 ---
 ## 📝 License
 
 Copyright © 2010 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2023-06-07T14:29:15.000Z
+Last updated on 2023-07-09T15:17:08.000Z
