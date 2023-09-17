@@ -322,6 +322,12 @@ sudo systemctl status postgresql
 ```bash
 curl -1sLf 'https://dl.redpanda.com/nzc4ZYQK3WRGd9sy/redpanda/cfg/setup/bash.deb.sh' | \
 sudo -E bash && sudo apt install redpanda -y
+
+curl -LO https://github.com/redpanda-data/redpanda/releases/latest/download/rpk-linux-amd64.zip
+mkdir -p ~/.local/bin
+export PATH="~/.local/bin:$PATH"
+unzip rpk-linux-amd64.zip -d ~/.local/bin/
+rpk version
 ```
 
 #### Redis and Memcached
@@ -423,4 +429,4 @@ curl -1sLf 'https://gitlab.com/randop/notebook/-/raw/main/README.md?inline=false
 
 Copyright © 2010 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2023-09-17T07:32:39.000Z
+Last updated on 2023-09-17T07:37:25.000Z
