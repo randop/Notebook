@@ -318,6 +318,12 @@ sudo systemctl disable --now postgresql
 sudo systemctl status postgresql
 ```
 
+#### Redpanda
+```bash
+curl -1sLf 'https://dl.redpanda.com/nzc4ZYQK3WRGd9sy/redpanda/cfg/setup/bash.deb.sh' | \
+sudo -E bash && sudo apt install redpanda -y
+```
+
 #### Redis and Memcached
 ```bash
 sudo apt install -y redis memcached
@@ -417,4 +423,4 @@ curl -1sLf 'https://gitlab.com/randop/notebook/-/raw/main/README.md?inline=false
 
 Copyright © 2010 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2023-09-17T07:22:11.000Z
+Last updated on 2023-09-17T07:32:39.000Z
