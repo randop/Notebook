@@ -16,4 +16,3 @@ Advanced protective DNS and content filtering for your organization. Pricing ava
 https://www.dnsfilter.com/
 103.247.36.36
 103.247.37.37
-
