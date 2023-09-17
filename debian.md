@@ -36,7 +36,20 @@ qemu-system-x86_64 \
   -machine accel=kvm \
   -nic user,hostfwd=tcp::2222-:22,hostfwd=tcp::2333-:3000 \
   -drive file=debian.qcow2,format=qcow2 \
-  -initrd initrd.img-6.1.0-10-amd64 \
-  -kernel vmlinuz-6.1.0-10-amd64 -append "root=/dev/sda1 console=ttyS0" \
+  -initrd initrd.img-6.1.0-12-amd64 \
+  -kernel vmlinuz-6.1.0-12-amd64 -append "root=/dev/sda1 console=ttyS0" \
   -nographic
 ```
+
+# Fix floppy boot issue
+> IMPORTANT: ssh on the system
+```bash
+ssh -p 2222 user@127.0.0.1
+su
+echo "blacklist floppy" | tee /etc/modprobe.d/floppy.conf
+update-initramfs -u
+/sbin/poweroff
+
+virt-copy-out -a debian.qcow2 /boot/vmlinuz-6.1.0-12-amd64 /boot/initrd.img-6.1.0-12-amd64 .
+```
+
