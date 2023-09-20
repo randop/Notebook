@@ -1,5 +1,91 @@
 # Machine Learning
 
+## Install AMD ROCm
+[https://rocm.docs.amd.com/en/latest/tutorials/install/index.html](https://rocm.docs.amd.com/en/latest/tutorials/install/index.html)
+```bash
+su
+sudo usermod -a -G render,video $LOGNAME
+# Make the directory if it doesn't exist yet.
+# This location is recommended by the distribution maintainers.
+sudo mkdir --parents --mode=0755 /etc/apt/keyrings
+# Download the key, convert the signing-key to a full
+# keyring required by apt and store in the keyring directory
+wget https://repo.radeon.com/rocm/rocm.gpg.key -O - | \
+    gpg --dearmor | sudo tee /etc/apt/keyrings/rocm.gpg > /dev/null
+
+apt install python3-venv python3-dev
+
+wget -q -O - https://debian.rickslab.com/PUBLIC.KEY | sudo gpg --dearmour -o /usr/share/keyrings/rickslab-agent.gpg
+
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/rickslab-agent.gpg] https://debian.rickslab.com/gpu-utils/ eddore main' | sudo tee /etc/apt/sources.list.d/rickslab-gpu-utils.list
+
+apt update
+apt install rickslab-gpu-utils
+
+gpu-chk
+
+printf 'amdgpu.ppfeaturemask=0x%x\n' "$(($(cat /sys/module/amdgpu/parameters/ppfeaturemask) | 0x4000))"
+amdgpu.ppfeaturemask=0xffffffff
+
+vim /etc/default/grub
+
+sudo update-grub
+
+sudo reboot
+
+wget https://repo.radeon.com/amdgpu-install/23.10.3/ubuntu/jammy/amdgpu-install_5.5.50503-1_all.deb
+su
+apt install ./amdgpu-install_5.5.50503-1_all.deb
+apt update
+
+sudo amdgpu-install --vulkan=amdvlk,pro --opencl=rocr,legacy -y --accept-eula
+
+apt install wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev -y
+
+exit
+
+wget https://www.python.org/ftp/python/3.10.13/Python-3.10.13.tgz
+tar xvzf Python-3.10.13.tgz
+cd Python-3.10.13
+./configure --enable-optimizations
+
+su
+
+make altinstall
+
+python3.10 --version
+
+update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 1
+update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.10 1
+
+wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
+
+deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye main
+deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye main
+
+apt install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang 
+
+apt install amdgpu-core rocm-opencl
+
+apt install rocm-dkms
+The following packages have unmet dependencies:
+ rocm-gdb : Depends: libpython3.10 but it is not installable or
+                     libpython3.8 but it is not installable
+ rocm-llvm : Depends: libstdc++-5-dev but it is not installable or
+                      libstdc++-7-dev but it is not installable or
+                      libstdc++-11-dev but it is not installable
+             Depends: libgcc-5-dev but it is not installable or
+                      libgcc-7-dev but it is not installable or
+                      libgcc-11-dev but it is not installable
+             Recommends: gcc-multilib but it is not going to be installed
+             Recommends: g++-multilib but it is not going to be installed
+E: Unable to correct problems, you have held broken packages.
+
+exit
+
+python --version
+```
+
 ## Installing python virtual environment
 ```bash
 $ python3 -m venv venv
@@ -364,6 +450,20 @@ Installing collected packages: rpds-py, attrs, referencing, traitlets, python-da
 Successfully installed anyio-4.0.0 argon2-cffi-23.1.0 argon2-cffi-bindings-21.2.0 arrow-1.2.3 asttokens-2.4.0 async-lru-2.0.4 attrs-23.1.0 babel-2.12.1 backcall-0.2.0 beautifulsoup4-4.12.2 bleach-6.0.0 cffi-1.15.1 comm-0.1.4 debugpy-1.8.0 decorator-5.1.1 defusedxml-0.7.1 exceptiongroup-1.1.3 executing-1.2.0 fastjsonschema-2.18.0 fqdn-1.5.1 ipykernel-6.25.2 ipython-8.15.0 isoduration-20.11.0 jedi-0.19.0 jinja2-3.1.2 json5-0.9.14 jsonpointer-2.4 jsonschema-4.19.0 jsonschema-specifications-2023.7.1 jupyter-client-8.3.1 jupyter-core-5.3.1 jupyter-events-0.7.0 jupyter-lsp-2.2.0 jupyter-server-2.7.3 jupyter-server-terminals-0.4.4 jupyterlab-4.0.6 jupyterlab-pygments-0.2.2 jupyterlab-server-2.25.0 matplotlib-inline-0.1.6 mistune-3.0.1 nbclient-0.8.0 nbconvert-7.8.0 nbformat-5.9.2 nest-asyncio-1.5.8 notebook-shim-0.2.3 overrides-7.4.0 pandocfilters-1.5.0 parso-0.8.3 pexpect-4.8.0 pickleshare-0.7.5 platformdirs-3.10.0 prometheus-client-0.17.1 prompt-toolkit-3.0.39 psutil-5.9.5 ptyprocess-0.7.0 pure-eval-0.2.2 pycparser-2.21 pygments-2.16.1 python-dateutil-2.8.2 python-json-logger-2.0.7 pyyaml-6.0.1 pyzmq-25.1.1 referencing-0.30.2 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 rpds-py-0.10.3 send2trash-1.8.2 sniffio-1.3.0 soupsieve-2.5 stack-data-0.6.2 terminado-0.17.1 tinycss2-1.2.1 tomli-2.0.1 tornado-6.3.3 traitlets-5.10.0 uri-template-1.3.0 wcwidth-0.2.6 webcolors-1.13 webencodings-0.5.1 websocket-client-1.6.3
 
 (venv) $ python -m pip install notebook
+
+(venv) $ python verify.py
+Traceback (most recent call last):
+  File "/home/randop/Projects/notebook/venv/verify.py", line 1, in <module>
+    import tensorflow as tf
+  File "/home/randop/Projects/venv/lib/python3.9/site-packages/tensorflow/__init__.py", line 37, in <module>
+    from tensorflow.python.tools import module_util as _module_util
+  File "/home/randop/Projects/venv/lib/python3.9/site-packages/tensorflow/python/__init__.py", line 36, in <module>
+    from tensorflow.python import pywrap_tensorflow as _pywrap_tensorflow
+  File "/home/randop/Projects/venv/lib/python3.9/site-packages/tensorflow/python/pywrap_tensorflow.py", line 26, in <module>
+    self_check.preload_check()
+  File "/home/randop/Projects/venv/lib/python3.9/site-packages/tensorflow/python/platform/self_check.py", line 63, in preload_check
+    from tensorflow.python.platform import _pywrap_cpu_feature_guard
+ImportError: libhsa-runtime64.so.1: cannot open shared object file: No such file or directory
 ```
 
 ## Using Keras Tensorflow with AMD GPU
