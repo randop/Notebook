@@ -453,17 +453,19 @@ Successfully installed anyio-4.0.0 argon2-cffi-23.1.0 argon2-cffi-bindings-21.2.
 
 (venv) $ python verify.py
 Traceback (most recent call last):
-  File "/home/randop/Projects/notebook/venv/verify.py", line 1, in <module>
+  File "/home/projects/notebook/venv/verify.py", line 1, in <module>
     import tensorflow as tf
-  File "/home/randop/Projects/venv/lib/python3.9/site-packages/tensorflow/__init__.py", line 37, in <module>
+  File "/home/projects/venv/lib/python3.9/site-packages/tensorflow/__init__.py", line 37, in <module>
     from tensorflow.python.tools import module_util as _module_util
-  File "/home/randop/Projects/venv/lib/python3.9/site-packages/tensorflow/python/__init__.py", line 36, in <module>
+  File "/home/projects/venv/lib/python3.9/site-packages/tensorflow/python/__init__.py", line 36, in <module>
     from tensorflow.python import pywrap_tensorflow as _pywrap_tensorflow
-  File "/home/randop/Projects/venv/lib/python3.9/site-packages/tensorflow/python/pywrap_tensorflow.py", line 26, in <module>
+  File "/home/projects/venv/lib/python3.9/site-packages/tensorflow/python/pywrap_tensorflow.py", line 26, in <module>
     self_check.preload_check()
-  File "/home/randop/Projects/venv/lib/python3.9/site-packages/tensorflow/python/platform/self_check.py", line 63, in preload_check
+  File "/home/projects/venv/lib/python3.9/site-packages/tensorflow/python/platform/self_check.py", line 63, in preload_check
     from tensorflow.python.platform import _pywrap_cpu_feature_guard
 ImportError: libhsa-runtime64.so.1: cannot open shared object file: No such file or directory
+
+(venv) $ python -m pip install seaborn
 ```
 
 ## Using Keras Tensorflow with AMD GPU
