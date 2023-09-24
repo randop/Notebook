@@ -84,3 +84,10 @@ qemu-system-aarch64 -M virt -cpu cortex-a57 -m 8G -smp 4 \
     -nic user,hostfwd=tcp::2424-:22,hostfwd=tcp::3232-:3000 \
     -device intel-hda -device hda-duplex -nographic
 ```
+
+## connect via ssh
+```bash
+user@localhost:~$ ssh -p 2424 developer@localhost
+developer@developer:~$ uname -a
+# Linux developer 6.1.0-12-arm64 #1 SMP Debian 6.1.52-1 (2023-09-07) aarch64 GNU/Linux
+```
