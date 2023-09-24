@@ -53,3 +53,34 @@ update-initramfs -u
 virt-copy-out -a debian.qcow2 /boot/vmlinuz-6.1.0-12-amd64 /boot/initrd.img-6.1.0-12-amd64 .
 ```
 
+# Setup Qemu ARM
+```bash
+apt install qemu-system-arm qemu-system-mips qemu-efi-aarch64 qemu-kvm qemu-efi
+```
+
+# Install ARM system
+```bash
+qemu-system-aarch64 -M virt -cpu cortex-a57 -m 4G \
+    -kernel vmlinuz-arm64 -initrd initrd-arm64.gz \
+    -hda disk.qcow2 -append "console=ttyAMA0" \
+    -drive "file=debian-12.1.0-arm64-DVD-1.iso,id=cdrom,if=none,media=cdrom" \
+    -device virtio-scsi-device -device scsi-cd,drive=cdrom -nographic
+```
+
+# Copy ARM boot files
+> ⚠️ IMPORTANT: Poweroff the vm
+```bash
+virt-ls -a disk.qcow2 /boot/
+virt-copy-out -a disk.qcow2 /boot/vmlinuz-6.1.0-12-arm64 /boot/initrd.img-6.1.0-12-arm64 .
+```
+
+# Running ARM system
+```bash
+qemu-system-aarch64 -M virt -cpu cortex-a57 -m 8G -smp 4 \
+    -initrd initrd.img-6.1.0-12-arm64 \
+    -kernel vmlinuz-6.1.0-12-arm64 \
+    -append "root=/dev/vda2 console=ttyAMA0" \
+    -drive if=virtio,file=disk.qcow2,format=qcow2,id=hd \
+    -nic user,hostfwd=tcp::2424-:22,hostfwd=tcp::3232-:3000 \
+    -device intel-hda -device hda-duplex -nographic
+```
