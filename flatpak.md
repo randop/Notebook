@@ -59,6 +59,9 @@ flatpak --user install flathub net.codeindustry.MasterPDFEditor
 flatpak --user install flathub org.gnome.gitlab.somas.Apostrophe
 flatpak --user install flathub com.brave.Browser
 flatpak --user install flathub com.axosoft.GitKraken
+flatpak --user install flathub org.nickvision.tubeconverter
+flatpak --user install flathub org.kde.kget
+flatpak --user install flathub io.gitlab.zehkira.Monophony
 ```
 
 ## Games
