@@ -1,6 +1,8 @@
 # install qemu
 ```bash
-sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils libguestfs-tools
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils libguestfs-tools qemu-utils
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients virtinst cpu-checker libguestfs-tools
+sudo apt install dnsmasq
 ```
 
 # download debian
@@ -56,6 +58,11 @@ virt-copy-out -a debian.qcow2 /boot/vmlinuz-6.1.0-12-amd64 /boot/initrd.img-6.1.
 # Setup Qemu ARM
 ```bash
 apt install qemu-system-arm qemu-system-mips qemu-efi-aarch64 qemu-kvm qemu-efi
+```
+
+# create ARM disk
+```bash
+qemu-img create -f qcow2 disk.qcow2 8G
 ```
 
 # Install ARM system
