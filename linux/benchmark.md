@@ -4,7 +4,16 @@
 ```bash
 sudo apt install --no-install-recommends -y fio
 
-fio --name=iotest4k --rw=randwrite --direct=1 --ioengine=libaio --bs=4k --numjobs=4 --iodepth=128 --size=100M --runtime=600 --group_reporting
+fio --name=iotest4k \
+    --rw=randwrite \
+    --direct=1 \
+    --ioengine=libaio \
+    --bs=4k \
+    --numjobs=4 \
+    --iodepth=128 \
+    --size=100M \
+    --runtime=600 \
+    --group_reporting
 ```
 
 ### disk results
