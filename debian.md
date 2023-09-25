@@ -89,7 +89,8 @@ qemu-system-aarch64 -M virt -cpu cortex-a57 -m 8G -smp 4 \
     -append "root=/dev/vda2 console=ttyAMA0" \
     -drive if=virtio,file=disk.qcow2,format=qcow2,id=hd \
     -nic user,hostfwd=tcp::2424-:22,hostfwd=tcp::3232-:3000 \
-    -device intel-hda -device hda-duplex -nographic
+    -device intel-hda -device hda-duplex -nographic \
+    -accel tcg,thread=multi
 ```
 
 ## connect via ssh
