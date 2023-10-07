@@ -62,12 +62,13 @@ flatpak --user install flathub com.axosoft.GitKraken
 flatpak --user install flathub org.nickvision.tubeconverter
 flatpak --user install flathub org.kde.kget
 flatpak --user install flathub io.gitlab.zehkira.Monophony
+flatpak --user install flathub com.logseq.Logseq
 ```
 
 ## Games
 ```bash
-flatpak install flathub com.github._0negal.Viper
-flatpak install flathub org.wesnoth.Wesnoth
+flatpak --user install flathub com.github._0negal.Viper
+flatpak --user install flathub org.wesnoth.Wesnoth
 ```
 
 ## (SOLVED) Fix Error: Permission denied
