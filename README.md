@@ -424,9 +424,18 @@ Mon Apr 10 12:15:48 2023
 curl -1sLf 'https://gitlab.com/randop/notebook/-/raw/main/README.md?inline=false'
 ```
 
+#### Downloading using aria2
+```bash
+aria2c --continue=true \
+    --max-concurrent-downloads=1 \
+    --max-connection-per-server=12 \
+    --file-allocation=none \
+    --input-file=debian-iso-dvd.txt
+```
+
 ---
 ## 📝 License
 
 Copyright © 2010 — 2023 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2023-10-07T07:13:10.000Z
+Last updated on 2023-10-07T07:39:33.000Z
