@@ -64,6 +64,8 @@ flatpak --user install flathub org.kde.kget
 flatpak --user install flathub io.gitlab.zehkira.Monophony
 flatpak --user install flathub com.logseq.Logseq
 flatpak --user install flathub org.kde.kommit
+flatpak --user install flathub org.kde.kdiff3
+flatpak --user install flathub org.kde.umbrello
 ```
 
 ## Games
