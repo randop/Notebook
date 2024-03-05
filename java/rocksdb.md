@@ -1,6 +1,6 @@
 ## Segfaults 
 > OS: Clear Linux
-> 
+> Java: 19
 > When doing export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so"
 ```
 [31777.661666] java[26606]: segfault at 7ffcdffecff0 ip 00007f2021bd600e sp 00007ffcdffecfd0 error 6 cpu 48 in ld-2.39.so[7f2021bc3000+29000] likely on CPU 48 (core 0, socket 1)
