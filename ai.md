@@ -25,5 +25,5 @@ huggingface-cli download --cache-dir /media/randop/FILES/huggingface/cache --res
 cd /media/randop/FILES/gpt4all
 docker run -it --rm -v $(pwd)/cache:/root/.cache/gpt4all -v $(pwd):/projects python:3.10-bookworm /bin/bash
 
-pip install pandasai[langchain] gpt4all langchain
+pip install langchain gpt4all langchain-experimental tabulate
 ```
