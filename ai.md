@@ -7,7 +7,6 @@ python -m venv python-venv
 mkdir /media/randop/FILES/python-venv/cache
 source /media/randop/FILES/python-venv/bin/activate
 ln -sv /media/randop/FILES/python-venv/cache ~/.cache/pip
-apt install libc6
 ```
 
 # Install Hugging Face
@@ -23,5 +22,8 @@ huggingface-cli download --cache-dir /media/randop/FILES/huggingface/cache --res
 
 # GPT4ALL
 ```bash
-docker run -it --rm -v $(pwd)/cache:/root/.cache/gpt4all -v $(pwd):/projects python:3-bookworm /bin/bash
+cd /media/randop/FILES/gpt4all
+docker run -it --rm -v $(pwd)/cache:/root/.cache/gpt4all -v $(pwd):/projects python:3.10-bookworm /bin/bash
+
+pip install pandasai[langchain] gpt4all langchain
 ```
