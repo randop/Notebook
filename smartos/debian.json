@@ -1,0 +1,42 @@
+{
+  "brand": "bhyve",
+  "autoboot": true,
+  "ram": "2048",
+  "vcpus": "2",
+  "cpu_type": "qemu64,+aes,+sse4.2,+sse4.1,+ssse3",
+  "alias": "debian-server",
+  "resolvers": [
+    "192.168.7.254"
+  ],
+  "disks": [
+    {
+      "image_uuid": "f96d7627-98c2-4332-bc97-2ad630f926d2",
+      "boot": true,
+      "model": "virtio"
+    },
+    {
+      "model": "virtio",
+      "size": 40960
+    }
+  ],
+  "nics": [
+    {
+      "nic_tag": "admin",
+      "model": "virtio",
+      "ip": "192.168.7.223",
+      "netmask": "255.255.255.0",
+      "gateway": "192.168.7.254",
+      "primary": true
+    }
+  ],
+  "pci_devices": [
+    {
+      "path": "/devices/pci@0,0/pci8086,43b3@1d,3/pci10ec,123@0:ppt",
+      "model": "passthru",
+      "pci_slot": "0:8:0"
+    }
+  ],
+  "customer_metadata": {
+    "cloud-init:user-data": "#cloud-config\n\nusers:\n  - default\n  - name: randop\n    ssh_import_id: randop\n    lock_passwd: true\n    sudo: \"ALL=(ALL) NOPASSWD:ALL\"\n    shell: /bin/bash\n    ssh_authorized_keys: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCBwipMj2YXcHLQPACGbAaQJ3UXoMyJm7IgTf/NFiXM5bJFYkEu8LXKnqUmJTefK+blDI0hjN0KaJgueYNipalcYrzvtuSzYQBCQPMPJHgiDUNMVrdN8M/gJfESejCNIKe7JdtX0TS0ros86jNNTdLRHYJMXr7uDUje5V3ZlBylKu1z+4Whgnycgnui1YrtJGN2JIWJeMTby0/9tCrkYWQ41qaTLQ2z3H/OOHCp8XbUoZTRIIO5QAkeGEPCejUL+t7So21j4/z0jYQTrJ1VVpkS6WM7zOpNwlOhyZJ4b2wDCUaEAGOq9oUgvMzzPsu2b65BOzQWvyok5wCpa0ca7qd1MBeo8xNlMDxmFP2z9/xk0V/r2ot7kEsgIZ2KFEFFKeXovLCj6K2/wLb/DcfgUL86f3ciTPFajFYIIXRAFuHKCMN7oyaOMkS2cnGHNfqgtHc1uvvaZNMVUo9hlBwnqFiDCaq91oXDv9tUzSV62lOrmgpNxVKR++aV0/AlvTbPSqvXhdoMzIiwMkV52nVKfoWNU9chvYpdu2AwoEZvtEGXv6PStDW03TwdU/nnfNNrgs9PcGOADYi3yhLk82zyKp8btTM1mFbMKl7FQavxrdBlJ5VOx1eiS8cCtOGrVMpbte0w6msKfgcCNaHMKYKfbYooz/axw2aMJuTorhms79GohQ== randop@randop"
+  }
+}
