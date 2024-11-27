@@ -1,4 +1,4 @@
-```
+```javascript
 Message message = new Message("/remote/object/path", "MethodName", arg1, arg2);
 Connection connection = getBusConnection();
 connection.send(message);
