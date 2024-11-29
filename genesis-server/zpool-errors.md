@@ -2,11 +2,18 @@
 
 ## SmartOS (build: 20241128T004404Z)
 
+### System
+```
+uname -a
+SunOS genesis 5.11 joyent_20241128T004404Z i86pc i386 i86pc
+```
+
+### Command
 ```bash
 dmesg
 ```
 
-## Logs
+### Logs
 ```
 November 29, 2024 at 03:08:44 PM UTC
 2024-11-29T15:00:13.246488+00:00 genesis genunix: [ID 936769 kern.info] power0 is /pseudo/power@0
