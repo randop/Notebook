@@ -6,6 +6,7 @@
 dmesg
 ```
 
+```
 November 29, 2024 at 10:30:27 AM UTC
 2024-11-29T10:28:12.136243+00:00 genesis sata: [ID 163988 kern.info] #011serial number            000000000
 2024-11-29T10:28:12.136245+00:00 genesis sata: [ID 594940 kern.info] #011supported features:
@@ -207,3 +208,4 @@ November 29, 2024 at 10:30:27 AM UTC
 2024-11-29T10:28:33.524585+00:00 genesis scsi: [ID 583861 kern.info] sd0 at scsa2usb0: target 0 lun 0
 2024-11-29T10:28:33.524596+00:00 genesis genunix: [ID 936769 kern.info] sd0 is /pci@0,0/pci1462,7d22@14/storage@2/disk@0,0
 2024-11-29T10:28:33.534094+00:00 genesis genunix: [ID 127566 kern.info] device pciclass,030000@2(display#0) keeps up device sd@0,0(disk#0), but the former is not power managed
+```

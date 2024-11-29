@@ -6,6 +6,7 @@
 zpool history zones
 ```
 
+```
 History for 'zones':
 2024-11-29.10:24:23 zpool create zones raidz3 c1t1d0 c3t0d0 c3t1d0 c3t2d0 c3t3d0
 2024-11-29.10:26:33 zfs create -V 1024mb -o checksum=noparity zones/dump
@@ -26,3 +27,4 @@ History for 'zones':
 2024-11-29.10:28:01 zfs create -o quota=10g -o mountpoint=/zones/global/cores zones/cores/global
 2024-11-29.10:28:24 zfs create -o compression=lzjb -o mountpoint=/zones/archive zones/archive
 
+```
