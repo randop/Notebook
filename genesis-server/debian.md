@@ -71,6 +71,14 @@ add attr
     set type=string
     set value="-S -s 8:0,passthru,/dev/ppt0"
 end
+add dataset
+    set name=filepool/shared
+end
+add attr
+    set name=virtfs0
+    set type=string
+    set value=files,/files
+end
 verify
 commit
 exit
@@ -114,4 +122,19 @@ apt install build-essential dkms git
 git clone https://github.com/awesometic/realtek-r8125-dkms.git
 cd realtek-r8125-dkms
 sudo ./dkms-install.sh
+```
+
+## Shared filesystem
+```bash
+zfs create -o quota=150G -o mountpoint=/files -o zoned=on filepool/shared
+```
+
+### Shared filesystem (setup inside debian)
+```bash
+mkdir /files
+mount -t 9p -o trans=virtio,noatime,nodev,nodevmap,nosuid,uname=root,cache=mmap,access=client,trans=virtio,version=9p2000.L,msize=512000 files /files
+
+echo 9pnet_virtio >> /etc/initramfs-tools/modules
+export PATH=/sbin:$PATH
+update-initramfs -u
 ```
