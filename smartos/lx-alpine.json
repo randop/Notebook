@@ -1,0 +1,24 @@
+{
+  "brand": "lx",
+  "resolvers": [
+    "10.0.0.1"
+  ],
+  "kernel_version": "5.10.0",
+  "ram": 128,
+  "alias": "lx-alpine",
+  "customer_metadata": {},
+  "nics": [
+    {
+      "interface": "net0",
+      "nic_tag": "admin",
+      "mac": "2c:f0:5d:aa:00:10",
+      "ips": [
+        "dhcp"
+      ],
+      "model": "virtio",
+      "primary": true
+    }
+  ],
+  "image_uuid": "632a25ad-15dc-42f0-a23b-743b37f62cbb",
+  "quota": 3
+}
