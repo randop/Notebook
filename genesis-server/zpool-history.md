@@ -2,10 +2,12 @@
 
 ## SmartOS (build: 20241128T004404Z)
 
+### Command
 ```bash
 zpool history zones
 ```
 
+#### Logs
 ```
 History for 'zones':
 2024-11-29.10:24:23 zpool create zones raidz3 c1t1d0 c3t0d0 c3t1d0 c3t2d0 c3t3d0
