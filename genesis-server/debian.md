@@ -24,6 +24,7 @@ create -b
 set brand=bhyve
 set zonepath=/zones/bhyve
 set ip-type=exclusive
+set autoboot=true
 add net
     set allowed-address=10.0.0.112/16
     set physical=bhyve0
