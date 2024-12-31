@@ -436,6 +436,6 @@ aria2c --continue=true \
 ---
 ## 📝 License
 
-Copyright © 2010 — 2024 [Randolph Ledesma](https://gitlab.com/randop).
+Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2024-11-30T11:53:01.000Z
+Last updated on 2025-01-01T00:00:01.000Z
