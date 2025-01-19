@@ -47,78 +47,79 @@
 
 ## System Setup
 
-### Debian 11.7 KDE Linux 5.10
+### Debian 12.9 Linux 6.1.0-30-amd64 (64-bit) KDE 5.27.5
 ```bash
 wget --continue \
-    https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/11.7.0-live+nonfree/amd64/iso-hybrid/debian-live-11.7.0-amd64-kde+nonfree.iso
+    https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.9.0-amd64-kde.iso
 ```
 ```
-https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/11.7.0-live+nonfree/amd64/iso-hybrid/SHA256SUMS
+https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA256SUMS
 
-c7e29da831bf995b58b92ddcb697afe364d4ee6739dfb2dd140faeabd6387887  debian-live-11.7.0-amd64-kde+nonfree.contents
-a94c2e662847829666b3accecd391d32593d113eb799b534f89c4fbb194c90ff  debian-live-11.7.0-amd64-kde+nonfree.iso
-5cacbd4154ac04bd455a7a1fc28c9c35563c5b3234bce8da73229fedd26b49a0  debian-live-11.7.0-amd64-kde+nonfree.log
-d77a71412573016911cce7c262eff5269a52b797940287f68376e1e71068240a  debian-live-11.7.0-amd64-kde+nonfree.packages
+1323719ac8c5267f756b11198dc34fc5a2f3c823078631c9c7047937ea37b746  debian-live-12.9.0-amd64-cinnamon.iso
+fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-cinnamon.iso.contents
+9a6e38b443f2bf56a29f5451ce8b6528d8eeaab3e8147a5880681c868124683a  debian-live-12.9.0-amd64-cinnamon.iso.log
+3ed62f1178f5f33e8637f82a6173a43773d1b225f44cf382dca45959cc646f1f  debian-live-12.9.0-amd64-cinnamon.iso.packages
+5eb11fa73560c84c03174f3b62acbefaad31b025c045d8776b0e4b47d6e9fff7  debian-live-12.9.0-amd64-cinnamon.log
+2b992d95a86906cf4560074b38bd6894b12ac17a385a65734d67a5ab947d45b3  debian-live-12.9.0-amd64-gnome.iso
+fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-gnome.iso.contents
+1a58e106a09498a6641105a1e843fec35d6dab2c19a579f28e679b14f0817f86  debian-live-12.9.0-amd64-gnome.iso.log
+28f85946da5a1132e95252458b56e06eb8d08b076127da51a95114aaa9a6657c  debian-live-12.9.0-amd64-gnome.iso.packages
+8baf41da6b06fe4975f6477b0091d23db57329378928f9c5f7e406699658ccfa  debian-live-12.9.0-amd64-gnome.log
+6f6a087a4a8326fdb55971d95855f1185f5b547dfe92cf770da4ec555b763d3f  debian-live-12.9.0-amd64-kde.iso
+fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-kde.iso.contents
+8108474242d36489f9e9efcbb4bf86c28dad95c3aa76f4af0d7664f436d638a9  debian-live-12.9.0-amd64-kde.iso.log
+76c140a9f5cd0d6061df2f844647a4469bc61c97318ee7a54e2ad594f9976b8a  debian-live-12.9.0-amd64-kde.iso.packages
+d930978abaffff4897a4e5cca50533a20095019abc8a0fa860bcfb4dda4683f5  debian-live-12.9.0-amd64-kde.log
+e086b4e0f8f856aca857a2535fdb47e987ffd6344bb5343e519f93cea38c581d  debian-live-12.9.0-amd64-lxde.iso
+fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-lxde.iso.contents
+9ce944a016dc8a618f65e4feab40095212ad2afaad71faabaf44c931a8e40943  debian-live-12.9.0-amd64-lxde.iso.log
+16abb54a6914e77ec1b85ac886064e7376fceffa9f26548c009f0df151374a29  debian-live-12.9.0-amd64-lxde.iso.packages
+5933e7c22d8a09701d0ba1a2857a50fe513f916159b90bec9f28463305f9dc1b  debian-live-12.9.0-amd64-lxde.log
+6ab29e3de6eb397622538375aec7d28299059e82a80edf58d903d1c7e06e16cf  debian-live-12.9.0-amd64-lxqt.iso
+fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-lxqt.iso.contents
+f89dceb6dc2050e4b1ac3f1243c898b6f4cf4b825fa9bfa35846ae1920ca4773  debian-live-12.9.0-amd64-lxqt.iso.log
+6a597bb4bb7f44fbf5dce6ba58ad6d6e97c1d51859d2a993f638ab96acd7a7e2  debian-live-12.9.0-amd64-lxqt.iso.packages
+031d1ae2a3fc92b0dc694b9ccaa821ddcbff1cf59362ebf9305a5ea78c937e55  debian-live-12.9.0-amd64-lxqt.log
+78bc50ebcc9450dc30cf37b6ddced7161e4c151ea30851426b9788ec9332fbf4  debian-live-12.9.0-amd64-mate.iso
+fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-mate.iso.contents
+43f15a9629f270bfc6fcec3205551cc00170d8424b54472bc34f91e116e7149b  debian-live-12.9.0-amd64-mate.iso.log
+ba1cd87212d639100a624a6000cc228ded9b33a848f23918bd63bd1ec6a5035a  debian-live-12.9.0-amd64-mate.iso.packages
+39cae92eee69243cbc52c6b83110bde65fff69761cf78ef07e4f115a449cca8c  debian-live-12.9.0-amd64-mate.log
+279320202a53deae1895acbb984a5a262dbcccef874372f066e2c91163161c5d  debian-live-12.9.0-amd64-standard.iso
+fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-standard.iso.contents
+f1726505ceffad2c5c2cc202166202825a0a87925856be6e5d9fe961da65b4e8  debian-live-12.9.0-amd64-standard.iso.log
+cfb5ac9d40a7fcac2fc939658fbb7cc8c05f017c46496ec2fd3812bc56069ddc  debian-live-12.9.0-amd64-standard.iso.packages
+efc2f9343807d991166087ab827a2f0c6b0ea7a6d9443ff25f0a4a2a9cef8177  debian-live-12.9.0-amd64-standard.log
+4f507da37ebff4e3c5f9df83e3ac045f5bc6e8bd4a03c8e582a59046860ab6ff  debian-live-12.9.0-amd64-xfce.iso
+fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-xfce.iso.contents
+108052f1363290ddce3c6e458e9348248f8d54f1531b4bb0b6902119afd0d628  debian-live-12.9.0-amd64-xfce.iso.log
+ea1590f2286a625ad5ead2eeaedcce0ab2a12e53a1d164e0a696b120ba113034  debian-live-12.9.0-amd64-xfce.iso.packages
+14fc3f86cef544b9f7e5a6b08789c53ba2e3e62948cacc19293e3f8ef60021b8  debian-live-12.9.0-amd64-xfce.log
 ```
 ```
-https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/11.7.0-live+nonfree/amd64/iso-hybrid/SHA256SUMS.sign
+https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.9.0-amd64-kde.iso
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEE35ucSeqpKYQyWJ122ofoDWKUvpsFAmRNgpoACgkQ2ofoDWKU
-vpsQqg//bhegKEK4AXN2PbPBmD4rTurToa0h2cUKtYNoo3+ac8qgAL0qKFCYZoSv
-dFwtAS9o3IHFolGYPjOsYbZpZxB+Ot4Z5PjmidYLDEazIYqTPM2P2K6DOZwH0c8A
-ooaFVRrW/V3VAegLJq2gEr0aUVuKYdWDEdyAY6BIaWH1R6cORhwTDqIsrTSDQoEm
-D1XRitHrpLNgBHgLZK0pO1PaOgKkj4BCXmyaCyqrzZXMWO4ScNW+GH8GJuH3Wvvc
-/BDKjicC4dvey6ujhDYGNN9orq4no4I6uHJoNUzAGwXsz7essIsakgRAcMT/wSTe
-/tno9ihyYqSP3QrPJYnJNm7M1aHVkeCi5bEJJDMqPt7gli10wRnN2GqEsmPBhmrb
-OXskSOFBes02W6oZwn5pPOJlH6IlveHOdXH0W5sq3rk5MvGW77nAt+u6muwnpqE/
-2Dm1OnqxCOIntr5y0E+iXzNS55hmXnLZw1tcCqCQwPY6aT+8numV4CsjaF5patAi
-yWo4Xv0M8kLsCysxNPNgOy5eQ/XMvrsic8Isu4t9dPkaSbVGb8lgYqyBLBF4Y62Z
-cnRDl6SSFrLl4INDNUjEgVb+3+pmh/mEHeqBbPo9tH5/SrUIst+GIKHQgErrJuOb
-gJfx+gc/r4MyG1594UFuQLsy0Y4Q90HOMlGj3xHQOSLFAdcao6U=
-=lnC1
------END PGP SIGNATURE-----
-```
-
-#### Ubuntu Studio 22.04.1 Linux Operating System
-```bash
-wget --continue \
-	https://cdimage.ubuntu.com/ubuntustudio/releases/22.04.1/release/ubuntustudio-22.04.1-dvd-amd64.iso
-```
-```
-https://cdimage.ubuntu.com/ubuntustudio/releases/22.04.1/release/SHA256SUMS
-
-3fe6fa9a17fa7a4b34b2ec7ff3b9500d354ca644aedcc37096b923f14247f504 *ubuntustudio-22.04.1-dvd-amd64.iso
-```
-```
-https://cdimage.ubuntu.com/ubuntustudio/releases/22.04.1/release/SHA256SUMS.gpg
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEhDk43yKNIvezdCvA2Uqj8O/iEJIFAmL02gcACgkQ2Uqj8O/i
-EJLOHxAAnlY1tyghKTNQB3izXQJCXj5NIXjO50RCZQbJbxfUMzzKnzdJeaImUyO/
-KwEFowGXdQ12gpBVjdmD4ocGTagDbFy8WGJ7tkq+YP++cKTnDtsIO9fk+QhhYalL
-cQ/uP2BXSqDoepIrRGM/QVixnAM171VLqDBTcCR8jqKucA2fn+u0i0C+t7WWQaLk
-PTrUJiY9n/Ms8UskP1oN4zBRB0TucBv9ZiuHTW4KS+diXoLSFasaMSbkLPHaKD0s
-MmPbXXGACUc48rdJtn7FEUwEnTAm71IwAL19U0hbfrKqq4tTFhWRCJ16nO50ivHa
-5fkq+Ah42iTNWMSdATMUQoWKrXhbgdNG6xMlXeawGtZkU/7wwplBzp+kIdtrV1aJ
-HRHNlNNFc/9O3Hv/YUTv+ELLThrgZSeygq70/NLXHd4aTaV66m6ECz4rfZ/M+aiO
-j2kVmCWa48it7YFmhTI5lasWNKqRqepNmJkkhP+ZbyMcAKEVc+smMnefa13aPVso
-kPW3aGxxyTc5ZpBJXM22MyL+YiqNgIPSFAm2L6gsFxqPvztoEC3ti93TCEV9CX8d
-SG8OcYBDaqNgsGd+qEyyFUi7t6g+X3l0VXTe+2xz9b5Qde1PEu52PDBYXeT7Rd77
-PHgrqSxI3FFNIj1wWiG5iWJxD2MuG/upOdfg6k210/Np2wwd3i0=
-=QlUg
+iQIzBAABCAAdFiEE35ucSeqpKYQyWJ122ofoDWKUvpsFAmeCs14ACgkQ2ofoDWKU
+vpsdkxAAvUXxPVlIw6LNrGtuTRHV5jWdvPoppJui9fNbg/T1rZyZlHJ5VjDgQ28m
+UXvTT+R+cNCvSaTsE7eaSXzdsrSqyz7ACUwuTK0lJCIBitoe70r6kuyI+dI7VOal
+FaTWVh6VTWv7UeKOTgVlhrLjATOen/k00RA3I6VTBkZgZGfHUw0ZKRs0cylnpmd+
+v9+ICzvjwXiScuXXqzxy4tu8oeCUdPSRxOjd4D5fyyEdYLO8uD0CsD0WqDloCv+w
+vbcwxZ4hNM3Ldjnm6BGuOo3nakUL+tgLzhvqqahxeke6xiz93gJSomW6rsTd/OVO
+Wmr0OuZEtIXXlHq0VuxJPorc7A2ww69WzYBEAH4KCs1WVdpOVG7aZuWM1MN5ujS1
+pp9hUQFRKh4jf1kxIPPnwjdEB1ttS18OWxRZYtM32Q6GfCc9zOV6Mot85CbWrkpi
+KSfRCvqZclHZ0nTM+i69138zgKpIdh2Uc7nz+v8lRImcAPy+Dgb5ALuUhDpauynP
+GGrusZBclg57pPBzyp9ioro9WNgurpExbUMF06SRNYanKY9l8YFy+yPaVA+PMwwQ
+Il5PvJb1NyMN5CZck6aUn67bmolI0XnQnw0LA+DLjGaYciHRBdmXWOUMqGEFL0B5
+hvmAETVaFNj6z7ZXB9KC9hLREVgy7QJo4GdXufJdjTk2Yyvt2JI=
+=3GaQ
 -----END PGP SIGNATURE-----
 ```
 
 #### OS Tweaks
 ```bash
 sudo systemctl stop \
-	cups.path \
-	cups-browsed.service \
-	cups.service \
-	cups.socket \
 	apt-daily-upgrade.timer \
 	apt-daily.timer \
 	fwupd-refresh.timer \
@@ -129,10 +130,6 @@ sudo systemctl stop \
 	packagekit
 
 sudo systemctl mask \
-	cups.path \
-	cups-browsed.service \
-	cups.service \
-	cups.socket \
 	apt-daily-upgrade.timer \
 	apt-daily.timer \
 	fwupd-refresh.timer \
@@ -438,4 +435,4 @@ aria2c --continue=true \
 
 Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2025-01-01T00:00:01.000Z
+Last updated on 2025-01-19T15:01:46.000Z
