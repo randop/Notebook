@@ -296,7 +296,7 @@ rpk version
 ---
 ## How to code using NASM assembler (Assembly programming language)
 ```asm
-; Copyright© 1998—2023 Randolph Ledesma (randop at me.com)
+; Copyright© 1998—2025 Randolph Ledesma (randop at me.com)
 ; $ nasm -g -f elf64 hello.asm
 ; $ ld -o hello hello.o
 global _start
@@ -378,4 +378,4 @@ aria2c --continue=true \
 
 Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2025-01-20T15:21:42.000Z
+Last updated on 2025-01-20T17:47:33.000Z
