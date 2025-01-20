@@ -47,73 +47,34 @@
 
 ## System Setup
 
-### Debian 12.9 Linux 6.1.0-30-amd64 (64-bit) KDE 5.27.5
+### Ubuntu Studio 24.04.1 (Noble Numbat) Linux 6.8.0-51-lowlatency (64-bit) KDE 5.27.11
 ```bash
 wget --continue \
-    https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.9.0-amd64-kde.iso
+    https://cdimage.ubuntu.com/ubuntustudio/releases/noble/release/ubuntustudio-24.04.1-dvd-amd64.iso
 ```
 ```
-https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA256SUMS
+https://cdimage.ubuntu.com/ubuntustudio/releases/noble/release/SHA256SUMS
 
-1323719ac8c5267f756b11198dc34fc5a2f3c823078631c9c7047937ea37b746  debian-live-12.9.0-amd64-cinnamon.iso
-fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-cinnamon.iso.contents
-9a6e38b443f2bf56a29f5451ce8b6528d8eeaab3e8147a5880681c868124683a  debian-live-12.9.0-amd64-cinnamon.iso.log
-3ed62f1178f5f33e8637f82a6173a43773d1b225f44cf382dca45959cc646f1f  debian-live-12.9.0-amd64-cinnamon.iso.packages
-5eb11fa73560c84c03174f3b62acbefaad31b025c045d8776b0e4b47d6e9fff7  debian-live-12.9.0-amd64-cinnamon.log
-2b992d95a86906cf4560074b38bd6894b12ac17a385a65734d67a5ab947d45b3  debian-live-12.9.0-amd64-gnome.iso
-fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-gnome.iso.contents
-1a58e106a09498a6641105a1e843fec35d6dab2c19a579f28e679b14f0817f86  debian-live-12.9.0-amd64-gnome.iso.log
-28f85946da5a1132e95252458b56e06eb8d08b076127da51a95114aaa9a6657c  debian-live-12.9.0-amd64-gnome.iso.packages
-8baf41da6b06fe4975f6477b0091d23db57329378928f9c5f7e406699658ccfa  debian-live-12.9.0-amd64-gnome.log
-6f6a087a4a8326fdb55971d95855f1185f5b547dfe92cf770da4ec555b763d3f  debian-live-12.9.0-amd64-kde.iso
-fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-kde.iso.contents
-8108474242d36489f9e9efcbb4bf86c28dad95c3aa76f4af0d7664f436d638a9  debian-live-12.9.0-amd64-kde.iso.log
-76c140a9f5cd0d6061df2f844647a4469bc61c97318ee7a54e2ad594f9976b8a  debian-live-12.9.0-amd64-kde.iso.packages
-d930978abaffff4897a4e5cca50533a20095019abc8a0fa860bcfb4dda4683f5  debian-live-12.9.0-amd64-kde.log
-e086b4e0f8f856aca857a2535fdb47e987ffd6344bb5343e519f93cea38c581d  debian-live-12.9.0-amd64-lxde.iso
-fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-lxde.iso.contents
-9ce944a016dc8a618f65e4feab40095212ad2afaad71faabaf44c931a8e40943  debian-live-12.9.0-amd64-lxde.iso.log
-16abb54a6914e77ec1b85ac886064e7376fceffa9f26548c009f0df151374a29  debian-live-12.9.0-amd64-lxde.iso.packages
-5933e7c22d8a09701d0ba1a2857a50fe513f916159b90bec9f28463305f9dc1b  debian-live-12.9.0-amd64-lxde.log
-6ab29e3de6eb397622538375aec7d28299059e82a80edf58d903d1c7e06e16cf  debian-live-12.9.0-amd64-lxqt.iso
-fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-lxqt.iso.contents
-f89dceb6dc2050e4b1ac3f1243c898b6f4cf4b825fa9bfa35846ae1920ca4773  debian-live-12.9.0-amd64-lxqt.iso.log
-6a597bb4bb7f44fbf5dce6ba58ad6d6e97c1d51859d2a993f638ab96acd7a7e2  debian-live-12.9.0-amd64-lxqt.iso.packages
-031d1ae2a3fc92b0dc694b9ccaa821ddcbff1cf59362ebf9305a5ea78c937e55  debian-live-12.9.0-amd64-lxqt.log
-78bc50ebcc9450dc30cf37b6ddced7161e4c151ea30851426b9788ec9332fbf4  debian-live-12.9.0-amd64-mate.iso
-fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-mate.iso.contents
-43f15a9629f270bfc6fcec3205551cc00170d8424b54472bc34f91e116e7149b  debian-live-12.9.0-amd64-mate.iso.log
-ba1cd87212d639100a624a6000cc228ded9b33a848f23918bd63bd1ec6a5035a  debian-live-12.9.0-amd64-mate.iso.packages
-39cae92eee69243cbc52c6b83110bde65fff69761cf78ef07e4f115a449cca8c  debian-live-12.9.0-amd64-mate.log
-279320202a53deae1895acbb984a5a262dbcccef874372f066e2c91163161c5d  debian-live-12.9.0-amd64-standard.iso
-fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-standard.iso.contents
-f1726505ceffad2c5c2cc202166202825a0a87925856be6e5d9fe961da65b4e8  debian-live-12.9.0-amd64-standard.iso.log
-cfb5ac9d40a7fcac2fc939658fbb7cc8c05f017c46496ec2fd3812bc56069ddc  debian-live-12.9.0-amd64-standard.iso.packages
-efc2f9343807d991166087ab827a2f0c6b0ea7a6d9443ff25f0a4a2a9cef8177  debian-live-12.9.0-amd64-standard.log
-4f507da37ebff4e3c5f9df83e3ac045f5bc6e8bd4a03c8e582a59046860ab6ff  debian-live-12.9.0-amd64-xfce.iso
-fe4087f5cf8cdb97b7ca8dc74a9d6f5eaaf48e1be3eb967781fdd5ff443e01c6  debian-live-12.9.0-amd64-xfce.iso.contents
-108052f1363290ddce3c6e458e9348248f8d54f1531b4bb0b6902119afd0d628  debian-live-12.9.0-amd64-xfce.iso.log
-ea1590f2286a625ad5ead2eeaedcce0ab2a12e53a1d164e0a696b120ba113034  debian-live-12.9.0-amd64-xfce.iso.packages
-14fc3f86cef544b9f7e5a6b08789c53ba2e3e62948cacc19293e3f8ef60021b8  debian-live-12.9.0-amd64-xfce.log
+f2d1e8999b9d11fe8249d6eb3c1d53eff549c6c7b388747e3d0442e6cb138f8f *ubuntustudio-24.04.1-dvd-amd64.iso
 ```
 ```
-https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.9.0-amd64-kde.iso
+https://cdimage.ubuntu.com/ubuntustudio/releases/noble/release/ubuntustudio-24.04.1-dvd-amd64.iso
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEE35ucSeqpKYQyWJ122ofoDWKUvpsFAmeCs14ACgkQ2ofoDWKU
-vpsdkxAAvUXxPVlIw6LNrGtuTRHV5jWdvPoppJui9fNbg/T1rZyZlHJ5VjDgQ28m
-UXvTT+R+cNCvSaTsE7eaSXzdsrSqyz7ACUwuTK0lJCIBitoe70r6kuyI+dI7VOal
-FaTWVh6VTWv7UeKOTgVlhrLjATOen/k00RA3I6VTBkZgZGfHUw0ZKRs0cylnpmd+
-v9+ICzvjwXiScuXXqzxy4tu8oeCUdPSRxOjd4D5fyyEdYLO8uD0CsD0WqDloCv+w
-vbcwxZ4hNM3Ldjnm6BGuOo3nakUL+tgLzhvqqahxeke6xiz93gJSomW6rsTd/OVO
-Wmr0OuZEtIXXlHq0VuxJPorc7A2ww69WzYBEAH4KCs1WVdpOVG7aZuWM1MN5ujS1
-pp9hUQFRKh4jf1kxIPPnwjdEB1ttS18OWxRZYtM32Q6GfCc9zOV6Mot85CbWrkpi
-KSfRCvqZclHZ0nTM+i69138zgKpIdh2Uc7nz+v8lRImcAPy+Dgb5ALuUhDpauynP
-GGrusZBclg57pPBzyp9ioro9WNgurpExbUMF06SRNYanKY9l8YFy+yPaVA+PMwwQ
-Il5PvJb1NyMN5CZck6aUn67bmolI0XnQnw0LA+DLjGaYciHRBdmXWOUMqGEFL0B5
-hvmAETVaFNj6z7ZXB9KC9hLREVgy7QJo4GdXufJdjTk2Yyvt2JI=
-=3GaQ
+iQIzBAABCgAdFiEEhDk43yKNIvezdCvA2Uqj8O/iEJIFAmbQpvsACgkQ2Uqj8O/i
+EJJOwRAAgSOJkrjC6wu6zKZ0bx261CYjOBV0jJ5mloaDk8nDE9wnpxc0jvhxJ/5Q
+MgIvymK2ayF6t+iULK3wj9TN2sxXawGELwq01/AD/AlQU2xvvFnUk7FDYeRIwigR
+8g2lR4Qhp4JGODn0Q8N75mPmN8gnwbILEr0RfgTDp0PySenpObG1s29c4vjxDMx2
+LziDqjESik17FEU4YhEpXfECYh3+7w7jlRn7urOzW40PA3W7uWUCr5OaUzDwzZjJ
+ntOt8JyQMuFHqhhJsm+xK83eGnAOu5zqDsNMYHtTleiihDE3Njaggklw8OgDLKRO
+awyOeifiEQmCV1OXdS8WmY465CUzPG6YwRPhxuUhGvdGrdPMfTECPWmXmnQ7qMnp
+Ia21kMSik4IkTiTYUfrosBJUxX3MW8L8C6wmw5XpSYDCvN8zLvCy0S8x05HxKQcZ
+sbd2oTcHYnKzFncodEQPKmPhGTeHLw7xpt1fpDlWRdw+80sI8I1LJVWvGSQ6rsTo
+eLqJRbFOc+ubnfabzJi+hQp/0NWOQ8DHNlIvWOE97bIXFCtsy4OSL/YJ9yAtrm58
+68NuVQJN9gc02KP0CnN8VOg58W/1lC2ah9aWVK+L22qxZAV9jZQGoERWigtWaPaz
+0G4865GU9cymNwdNNY8IMNX8kczFFMANSO9KU23zJ6+aW9Ss3tU=
+=FW8z
 -----END PGP SIGNATURE-----
 ```
 
@@ -142,11 +103,16 @@ sudo systemctl mask \
 sudo apt purge --auto-remove unattended-upgrades
 
 sudo snap remove --purge firefox
-sudo snap remove --purge gnome-3-38-2004
+sudo snap remove --purge gnome-42-2204
+sudo snap remove --purge firmware-updater
 sudo snap remove --purge gtk-common-themes
+sudo snap remove --purge freeshow
+sudo snap remove --purge thunderbird
+sudo snap remove --purge snapd-desktop-integration
 sudo snap remove --purge bare
-sudo snap remove --purge core20
+sudo snap remove --purge core22
 sudo snap remove --purge snapd
+
 sudo apt purge --yes --auto-remove snapd
 
 sudo ufw enable
@@ -412,4 +378,4 @@ aria2c --continue=true \
 
 Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2025-01-19T15:01:46.000Z
+Last updated on 2025-01-20T15:21:42.000Z
