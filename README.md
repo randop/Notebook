@@ -359,7 +359,7 @@ Mon Apr 10 12:15:48 2023
 ```
 
 #### Curl
-##### View contents of remote file 
+##### View contents of remote file
 ```bash
 curl -1sLf 'https://gitlab.com/randop/notebook/-/raw/main/README.md?inline=false'
 ```
@@ -378,4 +378,4 @@ aria2c --continue=true \
 
 Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2025-01-20T17:47:33.000Z
+Last updated on 2025-03-11T20:45:33.000Z
