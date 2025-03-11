@@ -2,6 +2,16 @@
 
 ## Installing OpenMandriva Lx on aarch64 hardware with UEFI support
 
+### Write USB image
+```bash
+dd if=OpenMandriva-Lx-x86-64-rolling-3702.img \
+	of=/dev/sda \
+	bs=16k \
+	oflag=direct \
+	conv=sync \
+	status=progress
+```
+
 ### To install OpenMandriva Lx on aarch64 hardware with UEFI support
 
 * Insert a USB storage device on another machine
