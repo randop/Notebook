@@ -19,3 +19,10 @@ dd if=OpenMandriva-Lx-x86-64-rolling-3702.img \
 * Put the USB storage device into your aarch64 device and boot it from the USB device
 * Log in as user "omv" with password "omv"
 * If you want to install OpenMandriva Lx to the harddisk or internal storage, run ./install-openmandriva from /home/omv
+
+
+```bash
+sudo nmcli con add type ethernet ifname enp2s0 con-name "system-eth" \
+  ipv4.method auto \
+  autoconnect yes
+```
