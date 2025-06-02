@@ -5,6 +5,11 @@
 sudo apt install ~/Downloads/scangearmp2-3.70-1-deb
 ```
 
+## Installing SANE utilities
+```bash
+sudo apt-get install sane-utils
+```
+
 ## Create menu shortcut
 ```bash
 cat <<EOF | tee ~/.local/share/applications/canon-scangear.desktop
