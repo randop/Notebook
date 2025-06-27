@@ -3,7 +3,9 @@
 ### Ghostty
 * Installation
 ```bash
-wget --continue -nc -O ~/.local/bin/ghostty https://github.com/pkgforge-dev/ghostty-appimage/releases/download/v1.1.3%2B3/Ghostty-1.1.3-x86_64.AppImage
+wget -nc -O ~/.local/bin/ghostty https://github.com/pkgforge-dev/ghostty-appimage/releases/download/v1.1.3%2B3/Ghostty-1.1.3-x86_64.AppImage
+
+wget -nc -O ~/.local/share/icons/ghostty.png "https://github.com/pkgforge-dev/ghostty-appimage/blob/main/assets/ghostty.png?raw=true"
 
 chmod +x ~/.local/bin/ghostty
 
