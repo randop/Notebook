@@ -58,4 +58,11 @@ dd if=/home/randop/Downloads/OracleLinux-R10-U0-x86_64-dvd.iso \
 	oflag=direct \
 	conv=sync \
 	status=progress
+
+dd if=archlinux-x86_64.iso \
+	of=/dev/sdc \
+	bs=16k \
+	oflag=direct \
+	conv=sync \
+	status=progress
 ```
