@@ -51,4 +51,11 @@ dd if=debian-live-11.7.0-amd64-kde-nonfree.iso \
 	oflag=direct \
 	conv=sync \
 	status=progress
+
+dd if=/home/randop/Downloads/OracleLinux-R10-U0-x86_64-dvd.iso \
+	of=/dev/sdc \
+	bs=16k \
+	oflag=direct \
+	conv=sync \
+	status=progress
 ```
