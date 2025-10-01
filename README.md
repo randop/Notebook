@@ -17,9 +17,10 @@
 👤 **Randolph Ledesma**
 
 * 📱 +1 (415) 754-3092
+* 🌐 [https://linktr.ee/randolphledesma](https://linktr.ee/randolphledesma)
 * 🌐 [https://gitlab.com/randop](https://gitlab.com/randop)
 * 👷 [https://www.linkedin.com/in/randop/](https://www.linkedin.com/in/randop/)
-* 📍 Philippines
+* 📍 🇵🇭 Philippines
 
 ## Table of contents
 * [How to save the pricess using 8 programming languages](#how-to-save-the-pricess-using-8-programming-languages)
@@ -378,4 +379,4 @@ aria2c --continue=true \
 
 Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2025-07-02T13:47:35.000Z
+Last updated on 2025-10-01T11:47:55.000Z
