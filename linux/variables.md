@@ -84,4 +84,4 @@ file1 file2
 - **Arrays**: `${ARRAY[0]}` for elements; `@` or `*` for all (e.g., `"${ARRAY[@]}"`).
 - **Leading $ in Vars**: If VAR starts with `$`, it expands prematurely—use single quotes or assign carefully.
 
-For more, see `man bash` under "EXPANSION". If you have a specific command or error example, paste it for debugging!
+For more, see `man bash` under "EXPANSION".
