@@ -1,5 +1,23 @@
 # E-mail
 
+### Standard Email Server Ports
+
+Email protocols like SMTP (for sending), POP3 (for receiving/downloading), and IMAP (for receiving/managing) operate over **TCP** (Transmission Control Protocol), not UDP. TCP is used because these protocols require reliable, connection-oriented communication to ensure messages are delivered in order without loss. While SMTP could theoretically run over UDP per some RFCs, in practice, all standard implementations use TCP exclusively.
+
+Here's a summary of the most common ports:
+
+| Protocol | Port | Purpose | Security |
+|----------|------|---------|----------|
+| SMTP    | 25   | Standard outgoing mail server (unencrypted by default) | Insecure (supports opportunistic STARTTLS) |
+| SMTP    | 587  | Mail submission (client to server) | Secure (requires STARTTLS) |
+| SMTPS   | 465  | Secure outgoing mail (implicit TLS) | Secure (TLS from the start) |
+| POP3    | 110  | Standard incoming mail retrieval (downloads to client) | Insecure (supports opportunistic STARTTLS) |
+| POP3S   | 995  | Secure incoming mail retrieval | Secure (TLS from the start) |
+| IMAP    | 143  | Standard incoming mail management (syncs with server) | Insecure (supports opportunistic STARTTLS) |
+| IMAPS   | 993  | Secure incoming mail management | Secure (TLS from the start) |
+
+These ports are assigned by IANA and widely used across email services.
+
 ### Developing a Node.js SMTP Email Server with StartTLS Support
 
 Implementing a full email server from scratch in Node.js is complex, involving parsing SMTP commands, handling sessions, and managing TLS upgrades manually. A more efficient approach is to use the `smtp-server` module from Nodemailer, which provides a robust, production-ready SMTP server implementation that natively supports StartTLS (upgrading from plaintext to TLS on the `STARTTLS` command). This allows the server to start in non-TLS mode (`secure: false`) and advertise StartTLS in the EHLO response, enabling clients to request encryption.
