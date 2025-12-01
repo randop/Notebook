@@ -374,9 +374,21 @@ aria2c --continue=true \
     --input-file=debian-iso-dvd.txt
 ```
 
+#### Download a 1080p youtube video as mp4 format
+```sh
+yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=EWvNQjAaOHw"
+yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=T75MME5a9zA"
+yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=LPZh9BOjkQs"
+yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=PaCmpygFfXo"
+yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=kCc8FmEb1nY"
+yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=7xTGNNLPyMI"
+yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=zjkBMFhNj_g"
+yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=aircAruvnKk"
+```
+
 ---
 ## 📝 License
 
 Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2025-10-01T11:47:55.000Z
+Last updated on 2025-12-01T08:23:21.000Z
