@@ -1,7 +1,7 @@
 # Wire Crimper
 
 ## HSC8 6-4A
-![HSC8 6-4A]([https://gitlab.com/randop/notebook/-/raw/main/assets/HSC8_6-4A.jpg?ref_type=heads&inline=true])
+![HSC8 6-4A](https://gitlab.com/randop/notebook/-/raw/main/assets/HSC8_6-4A.jpg?ref_type=heads&inline=true)
 ## HSC8 6-6A
 ![HSC8 6-6A](https://gitlab.com/randop/notebook/-/raw/main/assets/HSC8_6-6A.jpg?ref_type=heads&inline=true)
 
