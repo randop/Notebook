@@ -1,5 +1,10 @@
 # Wire Crimper
 
+## HSC8 6-4A
+![HSC8 6-4A]([https://gitlab.com/randop/notebook/-/raw/main/assets/HSC8_6-4A.jpg?ref_type=heads&inline=true])
+## HSC8 6-6A
+![HSC8 6-6A](https://gitlab.com/randop/notebook/-/raw/main/assets/HSC8_6-6A.jpg?ref_type=heads&inline=true)
+
 The **HSC8 6-4A** and **HSC8 6-6A** (commonly branded as IWISS, Preciva, or similar) are popular self-adjusting ratchet crimping tools designed for **wire end ferrules** (bootlace sleeves) on stranded wires, typically in the range of **0.25–6 mm² (AWG 23–10)**.
 
 ### Key Similarities
