@@ -389,6 +389,6 @@ yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "htt
 ---
 ## 📝 License
 
-Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
+Copyright © 2010 — 2026 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2025-12-01T08:23:21.000Z
+Last updated on 2026-01-01T00:00:00.000Z
