@@ -2537,4 +2537,87 @@ descr:          Internet-security-STK
 mnt-by:         SIL3-MNT
 source:         AFRINIC # Filtered
 
+Whois IP 62.60.130.5
+Updated 1 second ago
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '62.60.130.0 - 62.60.130.255'
+
+% Abuse contact for '62.60.130.0 - 62.60.130.255' is 'email@outlook.com'
+
+inetnum:        62.60.130.0 - 62.60.130.255
+org:            ORG-COD1-RIPE
+netname:        spaceshipnetworks
+country:        GB
+admin-c:        ACRO58704-RIPE
+tech-c:         ACRO58704-RIPE
+abuse-c:        ACRO58704-RIPE
+status:         ASSIGNED PA
+mnt-by:         mm500-mnt
+created:        2025-07-12T09:39:11Z
+last-modified:  2025-08-13T07:41:27Z
+source:         RIPE
+
+organisation:   ORG-COD1-RIPE
+org-name:       CIPHER OPERATIONS DOO BEOGRAD - NOVI BEOGRAD
+country:        RS
+org-type:       OTHER
+address:        BELGRADE (NOVI BELGRADE) , Jurija Gagarina 231 , local 329 , BELGRADE (NOVI BELGRADE), NEW BELGRADE, Serbia
+phone:          +381656166978
+admin-c:        ACRO58704-RIPE
+tech-c:         ACRO58704-RIPE
+abuse-c:        ACRO58704-RIPE
+mnt-ref:        wcd
+mnt-ref:        mm500-mnt
+mnt-by:         wcd
+mnt-by:         mm500-mnt
+created:        2023-11-04T08:13:28Z
+last-modified:  2025-05-28T07:44:44Z
+source:         RIPE # Filtered
+
+role:           Abuse contact role object
+abuse-mailbox:  email@outlook.com
+address:        Khreshhatik St., 14D, Kyiv, UA
+nic-hdl:        ACRO58704-RIPE
+mnt-by:         researchnoc-mnt
+created:        2024-12-21T13:09:32Z
+last-modified:  2024-12-21T13:14:14Z
+source:         RIPE # Filtered
+
+% Information related to '62.60.130.0/24AS215930'
+
+route:          62.60.130.0/24
+org:            ORG-COD1-RIPE
+origin:         AS215930
+mnt-by:         mm500-mnt
+created:        2025-08-13T07:42:50Z
+last-modified:  2025-08-13T07:42:50Z
+source:         RIPE
+
+organisation:   ORG-COD1-RIPE
+org-name:       CIPHER OPERATIONS DOO BEOGRAD - NOVI BEOGRAD
+country:        RS
+org-type:       OTHER
+address:        BELGRADE (NOVI BELGRADE) , Jurija Gagarina 231 , local 329 , BELGRADE (NOVI BELGRADE), NEW BELGRADE, Serbia
+phone:          +381656166978
+admin-c:        ACRO58704-RIPE
+tech-c:         ACRO58704-RIPE
+abuse-c:        ACRO58704-RIPE
+mnt-ref:        wcd
+mnt-ref:        mm500-mnt
+mnt-by:         wcd
+mnt-by:         mm500-mnt
+created:        2023-11-04T08:13:28Z
+last-modified:  2025-05-28T07:44:44Z
+source:         RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.120 (BUSA)
+
 
