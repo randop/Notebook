@@ -3213,3 +3213,77 @@ OrgNOCRef:    https://rdap.arin.net/registry/entity/GCABU-ARIN
 [2026-01-16 15:18:23] INFO  [#mir5dvytdibtmmae] mir5dvytdibtmmae received "close" event from 35.203.210.163
 [2026-01-16 15:18:23] INFO  [#mir5dvytdibtmmae] Connection closed to [35.203.210.163]
 
+Whois IP 77.83.39.70
+Updated 1 second ago
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '77.83.39.0 - 77.83.39.255'
+
+% Abuse contact for '77.83.39.0 - 77.83.39.255' is 'email@lanedo.net'
+
+inetnum:        77.83.39.0 - 77.83.39.255
+netname:        LANEDONET
+country:        NL
+geofeed:        https://lanedo.net/geofeed.csv
+descr:          LANEDONET
+org:            ORG-LD194-RIPE
+abuse-c:        LAD41-RIPE
+admin-c:        LAD41-RIPE
+tech-c:         LAD41-RIPE
+mnt-domains:    lanedonet-mnt
+mnt-lower:      lanedonet-mnt
+mnt-routes:     lanedonet-mnt
+status:         ASSIGNED PA
+created:        2025-12-17T17:14:06Z
+last-modified:  2025-12-17T17:59:46Z
+source:         RIPE
+mnt-by:         PITLINE-MNT
+mnt-by:         LANEDONET-MNT
+
+organisation:   ORG-LD194-RIPE
+org-name:       Lanedonet Datacenter
+org-type:       OTHER
+descr:
+remarks:        Report your complaint:
+remarks:        email@lanedo.net
+address:        Strawinskylaan 3051 1077 ZX,Amsterdam,Netherlands
+country:        NL
+admin-c:        LAD41-RIPE
+tech-c:         LAD41-RIPE
+abuse-c:        LAD41-RIPE
+mnt-ref:        LANEDONET-MNT
+mnt-ref:        PITLINE-MNT
+mnt-by:         LANEDONET-MNT
+created:        2025-10-16T00:30:16Z
+last-modified:  2025-12-17T17:39:11Z
+source:         RIPE # Filtered
+
+role:           LANEDONET ABUSE DEPARTMENT
+address:        Strawinskylaan 3051 1077 ZX,Amsterdam,Netherlands
+abuse-mailbox:  email@lanedo.net
+nic-hdl:        LAD41-RIPE
+mnt-by:         LANEDONET-MNT
+created:        2025-10-16T00:22:30Z
+last-modified:  2025-10-16T00:29:52Z
+source:         RIPE # Filtered
+
+% Information related to '77.83.39.0/24AS214940'
+
+route:          77.83.39.0/24
+origin:         AS214940
+mnt-by:         PITLINE-MNT
+mnt-by:         LANEDONET-MNT
+created:        2025-12-17T17:16:32Z
+last-modified:  2025-12-17T17:16:40Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.120 (DEXTER)
+
+
