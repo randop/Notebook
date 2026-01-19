@@ -3343,4 +3343,89 @@ source:         RIPE # Filtered
 
 % This query was served by the RIPE Database Query Service version 1.120 (SHETLAND)
 
+Whois IP 209.23.72.254
+Updated 3 days ago
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2026, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       209.23.64.0 - 209.23.79.255
+CIDR:           209.23.64.0/20
+NetName:        8THFIRE-V4-001
+NetHandle:      NET-209-23-64-0-1
+Parent:         NET209 (NET-209-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       
+Organization:   8th Fire Communications, LLC (TFCL-5)
+RegDate:        2024-10-03
+Updated:        2025-12-09
+Ref:            https://rdap.arin.net/registry/ip/209.23.64.0
+
+
+OrgName:        8th Fire Communications, LLC
+OrgId:          TFCL-5
+Address:        2640 Thorofare Rd
+City:           Lac Du Flambeau
+StateProv:      WI
+PostalCode:     54538
+Country:        US
+RegDate:        2023-11-17
+Updated:        2026-01-14
+Ref:            https://rdap.arin.net/registry/entity/TFCL-5
+
+
+OrgTechHandle: POSEY30-ARIN
+OrgTechName:   Posey, Robert 
+OrgTechPhone:  +1-713-366-6265 
+OrgTechEmail:  email@gmail.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/POSEY30-ARIN
+
+OrgTechHandle: TLA186-ARIN
+OrgTechName:   Anderson, Travis L
+OrgTechPhone:  +1-715-388-0878 
+OrgTechEmail:  email@8thfirecommunications.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/TLA186-ARIN
+
+OrgNOCHandle: TLA186-ARIN
+OrgNOCName:   Anderson, Travis L
+OrgNOCPhone:  +1-715-388-0878 
+OrgNOCEmail:  email@8thfirecommunications.com
+OrgNOCRef:    https://rdap.arin.net/registry/entity/TLA186-ARIN
+
+OrgDNSHandle: TLA186-ARIN
+OrgDNSName:   Anderson, Travis L
+OrgDNSPhone:  +1-715-388-0878 
+OrgDNSEmail:  email@8thfirecommunications.com
+OrgDNSRef:    https://rdap.arin.net/registry/entity/TLA186-ARIN
+
+OrgRoutingHandle: TLA186-ARIN
+OrgRoutingName:   Anderson, Travis L
+OrgRoutingPhone:  +1-715-388-0878 
+OrgRoutingEmail:  email@8thfirecommunications.com
+OrgRoutingRef:    https://rdap.arin.net/registry/entity/TLA186-ARIN
+
+OrgAbuseHandle: ABUSE9515-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-715-388-0878 
+OrgAbuseEmail:  email@8thfirecommunications.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE9515-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2026, American Registry for Internet Numbers, Ltd.
+#
+
 
