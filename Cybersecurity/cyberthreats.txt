@@ -3428,4 +3428,83 @@ OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE9515-ARIN
 # Copyright 1997-2026, American Registry for Internet Numbers, Ltd.
 #
 
+Whois IP 213.230.127.217
+Updated 1 second ago
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '213.230.127.0 - 213.230.127.255'
+
+% Abuse contact for '213.230.127.0 - 213.230.127.255' is 'email@bkm.uz'
+
+inetnum:        213.230.127.0 - 213.230.127.255
+netname:        UZTELECOM
+country:        UZ
+admin-c:        ROJ1-RIPE
+tech-c:         ROJ1-RIPE
+geofeed:        https://minio.uzdc.uz/uztelecom-web-bucket/geofeed.csv
+status:         ASSIGNED PA
+mnt-by:         AS8193-MNT
+created:        2018-10-09T06:51:34Z
+last-modified:  2025-07-09T04:56:00Z
+source:         RIPE
+
+role:           Role of Uzbektelecom JSC
+address:        Alisher Navoi Avenue, 28A, Shaykhontohur District
+address:        Tashkent, Uzbekistan
+org:            ORG-JC7-RIPE
+org:            ORG-UNCN1-RIPE
+nic-hdl:        ROJ1-RIPE
+admin-c:        BM2509-RIPE
+tech-c:         BS10923-RIPE
+tech-c:         SHI1990-RIPE
+abuse-mailbox:  email@bkm.uz
+mnt-by:         AS8193-MNT
+mnt-by:         UZTELECOM-MNT
+created:        2018-10-09T04:28:53Z
+last-modified:  2021-05-26T05:11:22Z
+source:         RIPE # Filtered
+
+% Information related to '213.230.127.0/24AS8193'
+
+route:          213.230.127.0/24
+descr:          Uzbektelecom JSC
+org:            ORG-UNCN1-RIPE
+origin:         AS8193
+mnt-by:         AS8193-MNT
+created:        2018-10-09T08:29:45Z
+last-modified:  2018-10-10T10:19:34Z
+source:         RIPE
+
+organisation:   ORG-UNCN1-RIPE
+org-name:       "Uzbektelekom" Joint Stock Company
+country:        UZ
+org-type:       LIR
+address:        ALISHER NAVOI AVENUE, 28A
+address:        100011
+address:        TASHKENT
+address:        UZBEKISTAN
+phone:          +998712448042
+phone:          +998712146129
+fax-no:         +998712443443
+admin-c:        ROJ1-RIPE
+tech-c:         ROJ1-RIPE
+abuse-c:        ROJ1-RIPE
+mnt-ref:        RIPE-NCC-HM-MNT
+mnt-ref:        AS8193-MNT
+mnt-by:         RIPE-NCC-HM-MNT
+mnt-by:         AS8193-MNT
+created:        2004-04-17T12:24:40Z
+last-modified:  2024-07-15T04:19:22Z
+source:         RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.120 (DEXTER)
+
+
 
