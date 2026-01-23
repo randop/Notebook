@@ -1,4 +1,4 @@
-package com.usarlabs.smartcharge.middlewares;
+package com.application.middlewares;
 
 import java.util.List;
 import org.springframework.http.HttpHeaders;
@@ -16,8 +16,7 @@ import reactor.core.publisher.Mono;
 public class HttpUpgradeMiddleware implements WebFilter {
 
     @Override
-    public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
-        /*** TODO: Handle validations of http request **/
+    public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {        
         ServerHttpRequest request = exchange.getRequest();
         ServerHttpResponse response = exchange.getResponse();
         HttpHeaders headers = request.getHeaders();

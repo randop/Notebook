@@ -1,0 +1,1 @@
+-XX:+AlwaysPreTouch -XX:+UseSerialGC -XX:MaxGCPauseMillis=500 -XX:-UseGCOverheadLimit -XX:+UseLargePages
