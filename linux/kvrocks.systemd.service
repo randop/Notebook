@@ -1,0 +1,12 @@
+[Unit]
+Description=Apache KVRocks
+After=network.target
+
+[Service]
+ExecStart=/opt/kvrocks/kvrocks -c /opt/kvrocks/kvrocks.conf
+Type=exec
+Restart=always
+
+[Install]
+WantedBy=default.target
+RequiredBy=network.target
