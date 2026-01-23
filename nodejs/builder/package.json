@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-ws",
+  "version": "1.0.5",
+  "description": "Nodejs ws docker sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  }, 
+  "author": "Randolph Ledesma",
+  "license": "CFL",
+  "dependencies": {
+    "level-rocksdb": "^5.0.0",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
