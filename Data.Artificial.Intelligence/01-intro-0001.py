@@ -14,6 +14,11 @@ First training:
     for recognizing dogs and cats.
 """
 
+import fastbook
+fastbook.setup_book()
+
+from fastbook import *
+
 from fastai.vision.all import *
 
 path = untar_data(URLs.PETS) / "images"
@@ -31,7 +36,5 @@ dls = ImageDataLoaders.from_name_func(
 )
 
 learn = vision_learner(dls, resnet34, metrics=error_rate)
-
-with learn.no_bar():
-    learn.fine_tune(1)
+learn.fine_tune(1)
 
