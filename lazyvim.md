@@ -12,3 +12,6 @@ sudo pacman -S tree-sitter ripgrep
 ```shell
 rm -rf ~/.local/share/nvim/lazy
 ```
+
+* Return to netrw: `:Rex`
+* Prepend comment (#) on selected text: `:'<,'>norm I# `
