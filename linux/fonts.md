@@ -11,3 +11,17 @@ rm -v /tmp/0xproto.zip
 rm -rfv /tmp/0xproto
 fc-cache -fv
 ```
+
+## Hack
+```sh
+mkdir -pv ~/.local/share/fonts
+mkdir -v /tmp/hack
+wget -O /tmp/hack/hack-ttf.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
+wget -O /tmp/hack/hack-webfont.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-webfonts.zip
+unzip /tmp/hack/hack-ttf.zip -d /tmp/hack
+unzip /tmp/hack/hack-webfont.zip -d /tmp/hack
+cp -v /tmp/hack/ttf/*.{otf,ttf,woff2} ~/.local/share/fonts/
+rm -rfv /tmp/hack
+fc-cache -fv
+fc-list | grep "Hack"
+```
