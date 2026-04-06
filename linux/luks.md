@@ -12,15 +12,19 @@ A MAC address is **not secret** — it is visible on the local network and easil
 # Create the runtime hook (executed inside the initramfs)
 sudo mkdir -p /etc/initcpio/hooks
 sudo tee /etc/initcpio/hooks/encrypt-mac > /dev/null <<'EOF'
-#!/usr/bin/ash
+#!/bin/sh
 
 run_hook() {
-    # === Parse cryptdevice= from kernel command line (standard Arch format) ===
-    local cryptdev cryptname
+    # Parse cryptdevice= from kernel command line
+    cryptdev=""
+    cryptname=""
     for arg in $(cat /proc/cmdline); do
         case "$arg" in
             cryptdevice=*)
-                IFS=: read cryptdev cryptname <<< "${arg#cryptdevice=}"
+                # Split on first colon only
+                cryptdev="${arg#cryptdevice=}"
+                cryptname="${cryptdev#*:}"
+                cryptdev="${cryptdev%%:*}"
                 ;;
         esac
     done
@@ -31,15 +35,13 @@ run_hook() {
         return 1
     fi
 
-    # === Resolve device (UUID, LABEL, or direct path) ===
-    # Fallback to resolve_device if available (provided by base/udev hooks)
-    if command -v resolve_device >/dev/null 2>&1; then
+    # Resolve device (UUID, LABEL, or path)
+    if command -v resolve_device > /dev/null 2>&1; then
         cryptdev="$(resolve_device "$cryptdev" 30)" || {
             echo "ERROR: Failed to resolve cryptdevice '$cryptdev'"
             return 1
         }
     else
-        # Simple fallback for common UUID=... form
         case "$cryptdev" in
             UUID=*)
                 cryptdev="/dev/disk/by-uuid/${cryptdev#UUID=}"
@@ -50,8 +52,8 @@ run_hook() {
         esac
     fi
 
-    # === Read LAN MAC address (first non-lo interface) ===
-    local mac=""
+    # Read first non-lo network interface MAC address
+    mac=""
     for netdev in /sys/class/net/*; do
         if [ -e "$netdev/address" ] && [ "$(basename "$netdev")" != "lo" ]; then
             mac="$(cat "$netdev/address")"
@@ -62,12 +64,12 @@ run_hook() {
 
     if [ -z "$mac" ]; then
         echo "ERROR: No LAN MAC address found!"
-        echo "       Make sure your network driver is loaded early (see MODULES= below)"
+        echo "       Add your network driver to MODULES= in mkinitcpio.conf"
         return 1
     fi
 
-    # === Unlock LUKS using the MAC as passphrase ===
-    if echo -n "$mac" | cryptsetup luksOpen --key-file=- "$cryptdev" "$cryptname"; then
+    # Unlock using MAC as passphrase (no prompt)
+    if printf '%s' "$mac" | cryptsetup luksOpen --key-file=- "$cryptdev" "$cryptname"; then
         echo "LUKS device '$cryptname' unlocked successfully using LAN MAC passphrase."
     else
         echo "ERROR: Failed to unlock LUKS device with MAC-derived passphrase!"
