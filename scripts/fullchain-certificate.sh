@@ -25,3 +25,22 @@ openssl x509 -req -in server.csr -CA intermediate.crt -CAkey intermediate.key \
 
 # 4. Create fullchain.pem (Leaf + Intermediate)
 cat server.crt intermediate.crt > fullchain.pem
+
+# Check the fullchain
+openssl x509 -in fullchain.pem -text -noout | head -n 30
+
+# Check the whole chain
+openssl crl2pkcs7 -nocrl -certfile fullchain.pem | openssl pkcs7 -print_certs -noout
+
+# Encrypt message
+openssl cms -encrypt \
+  -aes256 -in message.txt \
+  -out encrypted.cms fullchain.pem
+
+# Decrypt message
+openssl cms -decrypt \
+  -in smime.p7m \
+  -inform SMIME \
+  -inkey privkey.pem \
+  -recip fullchain.pem \
+  -out decrypted.txt
