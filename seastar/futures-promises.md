@@ -59,3 +59,7 @@ int main(int ac, char** av) {
 }
 ```
 
+---
+
+#### References
+- [https://seastar.io/futures-promises/](https://seastar.io/futures-promises/)

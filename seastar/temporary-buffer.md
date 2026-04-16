@@ -96,3 +96,7 @@ The deleter is what makes it flexible — it can represent:
 
 This lets Seastar pass buffers across subsystems without knowing where the memory came from.
 
+---
+
+#### References
+- [https://docs.seastar.io/master/classseastar_1_1temporary__buffer.html](https://docs.seastar.io/master/classseastar_1_1temporary__buffer.html)
