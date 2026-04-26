@@ -1,0 +1,178 @@
+seastar:
+
+Core options:
+  --network-stack arg (=posix)          select network stack (valid values: 
+                                        native, posix)
+  --poll-mode                           poll continuously (100% cpu use)
+  --idle-poll-time-us arg (=200)        idle polling time in microseconds 
+                                        (reduce for overprovisioned 
+                                        environments or laptops)
+  --poll-aio arg (=1)                   busy-poll for disk I/O (reduces latency
+                                        and increases throughput)
+  --task-quota-ms arg (=0.5)            Max time (ms) between polls
+  --io-latency-goal-ms arg              Max time (ms) io operations must take 
+                                        (1.5 * task-quota-ms if not set)
+  --io-flow-rate-threshold arg (=1.1000000000000001)
+                                        Dispatch rate to completion rate 
+                                        threshold
+  --io-completion-notify-ms arg         Threshold in milliseconds over which IO
+                                        request completion is reported to logs
+  --max-task-backlog arg (=1000)        Maximum number of task backlog to 
+                                        allow; above this we ignore I/O
+  --blocked-reactor-notify-ms arg (=25) threshold in miliseconds over which the
+                                        reactor is considered blocked if no 
+                                        progress is made
+  --blocked-reactor-reports-per-minute arg (=5)
+                                        Maximum number of backtraces reported 
+                                        by stall detector per minute
+  --blocked-reactor-report-format-oneline arg (=1)
+                                        Print a simplified backtrace on a 
+                                        single line
+  --relaxed-dma                         allow using buffered I/O if DMA is not 
+                                        available (reduces performance)
+  --linux-aio-nowait arg (=1)           use the Linux NOWAIT AIO feature, which
+                                        reduces reactor stalls due to aio 
+                                        (autodetected)
+  --unsafe-bypass-fsync arg (=0)        Bypass fsync(), may result in data 
+                                        loss. Use for testing on consumer 
+                                        drives
+  --kernel-page-cache arg (=0)          Use the kernel page cache. This 
+                                        disables DMA (O_DIRECT). Useful for 
+                                        short-lived functional tests with a 
+                                        small data set.
+  --overprovisioned                     run in an overprovisioned environment 
+                                        (such as docker or a laptop); 
+                                        equivalent to --idle-poll-time-us 0 
+                                        --thread-affinity 0 --poll-aio 0
+  --abort-on-seastar-bad-alloc          abort when seastar allocator cannot 
+                                        allocate memory
+  --force-aio-syscalls arg (=0)         Force io_getevents(2) to issue a system
+                                        call, instead of bypassing the kernel 
+                                        when possible. This makes strace output
+                                        more useful, but slows down the 
+                                        application
+  --dump-memory-diagnostics-on-alloc-failure-kind arg (=critical)
+                                        Dump diagnostics of the seastar 
+                                        allocator state on allocation failure. 
+                                        Accepted values: none, critical 
+                                        (default), all. When set to critical, 
+                                        only allocations marked as critical 
+                                        will trigger diagnostics dump. The 
+                                        diagnostics will be written to the 
+                                        seastar_memory logger, with error 
+                                        level. Note that if the seastar_memory 
+                                        logger is set to debug or trace level, 
+                                        the diagnostics will be logged 
+                                        irrespective of this setting.
+  --reactor-backend arg (=linux-aio)    Internal reactor implementation 
+                                        ([linux-aio, epoll])
+  --aio-fsync arg (=1)                  Use Linux aio for fsync() calls. This 
+                                        reduces latency; requires Linux 4.18 or
+                                        later.
+  --max-networking-io-control-blocks arg (=10000)
+                                        Maximum number of I/O control blocks 
+                                        (IOCBs) to allocate per shard. This 
+                                        translates to the number of sockets 
+                                        supported per shard. Requires tuning 
+                                        /proc/sys/fs/aio-max-nr. Only valid for
+                                        the linux-aio reactor backend (see 
+                                        --reactor-backend).
+  --reserve-io-control-blocks arg (=0)  Reserve this many IOCBs, so it is 
+                                        available to any side application that 
+                                        runs parallel to the seastar 
+                                        appliation. Takes precedence over 
+                                        --max-networking-io-control-blocks. 
+                                        Only valid for the linux-aio reactor 
+                                        backend (see --reactor-backend).
+  --no-handle-interrupt                 ignore SIGINT (for gdb)
+
+Native networking stack options:
+  --tap-device arg (=tap0)              tap device to connect to
+  --host-ipv4-addr arg (=192.168.122.2) static IPv4 address to use
+  --gw-ipv4-addr arg (=192.168.122.1)   static IPv4 gateway to use
+  --netmask-ipv4-addr arg (=255.255.255.0)
+                                        static IPv4 netmask to use
+  --udpv4-queue-size arg (=1024)        Default size of the UDPv4 per-channel 
+                                        packet queue
+  --dhcp arg (=1)                       Use DHCP discovery
+  --hw-queue-weight arg (=1)            Weighing of a hardware network queue 
+                                        relative to a software queue (0=no 
+                                        work, 1=equal share)
+  --lro arg (=on)                       Enable LRO
+
+Virtio net options:
+  --event-index arg (=on)               Enable event-index feature (on / off)
+  --csum-offload arg (=on)              Enable checksum offload feature (on / 
+                                        off)
+  --tso arg (=on)                       Enable TCP segment offload feature (on 
+                                        / off)
+  --ufo arg (=on)                       Enable UDP fragmentation offload 
+                                        feature (on / off)
+  --virtio-ring-size arg (=256)         Virtio ring size (must be power-of-two)
+
+Metrics options:
+  --metrics-hostname arg (=aicode)      set the hostname used by the metrics, 
+                                        if not set, the local hostname will be 
+                                        used
+
+SMP options:
+  -c [ --smp ] arg                      number of threads (default: one per 
+                                        CPU)
+  --cpuset arg                          CPUs to use (in cpuset(7) list format 
+                                        (ex: 0,1-3,7); default: all))
+  -m [ --memory ] arg (=64M)            memory to use, in bytes (ex: 4G) 
+                                        (default: all)
+  --reserve-memory arg                  memory reserved to OS (if --memory not 
+                                        specified)
+  --hugepages arg                       path to accessible hugetlbfs mount 
+                                        (typically /dev/hugepages/something)
+  --lock-memory arg                     lock all memory (prevents swapping)
+  --thread-affinity arg (=1)            pin threads to their cpus (disable for 
+                                        overprovisioning)
+  --num-io-groups arg                   Number of IO groups. Each IO group will
+                                        be responsible for a fraction of the IO
+                                        requests. Defaults to the number of 
+                                        NUMA nodes
+  --io-properties-file arg              path to a YAML file describing the 
+                                        characteristics of the I/O Subsystem
+  --io-properties arg                   a YAML string describing the 
+                                        characteristics of the I/O Subsystem
+  --mbind arg (=1)                      enable mbind
+  --enable-glibc-exception-scaling-workaround arg (=1)
+                                        enable workaround for glibc/gcc c++ 
+                                        exception scalablity problem
+  --allow-cpus-in-remote-numa-nodes arg (=1)
+                                        if some CPUs are found not to have any 
+                                        local NUMA nodes, allow assigning them 
+                                        to remote ones
+
+COLLECTD options:
+  --collectd arg (=0)                   enable collectd daemon
+  --collectd-address arg (=239.192.74.66:25826)
+                                        address to send/broadcast metrics to
+  --collectd-poll-period arg (=1000)    poll period - frequency of sending 
+                                        counter metrics (default: 1000ms, 0 
+                                        disables)
+  --collectd-hostname arg               Deprecated option, use metrics-hostname
+                                        instead
+
+Logging options:
+  --default-log-level arg (=info)       Default log level for log messages. 
+                                        Valid values are trace, debug, info, 
+                                        warn, error.
+  --logger-log-level arg                Map of logger name to log level. The 
+                                        format is "NAME0=LEVEL0[:NAME1=LEVEL1:.
+                                        ..]". Valid logger names can be queried
+                                        with --help-loggers. Valid values for 
+                                        levels are trace, debug, info, warn, 
+                                        error. This option can be specified 
+                                        multiple times.
+  --logger-stdout-timestamps arg (=real)
+                                        Select timestamp style for stdout logs:
+                                        none|boot|real
+  --log-to-stdout arg (=1)              Send log output to output stream, as 
+                                        selected by --logger-ostream-type
+  --logger-ostream-type arg (=stderr)   Send log output to: none|stdout|stderr
+  --log-to-syslog arg (=0)              Send log output to syslog.
+  --log-with-color arg (=1)             Print colored tag prefix in log message
+                                        written to ostream
