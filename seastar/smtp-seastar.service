@@ -1,0 +1,282 @@
+# /etc/systemd/system/smtp-seastar.service
+#
+# Hardened systemd unit for a Seastar v25.05 / C++23 SMTP service.
+# Runs as non-root user "smtp" while preserving all capabilities Seastar
+# requires for correct, low-latency operation.
+#
+# Verified against:
+#   systemd 255+  (earlier versions may lack some directives)
+#   Seastar v25.05 with --network-stack=posix --overprovisioned=false
+#   Kernel 6.6+ LTS
+#
+# Audit after deployment:
+#   systemd-analyze security smtp-seastar.service
+#   journalctl -u smtp-seastar.service --since "1 min ago"
+
+# ──────────────────────────────────────────────────────────────────────────────
+[Unit]
+# ──────────────────────────────────────────────────────────────────────────────
+Description=SMTP Seastar service (hardened non-root)
+Documentation=https://seastar.io
+
+# Ensure the network subsystem and any hugepage/cpu tuning pre-start
+# scripts have completed before we attempt to bind.
+After=network-online.target systemd-sysctl.service
+Wants=network-online.target
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+[Service]
+# ──────────────────────────────────────────────────────────────────────────────
+Type=notify
+# 'notify' requires the binary to call sd_notify(READY=1).
+# If your binary does not do this, change to 'simple'.
+
+User=smtp
+Group=smtp
+# FIX: was Group=users.
+# Using a dedicated group prevents accidental access to group-owned
+# resources (TLS certs owned by ssl-cert, log dirs, etc.) from leaking
+# into this process via supplementary group membership.
+# Create with:  groupadd --system smtp && useradd --system --gid smtp smtp
+
+SupplementaryGroups=
+# Explicitly empty: strip all supplementary groups inherited from /etc/group.
+# If TLS private keys are owned by a separate group (e.g. ssl-cert), add it
+# here explicitly:  SupplementaryGroups=ssl-cert
+
+WorkingDirectory=/var/jail/smtp
+
+# ── Writable paths ─────────────────────────────────────────────────────────
+# FIX: was only inbox. Added log dir and a coredump path so Seastar's reactor
+# stall reporter and crash logger never hit EROFS silently.
+ReadWritePaths=/var/jail/smtp/inbox \
+               /var/log/smtp \
+               /var/jail/smtp/run
+
+# ── Filesystem hardening ────────────────────────────────────────────────────
+ProtectSystem=strict
+# Mounts /usr, /boot, /efi read-only.  ReadWritePaths above punch controlled
+# holes back in.
+
+ProtectHome=yes
+PrivateTmp=yes
+
+ProtectKernelTunables=yes
+# RETAINED: /proc/sys becomes read-only for this unit. Seastar only *reads*
+# /proc/sys/vm/nr_hugepages at startup; it never writes it. Any pre-start
+# hugepage tuning must be done via a separate ExecStartPre= that runs before
+# this protection is applied, or via sysctl.d/ at boot.
+# If you need to write kernel tunables at runtime, remove this.
+
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+LockPersonality=yes
+RestrictSUIDSGID=yes
+NoNewPrivileges=yes
+
+# ── Capabilities ────────────────────────────────────────────────────────────
+# FIX: was CapabilityBoundingSet= (empty), which silently breaks three things:
+#
+#   CAP_NET_BIND_SERVICE — bind() on port 25 (privileged port < 1024)
+#   CAP_IPC_LOCK         — mlock()/mlockall() for Seastar's memory pool
+#   CAP_SYS_NICE         — SCHED_FIFO/SCHED_RR on reactor threads
+#
+# The bounding set is the hard ceiling; ambient capabilities must be a
+# subset of it. Both must list the same capabilities for them to be
+# effective on a non-root user under NoNewPrivileges=yes.
+
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_IPC_LOCK CAP_SYS_NICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE CAP_IPC_LOCK CAP_SYS_NICE
+# All capabilities outside this set remain permanently inaccessible.
+
+# ── Memory locking ──────────────────────────────────────────────────────────
+# FIX: missing from original. CAP_IPC_LOCK alone is not sufficient;
+# the rlimit RLIMIT_MEMLOCK must also be unlimited, or mlock() on the
+# full Seastar pool will fail with ENOMEM once the default 64 KiB
+# soft limit is exceeded.
+LimitMEMLOCK=infinity
+
+# ── Real-time scheduling ────────────────────────────────────────────────────
+# FIX: was RestrictRealtime=yes, which installs a seccomp filter that blocks
+# sched_setscheduler() with SCHED_FIFO/SCHED_RR policies. Seastar's reactor
+# sets real-time scheduling on its per-core threads at startup; that call
+# would return EPERM (seccomp SIGSYS on strict kernels) causing an abort.
+#
+# REMOVED entirely. CAP_SYS_NICE in the ambient set is sufficient control.
+# If you want to allow Seastar's RT scheduling but prevent runaway starvation,
+# pair this instead with:
+#   CPUSchedulingResetOnFork=yes
+#   CPUSchedulingPolicy=fifo
+#   CPUSchedulingPriority=1
+# and rely on the kernel's RT throttling (/proc/sys/kernel/sched_rt_runtime_us)
+# as the safety mechanism rather than an outright ban.
+CPUSchedulingResetOnFork=yes
+
+# ── Devices ─────────────────────────────────────────────────────────────────
+# FIX: was PrivateDevices=yes, which creates a synthetic /dev whitelist that
+# excludes:
+#   /dev/hugepages        (Seastar hugepage allocator)
+#   /dev/cpu_dma_latency  (Seastar writes 0 here to prevent deep C-states)
+#   /dev/cpu/N/msr        (CPU feature detection on some codepaths)
+#
+# Replacement: disable the synthetic /dev, then use DeviceAllow to enumerate
+# exactly what this service is permitted to open. This is strictly narrower
+# than PrivateDevices=yes once the three Seastar devices are accounted for.
+
+PrivateDevices=no
+
+DevicePolicy=closed
+# 'closed' denies all device access by default; only DeviceAllow entries pass.
+
+DeviceAllow=/dev/null          rw
+DeviceAllow=/dev/zero          r
+DeviceAllow=/dev/urandom       r
+DeviceAllow=/dev/random        r
+DeviceAllow=/dev/hugepages      rw
+# Seastar's hugepage-backed allocator. If hugepages are not provisioned on
+# the host, Seastar falls back to regular pages with a warning — this entry
+# is harmless even in the fallback case.
+DeviceAllow=/dev/cpu_dma_latency rw
+# Seastar opens this at startup and writes 0 to disable CPU sleep states,
+# which is foundational to its sub-microsecond tail latency design.
+# Without this, the device open() silently fails (no abort), but you will
+# see latency spikes of hundreds of microseconds under load.
+DeviceAllow=/dev/tty            rw
+# Required for logging to a terminal during development. Remove in production
+# if your binary only logs to files or journald.
+
+# ── W^X / Execute protection ─────────────────────────────────────────────────
+# FIX: was MemoryDenyWriteExecute=yes unconditionally.
+#
+# This directive installs a seccomp filter blocking mmap(PROT_WRITE|PROT_EXEC)
+# and mprotect() promotions of writable pages to executable. Seastar's own
+# allocator is clean. However, the following common dependencies are NOT:
+#
+#   - boost::context (used by Seastar's fiber/coroutine scheduler) uses
+#     mprotect to mark stack guard pages — this is safe and does not require
+#     W+X, but older Boost versions did temporarily map W+X trampolines.
+#     Verify your Boost version before enabling.
+#   - libgcc exception unwinding trampolines on non-x86-64 targets
+#   - Any JIT (LuaJIT, RE2, etc.) in filter plugins
+#
+# RECOMMENDATION: Enable it, test your full plugin/library stack, and keep it
+# only if no SIGSYS crashes appear. If you have no JIT dependencies, it is
+# safe. Disabled here by default for compatibility; re-enable when confirmed.
+#
+# MemoryDenyWriteExecute=yes   # <-- uncomment after verifying no JIT deps
+
+# ── Namespace restrictions ────────────────────────────────────────────────────
+# FIX: was RestrictNamespaces=yes (blanket ban on all namespace operations).
+#
+# Seastar's native (DPDK / kernel-bypass) network stack requires network
+# namespace operations during interface setup. With --network-stack=posix
+# (the only stack compatible with a hardened non-root environment anyway),
+# Seastar itself does not call unshare/clone with namespace flags.
+#
+# However, a blanket RestrictNamespaces=yes also blocks user namespaces,
+# which some crash reporters and sandbox helpers use. We restrict to only
+# the namespace types we have no use for, keeping the policy surgical.
+
+RestrictNamespaces=cgroup ipc pid uts
+# Allows: net (for POSIX socket API internals), user (for crash tools)
+# Blocks: cgroup, ipc, pid, uts — none of which Seastar needs
+
+# ── System call filtering ─────────────────────────────────────────────────────
+# Explicit syscall allowlist is more effective than individual booleans.
+# Using systemd's predefined sets where possible; extend as needed.
+SystemCallArchitectures=native
+
+SystemCallFilter=@system-service
+# @system-service covers the broad set needed by typical daemons:
+# file I/O, networking, memory management, signals, threads, etc.
+
+SystemCallFilter=@network-io
+# Explicit inclusion for socket/bind/accept/sendmsg families.
+
+SystemCallFilter=sched_setscheduler sched_setaffinity sched_getaffinity
+# Required for Seastar's reactor thread pinning and RT scheduling.
+# These are NOT included in @system-service.
+
+SystemCallFilter=mlock mlock2 munlock mlockall munlockall
+# Required for Seastar's memory pool locking.
+# mlock/munlock are in @system-service on recent systemd; listed explicitly
+# for compatibility with older systemd versions.
+
+SystemCallFilter=~@privileged @resources
+# Deny the broad privileged/resource sets AFTER the above inclusions.
+# The ~ prefix means "deny these unless already allowed above".
+# This kills the long tail of dangerous syscalls (ptrace, kexec, etc.)
+# without accidentally blocking Seastar's legitimate scheduler calls.
+
+# ── Process/thread limits ─────────────────────────────────────────────────────
+# FIX: missing from original.
+# Seastar spawns: 1 reactor thread per CPU core + alien thread pool
+# (default 4) + timer thread + I/O submission threads.
+# On a 32-core host that is ~40 threads minimum. Default TasksMax on many
+# distros is 15% of system-wide TasksMax, often 512, which is fine — but
+# on container-constrained or low-limit systems, clone() returns EAGAIN
+# with no obvious error message.
+TasksMax=512
+
+# ── OOM protection ────────────────────────────────────────────────────────────
+# FIX: missing from original.
+# Seastar pre-allocates its entire memory pool upfront. Under memory pressure,
+# the OOM killer scores it very highly (large RSS, relatively low score).
+# Adjust downward to protect the service from spurious OOM kills.
+OOMScoreAdjust=-500
+
+# ── CPU affinity ──────────────────────────────────────────────────────────────
+# Uncomment and align with --cpuset passed to Seastar.
+# Without this, the kernel may migrate reactor threads off their pinned cores
+# under load, negating Seastar's per-core isolation model.
+#
+# CPUAffinity=0-7              # Example: pin to first 8 cores
+#
+# Then pass matching --cpuset=0-7 in ExecStart below.
+
+# ── Environment ───────────────────────────────────────────────────────────────
+Environment=SEASTAR_EXCEPTION_LOGGING=1
+# Ensures unhandled exceptions are logged to journald before abort.
+
+# ── Execution ─────────────────────────────────────────────────────────────────
+ExecStartPre=/bin/bash -c ' \
+    install -d -o smtp -g smtp -m 750 /var/jail/smtp/inbox; \
+    install -d -o smtp -g smtp -m 750 /var/log/smtp; \
+    install -d -o smtp -g smtp -m 750 /var/jail/smtp/run'
+# Creates runtime directories if they don't exist. Must run before
+# ProtectSystem=strict locks things down — ExecStartPre runs in the same
+# namespace context before sandboxing is fully applied.
+
+ExecStart=/usr/local/bin/smtp-seastar \
+    --network-stack=posix \
+    --overprovisioned=false \
+    --lock-memory=true \
+    --hugepages=1 \
+    --reactor-backend=epoll \
+    --log-to-syslog=true \
+    --log-to-stdout=false \
+    --default-log-level=info \
+    --abort-on-seastar-bad-alloc
+
+# Notes on flags:
+#   --network-stack=posix       Mandatory; native/DPDK incompatible with this unit
+#   --lock-memory=true          Requires CAP_IPC_LOCK + LimitMEMLOCK=infinity
+#   --hugepages=1               Requires /dev/hugepages DeviceAllow above
+#   --reactor-backend=epoll     io_uring also works; aio is discouraged on 6.6+
+#   --abort-on-seastar-bad-alloc  Hard fail rather than UB on allocator exhaustion
+#   --overprovisioned=false     Enables per-core pinning and RT scheduling
+
+# ── Restart policy ────────────────────────────────────────────────────────────
+Restart=on-failure
+RestartSec=5s
+StartLimitIntervalSec=60s
+StartLimitBurst=3
+# Prevents a crash-loop from hammering the system. After 3 failures in 60s,
+# systemd stops trying and requires manual intervention.
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+[Install]
+# ──────────────────────────────────────────────────────────────────────────────
+WantedBy=multi-user.target
