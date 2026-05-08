@@ -240,3 +240,4 @@ flowchart LR
 - [RFC 8915](https://datatracker.ietf.org/doc/html/rfc8915) — Network Time Security (NTS)  
 - [RFC 5906](https://datatracker.ietf.org/doc/html/rfc5906) — NTP Autokey (deprecated)  
 - [ntppool.org](https://www.ntppool.org/) — Public NTP Pool Project
+- [https://grokipedia.com/page/Network_Time_Protocol](https://grokipedia.com/page/Network_Time_Protocol) - Network Time Protocol 
