@@ -1,5 +1,129 @@
 # Network Time Protocol (NTP)
 
+**NTP (Network Time Protocol)** is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks. It operates on **UDP port 123**.
+
+## Key Concepts
+
+- **Stratum Levels**: Hierarchical measure of distance from a reference clock.
+  - Stratum 0: Atomic clocks, GPS, etc.
+  - Stratum 1: Servers directly connected to Stratum 0.
+  - Higher strata: Further from the reference.
+- **Modes**: Client/Server (most common), Peer, Broadcast.
+- **Timestamps** (all in seconds since 1900):
+  - **T1**: Client send time (originate timestamp)
+  - **T2**: Server receive time
+  - **T3**: Server transmit time
+  - **T4**: Client receive time (destination timestamp)
+
+## NTP Packet Flow (Client-Server Mode)
+
+```mermaid
+sequenceDiagram
+    participant C as NTP Client
+    participant S as NTP Server (Stratum N)
+
+    Note over C,S: UDP Port 123
+
+    C->>S: NTP Request<br/>Mode=3 (Client)<br/>T1 (originate)
+    Note right of C: Client records T1
+
+    S->>S: Record T2 (receive time)
+    S->>C: NTP Response<br/>Mode=4 (Server)<br/>T1 (originate)<br/>T2 (receive)<br/>T3 (transmit)<br/>Reference Timestamp
+    Note left of S: Server records T3 just before sending
+
+    C->>C: Record T4 (receive time)
+
+    Note over C: Calculation Phase
+    C->>C: Round-Trip Delay δ = (T4-T1) - (T3-T2)
+    C->>C: Clock Offset θ = [(T2-T1) + (T3-T4)] / 2
+    C->>C: Adjust local clock
+```
+
+## Detailed Mermaid Diagram with Timestamps
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Client
+    participant Server
+
+    Client->>Server: NTP Query<br/>(Mode=3, T1)
+    activate Server
+    Note right of Client: T1 = Client's local time when request sent
+
+    Server-->>Server: Receive packet at T2
+    Note left of Server: T2 = Server's time upon receipt
+
+    Server->>Client: NTP Response<br/>(Mode=4, T1, T2, T3)
+    Note left of Server: T3 = Server's time just before sending response
+    deactivate Server
+
+    Note right of Client: T4 = Client's local time when response received
+
+    rect rgb(240, 240, 255)
+        Note over Client: Clock Synchronization Calculations
+        Client->>Client: Delay (δ) = (T4 - T1) - (T3 - T2)
+        Client->>Client: Offset (θ) = [(T2 - T1) + (T3 - T4)] / 2
+    end
+
+    Client->>Client: Apply offset to local clock
+```
+
+## NTP Association States (Simplified)
+
+```mermaid
+flowchart TD
+    A[Uninitialized] --> B[Poll]
+    B --> C{Response Received?}
+    C -->|Yes| D[Calculate Offset & Delay]
+    C -->|No| E[Retry / Increase Poll Interval]
+    D --> F[Update Local Clock]
+    F --> G[Monitor Stability]
+    G --> B
+```
+
+## Full NTP Process Steps
+
+1. **Client Initialization**
+   - Resolve server hostname (DNS)
+   - Create UDP socket to port 123
+
+2. **Request Transmission**
+   - Fill NTP packet with current time as T1
+   - Send to server
+
+3. **Server Processing**
+   - Validate request
+   - Timestamp T2 on arrival
+   - Prepare response with reference time, stratum, etc.
+   - Timestamp T3 on departure
+
+4. **Client Processing**
+   - Receive response at T4
+   - Filter and select best servers (if multiple)
+   - Apply algorithms (clock discipline)
+
+5. **Clock Discipline**
+   - Gradually slew (adjust) the clock to avoid jumps
+   - Update drift compensation
+
+## Common NTP Modes
+
+| Mode | Description | Use Case |
+|------|-------------|----------|
+| 3 (Client) | Client requests time | Most common |
+| 4 (Server) | Response from server | - |
+| 5 (Broadcast) | Server broadcasts time | Local networks |
+| 1/2 | Symmetric Peer | Mutual synchronization |
+
+## Security Considerations
+
+- **NTPv4** supports authentication (symmetric keys, Autokey)
+- Modern deployments often use **NTS (Network Time Security)**
+- Rate limiting and ACLs recommended on servers
+
+
+---
 ## Overview
 
 NTP (Network Time Protocol, RFC 5905) synchronizes clocks across a network to within a few milliseconds of UTC. It operates over UDP port 123 and uses a hierarchical system of time sources called **strata**.
