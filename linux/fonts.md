@@ -42,15 +42,29 @@ cat > ~/.config/fontconfig/fonts.conf << 'EOF'
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
 
-  <!-- Force Noto Color Emoji to win for any codepoint it covers -->
-  <match>
-    <test name="family" compare="eq"><string>monospace</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Noto Color Emoji</string>
-    </edit>
-  </match>
+  <!-- Set default fonts -->
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>Hack</family>
+    </prefer>
+  </alias>
 
-  <!-- Global emoji family alias -->
+  <alias>
+    <family>sans-serif</family>
+    <prefer>
+      <family>Noto Sans</family>
+    </prefer>
+  </alias>
+
+  <alias>
+    <family>serif</family>
+    <prefer>
+      <family>Noto Serif</family>
+    </prefer>
+  </alias>
+
+  <!-- Global emoji alias -->
   <match>
     <test name="family" compare="eq"><string>emoji</string></test>
     <edit name="family" mode="prepend" binding="strong">
@@ -58,26 +72,35 @@ cat > ~/.config/fontconfig/fonts.conf << 'EOF'
     </edit>
   </match>
 
-  <!-- Block DejaVu from serving emoji codepoints -->
+  <match target="pattern">
+    <test name="family" compare="eq"><string>monospace</string></test>
+    <test name="charset">
+      <charset>
+        <range><int>0x1F600</int><int>0x1F64F</int></range> <!-- Emoticons -->
+        <range><int>0x1F300</int><int>0x1F5FF</int></range>
+        <range><int>0x1F680</int><int>0x1F6FF</int></range>
+        <range><int>0x1F900</int><int>0x1F9FF</int></range>
+        <range><int>0x2600</int><int>0x26FF</int></range>
+        <range><int>0x2700</int><int>0x27BF</int></range>
+      </charset>
+    </test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
   <match target="scan">
     <test name="family" compare="eq"><string>DejaVu Sans</string></test>
     <edit name="charset" mode="assign">
       <minus>
         <name>charset</name>
         <charset>
-          <!-- Emoticons block U+1F600–U+1F64F -->
           <range><int>0x1F600</int><int>0x1F64F</int></range>
-          <!-- Misc symbols and pictographs U+1F300–U+1F5FF -->
           <range><int>0x1F300</int><int>0x1F5FF</int></range>
-          <!-- Transport and map U+1F680–U+1F6FF -->
           <range><int>0x1F680</int><int>0x1F6FF</int></range>
-          <!-- Supplemental symbols U+1F900–U+1F9FF -->
           <range><int>0x1F900</int><int>0x1F9FF</int></range>
-          <!-- Symbols extended-A U+1FA00–U+1FA6F -->
           <range><int>0x1FA00</int><int>0x1FA6F</int></range>
-          <!-- Misc symbols U+2600–U+26FF -->
           <range><int>0x2600</int><int>0x26FF</int></range>
-          <!-- Dingbats U+2700–U+27BF -->
           <range><int>0x2700</int><int>0x27BF</int></range>
         </charset>
       </minus>
