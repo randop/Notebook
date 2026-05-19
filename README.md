@@ -41,7 +41,6 @@
 
 ### Personal Computer (PC) M3 screw set specifications
 ![Picture of Personal Computer (PC) M3 screw set specifications](https://gitlab.com/randop/notebook/-/raw/main/assets/pc-m3-screws.png?inline=true)
-
 ---
 ## How to code using NASM assembler (Assembly programming language)
 ```asm
@@ -133,6 +132,17 @@ yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "htt
 yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=zjkBMFhNj_g"
 yt-dlp --merge-output-format mp4 -f "bestvideo[height=1080]+bestaudio/best" "https://www.youtube.com/watch?v=aircAruvnKk"
 ```
+
+## Git 
+![Git the princess by Mart Virkus, Toggl Goon Squad](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_01_title.jpg?inline=true)
+![Javascript](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_02_javascript.jpg?inline=true)
+![C](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_03_c.jpg?inline=true)
+![C#](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_04_csharp.jpg?inline=true)
+![Java](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_05_java.jpg?inline=true)
+![Lisp](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_06_lisp.jpg?inline=true)
+![Go](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_07_go.jpg?inline=true)
+![Pascal](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_08_pascal.jpg?inline=true)
+![Php](https://gitlab.com/randop/notebook/-/raw/main/assets/strip_09_php.jpg?inline=true)
 
 ---
 ## 📝 License
