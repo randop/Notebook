@@ -8478,10 +8478,8 @@
 | 5150 | TCP | atmp | Ascend Tunnel Management Protocol |
 | 5150 | UDP | atmp | Ascend Tunnel Management Protocol |
 | 5151 | TCP | esri-sde | ESRI SDE Instance |
->     IANA assigned this well-formed service name
 | 5151 | TCP | esri_sde | ESRI SDE Instance |
 | 5151 | UDP | esri-sde | ESRI SDE Remote Start |
->     IANA assigned this well-formed service 
 | 5151 | UDP | esri_sde | ESRI SDE Remote Start |
 | 5152 | TCP | sde-discovery | ESRI SDE Instance Discovery |
 | 5152 | UDP | sde-discovery | ESRI SDE Instance Discovery |
