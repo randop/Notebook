@@ -9194,17 +9194,17 @@
 | 6389 | UDP | clariion-evr01 | clariion-evr01 |
 | 6390 | TCP | metaedit-ws | MetaEdit+ WebService API |
 | 6390 | UDP | metaedit-ws | MetaEdit+ WebService API |
-> 6400           boe-cms                             Business Objects CMS contact port
-> 6401           boe-was                             boe-was
-> 6402           boe-eventsrv                        boe-eventsrv
-> 6403           boe-cachesvr                        boe-cachesvr
-> 6404           boe-filesvr                         Business Objects Enterprise internal server
-> 6405           boe-pagesvr                         Business Objects Enterprise internal server
-> 6406           boe-processsvr                      Business Objects Enterprise internal server
-> 6407           boe-resssvr1                        Business Objects Enterprise internal server
-> 6408           boe-resssvr2                        Business Objects Enterprise internal server
-> 6409           boe-resssvr3                        Business Objects Enterprise internal server
-> 6410           boe-resssvr4                        Business Objects Enterprise internal server
+| 6400 |     |     boe-cms |                            Business Objects CMS contact port
+| 6401 |     |     boe-was |                            boe-was
+| 6402 |     |     boe-eventsrv |                       boe-eventsrv
+| 6403 |     |     boe-cachesvr |                       boe-cachesvr
+| 6404 |     |     boe-filesvr |                        Business Objects Enterprise internal server
+| 6405 |     |     boe-pagesvr |                         Business Objects Enterprise internal server
+| 6406 |     |     boe-processsvr |                      Business Objects Enterprise internal server
+| 6407 |     |     boe-resssvr1 |                        Business Objects Enterprise internal server
+| 6408 |     |     boe-resssvr2 |                       Business Objects Enterprise internal server
+| 6409 |     |     boe-resssvr3 |                       Business Objects Enterprise internal server
+| 6410 |     |     boe-resssvr4 |                       Business Objects Enterprise internal server
 | 6417 | TCP | faxcomservice | Faxcom Message Service |
 | 6417 | UDP | faxcomservice | Faxcom Message Service |
 | 6418 | TCP | syserverremote | SYserver remote commands |
