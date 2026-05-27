@@ -2,8 +2,6 @@
 
 | PORT | PROTO | SERVICE | DESCRIPTION |
 |---|---|---|---|
-> PORT    PROTO  SERVICE                             DESCRIPTION
-> --------------------------------------------------------------------------------------------------------------
 | 1 | TCP | tcpmux | TCP Port Service Multiplexer |
 | 1 | UDP | tcpmux | TCP Port Service Multiplexer |
 | 2 | TCP | compressnet | Management Utility |
