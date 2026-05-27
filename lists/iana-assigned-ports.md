@@ -93,20 +93,16 @@
 | 62 | UDP | acas | ACA Services |
 | 63 | TCP | whois++ | whois++ |
 | 63 | TCP | whoispp | whois++ |
-> IANA assigned this well-formed service name as a replacem
 | 63 | UDP | whois++ | whois++ |
 | 63 | UDP | whoispp | whois++ |
-> IANA assigned this well-formed service name as a replacem
 | 64 | TCP | covia | Communications Integrator (CI) |
 | 64 | UDP | covia | Communications Integrator (CI) |
 | 65 | TCP | tacacs-ds | TACACS-Database Service |
 | 65 | UDP | tacacs-ds | TACACS-Database Service |
 | 66 | TCP | sql*net | Oracle SQL*NET |
 | 66 | TCP | sql-net | Oracle SQL*NET |
-> IANA assigned this well-formed service name as a r
 | 66 | UDP | sql*net | Oracle SQL*NET |
 | 66 | UDP | sql-net | Oracle SQL*NET |
-> IANA assigned this well-formed service name as a r
 | 67 | TCP | bootps | Bootstrap Protocol Server |
 | 67 | UDP | bootps | Bootstrap Protocol Server |
 | 68 | TCP | bootpc | Bootstrap Protocol Client |
@@ -314,10 +310,8 @@
 | 171 | TCP | multiplex | Network Innovations Multiplex |
 | 171 | UDP | multiplex | Network Innovations Multiplex |
 | 172 | TCP | cl-1 | Network Innovations CL/1 |
-> IANA assigned this well-formed service n
 | 172 | TCP | cl/1 | Network Innovations CL/1 |
 | 172 | UDP | cl-1 | Network Innovations CL/1 |
-> IANA assigned this well-formed service n
 | 172 | UDP | cl/1 | Network Innovations CL/1 |
 | 173 | TCP | xyplex-mux | Xyplex |
 | 173 | UDP | xyplex-mux | Xyplex |
@@ -395,16 +389,12 @@
 | 209 | TCP | qmtp | The Quick Mail Transfer Protocol |
 | 209 | UDP | qmtp | The Quick Mail Transfer Protocol |
 | 210 | TCP | z39-50 | ANSI Z39.50 |
-> IANA assigned this well-formed service name as a repl
 | 210 | TCP | z39.50 | ANSI Z39.50 |
 | 210 | UDP | z39-50 | ANSI Z39.50 |
-> IANA assigned this well-formed service name as a repl
 | 210 | UDP | z39.50 | ANSI Z39.50 |
 | 211 | TCP | 914c-g | Texas Instruments 914C/G Terminal |
-> IANA assigned this well-formed 
 | 211 | TCP | 914c/g | Texas Instruments 914C/G Terminal |
 | 211 | UDP | 914c-g | Texas Instruments 914C/G Terminal |
-> IANA assigned this well-formed 
 | 211 | UDP | 914c/g | Texas Instruments 914C/G Terminal |
 | 212 | TCP | anet | ATEXSSTR |
 | 212 | UDP | anet | ATEXSSTR |
@@ -443,10 +433,8 @@
 | 246 | TCP | dsp3270 | Display Systems Protocol |
 | 246 | UDP | dsp3270 | Display Systems Protocol |
 | 247 | TCP | subntbcst-tftp | SUBNTBCST_TFTP |
-> IANA assigned this well-formed service name as a r
 | 247 | TCP | subntbcst_tftp | SUBNTBCST_TFTP |
 | 247 | UDP | subntbcst-tftp | SUBNTBCST_TFTP |
-> IANA assigned this well-formed service name as a r
 | 247 | UDP | subntbcst_tftp | SUBNTBCST_TFTP |
 | 248 | TCP | bhfhs | bhfhs |
 | 248 | UDP | bhfhs | bhfhs |
@@ -569,10 +557,8 @@
 | 362 | TCP | srssend | SRS Send |
 | 362 | UDP | srssend | SRS Send |
 | 363 | TCP | rsvp-tunnel | RSVP Tunnel |
-> IANA assigned this well-formed service name as a repl
 | 363 | TCP | rsvp_tunnel | RSVP Tunnel |
 | 363 | UDP | rsvp-tunnel | RSVP Tunnel |
-> IANA assigned this well-formed service name as a repl
 | 363 | UDP | rsvp_tunnel | RSVP Tunnel |
 | 364 | TCP | aurora-cmgr | Aurora CMGR |
 | 364 | UDP | aurora-cmgr | Aurora CMGR |
@@ -703,16 +689,12 @@
 | 427 | TCP | svrloc | Server Location |
 | 427 | UDP | svrloc | Server Location |
 | 428 | TCP | ocs-cmu | OCS_CMU |
-> IANA assigned this well-formed service name as a replacem
 | 428 | TCP | ocs_cmu | OCS_CMU |
 | 428 | UDP | ocs-cmu | OCS_CMU |
-> IANA assigned this well-formed service name as a replacem
 | 428 | UDP | ocs_cmu | OCS_CMU |
 | 429 | TCP | ocs-amu | OCS_AMU |
-> IANA assigned this well-formed service name as a replacem
 | 429 | TCP | ocs_amu | OCS_AMU |
 | 429 | UDP | ocs-amu | OCS_AMU |
-> IANA assigned this well-formed service name as a replacem
 | 429 | UDP | ocs_amu | OCS_AMU |
 | 430 | TCP | utmpsd | UTMPSD |
 | 430 | UDP | utmpsd | UTMPSD |
@@ -739,10 +721,8 @@
 | 441 | TCP | decvms-sysmgt | decvms-sysmgt |
 | 441 | UDP | decvms-sysmgt | decvms-sysmgt |
 | 442 | TCP | cvc-hostd | cvc_hostd |
-> IANA assigned this well-formed service name as a replac
 | 442 | TCP | cvc_hostd | cvc_hostd |
 | 442 | UDP | cvc-hostd | cvc_hostd |
-> IANA assigned this well-formed service name as a replac
 | 442 | UDP | cvc_hostd | cvc_hostd |
 | 443 | SCTP | https | HTTPS |
 | 443 | TCP | https | http protocol over TLS/SSL |
@@ -1109,10 +1089,8 @@
 | 624 | TCP | cryptoadmin | Crypto Admin |
 | 624 | UDP | cryptoadmin | Crypto Admin |
 | 625 | TCP | dec-dlm | DEC DLM |
-> IANA assigned this well-formed service name as a replacem
 | 625 | TCP | dec_dlm | DEC DLM |
 | 625 | UDP | dec-dlm | DEC DLM |
-> IANA assigned this well-formed service name as a replacem
 | 625 | UDP | dec_dlm | DEC DLM |
 | 626 | TCP | asia | ASIA |
 | 626 | UDP | asia | ASIA |
@@ -1397,10 +1375,8 @@
 | 886 | TCP | iclcnet-locate | ICL coNETion locate server |
 | 886 | UDP | iclcnet-locate | ICL coNETion locate server |
 | 887 | TCP | iclcnet-svinfo | ICL coNETion server info |
-> IANA assigned this well-formed service n
 | 887 | TCP | iclcnet_svinfo | ICL coNETion server info |
 | 887 | UDP | iclcnet-svinfo | ICL coNETion server info |
-> IANA assigned this well-formed service n
 | 887 | UDP | iclcnet_svinfo | ICL coNETion server info |
 | 888 | TCP | accessbuilder | AccessBuilder |
 | 888 | TCP | cddbp | CD Database Protocol |
@@ -1531,16 +1507,12 @@
 | 1066 | TCP | fpo-fns | FPO-FNS |
 | 1066 | UDP | fpo-fns | FPO-FNS |
 | 1067 | TCP | instl-boots | Installation Bootstrap Proto. Serv. |
-> IANA assigned this well-forme
 | 1067 | TCP | instl_boots | Installation Bootstrap Proto. Serv. |
 | 1067 | UDP | instl-boots | Installation Bootstrap Proto. Serv. |
-> IANA assigned this well-forme
 | 1067 | UDP | instl_boots | Installation Bootstrap Proto. Serv. |
 | 1068 | TCP | instl-bootc | Installation Bootstrap Proto. Cli. |
-> IANA assigned this well-formed
 | 1068 | TCP | instl_bootc | Installation Bootstrap Proto. Cli. |
 | 1068 | UDP | instl-bootc | Installation Bootstrap Proto. Cli. |
-> IANA assigned this well-formed
 | 1068 | UDP | instl_bootc | Installation Bootstrap Proto. Cli. |
 | 1069 | TCP | cognex-insight | COGNEX-INSIGHT |
 | 1069 | UDP | cognex-insight | COGNEX-INSIGHT |
@@ -1680,10 +1652,8 @@
 | 1137 | TCP | trim | TRIM Workgroup Service |
 | 1137 | UDP | trim | TRIM Workgroup Service |
 | 1138 | TCP | encrypted-admin | encrypted admin requests |
-> IANA assigned this well-formed service n
 | 1138 | TCP | encrypted_admin | encrypted admin requests |
 | 1138 | UDP | encrypted-admin | encrypted admin requests |
-> IANA assigned this well-formed service n
 | 1138 | UDP | encrypted_admin | encrypted admin requests |
 | 1139 | TCP | evm | Enterprise Virtual Manager |
 | 1139 | UDP | evm | Enterprise Virtual Manager |
@@ -2033,10 +2003,8 @@
 | 1312 | TCP | sti-envision | STI Envision |
 | 1312 | UDP | sti-envision | STI Envision |
 | 1313 | TCP | bmc-patroldb | BMC_PATROLDB |
-> IANA assigned this well-formed service name as a rep
 | 1313 | TCP | bmc_patroldb | BMC_PATROLDB |
 | 1313 | UDP | bmc-patroldb | BMC_PATROLDB |
-> IANA assigned this well-formed service name as a rep
 | 1313 | UDP | bmc_patroldb | BMC_PATROLDB |
 | 1314 | TCP | pdps | Photoscript Distributed Printing System |
 | 1314 | UDP | pdps | Photoscript Distributed Printing System |
@@ -2175,20 +2143,16 @@
 | 1381 | TCP | apple-licman | Apple Network License Manager |
 | 1381 | UDP | apple-licman | Apple Network License Manager |
 | 1382 | TCP | udt-os | udt_os |
-> IANA assigned this well-formed service name as a replaceme
 | 1382 | TCP | udt_os | udt_os |
 | 1382 | UDP | udt-os | udt_os |
-> IANA assigned this well-formed service name as a replaceme
 | 1382 | UDP | udt_os | udt_os |
 | 1383 | TCP | gwha | GW Hannaway Network License Manager |
 | 1383 | UDP | gwha | GW Hannaway Network License Manager |
 | 1384 | TCP | os-licman | Objective Solutions License Manager |
 | 1384 | UDP | os-licman | Objective Solutions License Manager |
 | 1385 | TCP | atex-elmd | Atex Publishing License Manager |
-> IANA assigned this well-formed se
 | 1385 | TCP | atex_elmd | Atex Publishing License Manager |
 | 1385 | UDP | atex-elmd | Atex Publishing License Manager |
-> IANA assigned this well-formed se
 | 1385 | UDP | atex_elmd | Atex Publishing License Manager |
 | 1386 | TCP | checksum | CheckSum License Manager |
 | 1386 | UDP | checksum | CheckSum License Manager |
@@ -2251,10 +2215,8 @@
 | 1415 | TCP | dbstar | DBStar |
 | 1415 | UDP | dbstar | DBStar |
 | 1416 | TCP | novell-lu6-2 | Novell LU6.2 |
-> IANA assigned this well-formed service name as a rep
 | 1416 | TCP | novell-lu6.2 | Novell LU6.2 |
 | 1416 | UDP | novell-lu6-2 | Novell LU6.2 |
-> IANA assigned this well-formed service name as a rep
 | 1416 | UDP | novell-lu6.2 | Novell LU6.2 |
 | 1417 | TCP | timbuktu-srv1 | Timbuktu Service 1 Port |
 | 1417 | UDP | timbuktu-srv1 | Timbuktu Service 1 Port |
@@ -2331,10 +2293,8 @@
 | 1453 | TCP | genie-lm | Genie License Manager |
 | 1453 | UDP | genie-lm | Genie License Manager |
 | 1454 | TCP | interhdl-elmd | interHDL License Manager |
-> IANA assigned this well-formed service n
 | 1454 | TCP | interhdl_elmd | interHDL License Manager |
 | 1454 | UDP | interhdl-elmd | interHDL License Manager |
-> IANA assigned this well-formed service n
 | 1454 | UDP | interhdl_elmd | interHDL License Manager |
 | 1455 | TCP | esl-lm | ESL License Manager |
 | 1455 | UDP | esl-lm | ESL License Manager |
@@ -2349,20 +2309,16 @@
 | 1460 | TCP | proshare2 | Proshare Notebook Application |
 | 1460 | UDP | proshare2 | Proshare Notebook Application |
 | 1461 | TCP | ibm-wrless-lan | IBM Wireless LAN |
-> IANA assigned this well-formed service name as a
 | 1461 | TCP | ibm_wrless_lan | IBM Wireless LAN |
 | 1461 | UDP | ibm-wrless-lan | IBM Wireless LAN |
-> IANA assigned this well-formed service name as a
 | 1461 | UDP | ibm_wrless_lan | IBM Wireless LAN |
 | 1462 | TCP | world-lm | World License Manager |
 | 1462 | UDP | world-lm | World License Manager |
 | 1463 | TCP | nucleus | Nucleus |
 | 1463 | UDP | nucleus | Nucleus |
 | 1464 | TCP | msl-lmd | MSL License Manager |
-> IANA assigned this well-formed service name a
 | 1464 | TCP | msl_lmd | MSL License Manager |
 | 1464 | UDP | msl-lmd | MSL License Manager |
-> IANA assigned this well-formed service name a
 | 1464 | UDP | msl_lmd | MSL License Manager |
 | 1465 | TCP | pipes | Pipes Platform |
 | 1465 | UDP | pipes | Pipes Platform |
@@ -2407,10 +2363,8 @@
 | 1485 | TCP | lansource | LANSource |
 | 1485 | UDP | lansource | LANSource |
 | 1486 | TCP | nms-topo-serv | nms_topo_serv |
-> IANA assigned this well-formed service name as a re
 | 1486 | TCP | nms_topo_serv | nms_topo_serv |
 | 1486 | UDP | nms-topo-serv | nms_topo_serv |
-> IANA assigned this well-formed service name as a re
 | 1486 | UDP | nms_topo_serv | nms_topo_serv |
 | 1487 | TCP | localinfosrvr | LocalInfoSrvr |
 | 1487 | UDP | localinfosrvr | LocalInfoSrvr |
@@ -2423,10 +2377,8 @@
 | 1492 | TCP | stone-design-1 | stone-design-1 |
 | 1492 | UDP | stone-design-1 | stone-design-1 |
 | 1493 | TCP | netmap-lm | netmap_lm |
-> IANA assigned this well-formed service name as a replac
 | 1493 | TCP | netmap_lm | netmap_lm |
 | 1493 | UDP | netmap-lm | netmap_lm |
-> IANA assigned this well-formed service name as a replac
 | 1493 | UDP | netmap_lm | netmap_lm |
 | 1494 | TCP | ica | ica |
 | 1494 | UDP | ica | ica |
@@ -2553,10 +2505,8 @@
 | 1555 | TCP | livelan | livelan |
 | 1555 | UDP | livelan | livelan |
 | 1556 | TCP | veritas-pbx | VERITAS Private Branch Exchange |
-> IANA assigned this well-formed se
 | 1556 | TCP | veritas_pbx | VERITAS Private Branch Exchange |
 | 1556 | UDP | veritas-pbx | VERITAS Private Branch Exchange |
-> IANA assigned this well-formed se
 | 1556 | UDP | veritas_pbx | VERITAS Private Branch Exchange |
 | 1557 | TCP | arbortext-lm | ArborText License Manager |
 | 1557 | UDP | arbortext-lm | ArborText License Manager |
@@ -2619,10 +2569,8 @@
 | 1586 | TCP | ibm-abtact | ibm-abtact |
 | 1586 | UDP | ibm-abtact | ibm-abtact |
 | 1587 | TCP | pra-elmd | pra_elmd |
-> IANA assigned this well-formed service name as a replace
 | 1587 | TCP | pra_elmd | pra_elmd |
 | 1587 | UDP | pra-elmd | pra_elmd |
-> IANA assigned this well-formed service name as a replace
 | 1587 | UDP | pra_elmd | pra_elmd |
 | 1588 | TCP | triquest-lm | triquest-lm |
 | 1588 | UDP | triquest-lm | triquest-lm |
@@ -2751,10 +2699,8 @@
 | 1650 | TCP | nkd | nkdn |
 | 1650 | UDP | nkd | nkd |
 | 1651 | TCP | shiva-confsrvr | shiva_confsrvr |
-> IANA assigned this well-formed service name as a r
 | 1651 | TCP | shiva_confsrvr | shiva_confsrvr |
 | 1651 | UDP | shiva-confsrvr | shiva_confsrvr |
-> IANA assigned this well-formed service name as a r
 | 1651 | UDP | shiva_confsrvr | shiva_confsrvr |
 | 1652 | TCP | xnmp | xnmp |
 | 1652 | UDP | xnmp | xnmp |
@@ -3893,10 +3839,8 @@
 | 2221 | TCP | rockwell-csp1 | Rockwell CSP1 |
 | 2221 | UDP | rockwell-csp1 | Rockwell CSP1 |
 | 2222 | TCP | EtherNet-IP-1 | EtherNet/IP I/O |
-> IANA assigned this well-formed service name as a 
 | 2222 | TCP | EtherNet/IP-1 | EtherNet/IP I/O |
 | 2222 | UDP | EtherNet-IP-1 | EtherNet/IP I/O |
-> IANA assigned this well-formed service name as a 
 | 2222 | UDP | EtherNet/IP-1 | EtherNet/IP I/O |
 | 2223 | TCP | rockwell-csp2 | Rockwell CSP2 |
 | 2223 | UDP | rockwell-csp2 | Rockwell CSP2 |
@@ -4131,10 +4075,8 @@
 | 2339 | TCP | 3com-webview | 3Com WebView |
 | 2339 | UDP | 3com-webview | 3Com WebView |
 | 2340 | TCP | wrs-registry | WRS Registry |
-> IANA assigned this well-formed service name as a rep
 | 2340 | TCP | wrs_registry | WRS Registry |
 | 2340 | UDP | wrs-registry | WRS Registry |
-> IANA assigned this well-formed service name as a rep
 | 2340 | UDP | wrs_registry | WRS Registry |
 | 2341 | TCP | xiostatus | XIO Status |
 | 2341 | UDP | xiostatus | XIO Status |
@@ -4147,28 +4089,20 @@
 | 2345 | TCP | dbm | dbm |
 | 2345 | UDP | dbm | dbm |
 | 2346 | TCP | redstorm-join | Game Connection Port |
-> IANA assigned this well-formed service name 
 | 2346 | TCP | redstorm_join | Game Connection Port |
 | 2346 | UDP | redstorm-join | Game Connection Port |
-> IANA assigned this well-formed service name 
 | 2346 | UDP | redstorm_join | Game Connection Port |
 | 2347 | TCP | redstorm-find | Game Announcement and Location |
-> IANA assigned this well-formed ser
 | 2347 | TCP | redstorm_find | Game Announcement and Location |
 | 2347 | UDP | redstorm-find | Game Announcement and Location |
-> IANA assigned this well-formed ser
 | 2347 | UDP | redstorm_find | Game Announcement and Location |
 | 2348 | TCP | redstorm-info | Information to query for game status |
-> IANA assigned this well-form
 | 2348 | TCP | redstorm_info | Information to query for game status |
 | 2348 | UDP | redstorm-info | Information to query for game status |
-> IANA assigned this well-form
 | 2348 | UDP | redstorm_info | Information to query for game status |
 | 2349 | TCP | redstorm-diag | Diagnostics Port |
-> IANA assigned this well-formed service name as a
 | 2349 | TCP | redstorm_diag | Diagnostics Port |
 | 2349 | UDP | redstorm-diag | Diagnostics Port |
-> IANA assigned this well-formed service name as a
 | 2349 | UDP | redstorm_diag | Diagnostics Port |
 | 2350 | TCP | psbserver | Pharos Booking Server |
 | 2350 | UDP | psbserver | Pharos Booking Server |
@@ -4248,10 +4182,8 @@
 | 2394 | TCP | ms-olap2 | MS OLAP 2 |
 | 2394 | UDP | ms-olap2 | MS OLAP 2 |
 | 2395 | TCP | lan900-remote | LAN900 Remote |
-> IANA assigned this well-formed service name as a re
 | 2395 | TCP | lan900_remote | LAN900 Remote |
 | 2395 | UDP | lan900-remote | LAN900 Remote |
-> IANA assigned this well-formed service name as a re
 | 2395 | UDP | lan900_remote | LAN900 Remote |
 | 2396 | TCP | wusage | Wusage |
 | 2396 | UDP | wusage | Wusage |
@@ -4351,10 +4283,8 @@
 | 2445 | TCP | dtn1 | DTN1 |
 | 2445 | UDP | dtn1 | DTN1 |
 | 2446 | TCP | bues-service | bues_service |
-> IANA assigned this well-formed service name as a rep
 | 2446 | TCP | bues_service | bues_service |
 | 2446 | UDP | bues-service | bues_service |
-> IANA assigned this well-formed service name as a rep
 | 2446 | UDP | bues_service | bues_service |
 | 2447 | TCP | ovwdb | OpenView NNM daemon |
 | 2447 | UDP | ovwdb | OpenView NNM daemon |
@@ -4519,10 +4449,8 @@
 | 2527 | TCP | iqserver | IQ Server |
 | 2527 | UDP | iqserver | IQ Server |
 | 2528 | TCP | ncr-ccl | NCR CCL |
-> IANA assigned this well-formed service name as a replacem
 | 2528 | TCP | ncr_ccl | NCR CCL |
 | 2528 | UDP | ncr-ccl | NCR CCL |
-> IANA assigned this well-formed service name as a replacem
 | 2528 | UDP | ncr_ccl | NCR CCL |
 | 2529 | TCP | utsftp | UTS FTP |
 | 2529 | UDP | utsftp | UTS FTP |
@@ -4747,10 +4675,8 @@
 | 2639 | TCP | aminet | AMInet |
 | 2639 | UDP | aminet | AMInet |
 | 2640 | TCP | sai-sentlm | Sabbagh Associates Licence Manager |
-> IANA assigned this well-formed
 | 2640 | TCP | sai_sentlm | Sabbagh Associates Licence Manager |
 | 2640 | UDP | sai-sentlm | Sabbagh Associates Licence Manager |
-> IANA assigned this well-formed
 | 2640 | UDP | sai_sentlm | Sabbagh Associates Licence Manager |
 | 2641 | TCP | hdl-srv | HDL Server |
 | 2641 | UDP | hdl-srv | HDL Server |
@@ -4779,10 +4705,8 @@
 | 2653 | TCP | sonus | Sonus |
 | 2653 | UDP | sonus | Sonus |
 | 2654 | TCP | corel-vncadmin | Corel VNC Admin |
-> IANA assigned this well-formed service name as a 
 | 2654 | TCP | corel_vncadmin | Corel VNC Admin |
 | 2654 | UDP | corel-vncadmin | Corel VNC Admin |
-> IANA assigned this well-formed service name as a 
 | 2654 | UDP | corel_vncadmin | Corel VNC Admin |
 | 2655 | TCP | unglue | UNIX Nt Glue |
 | 2655 | UDP | unglue | UNIX Nt Glue |
@@ -5297,16 +5221,12 @@
 | 2915 | TCP | tksocket | TK Socket |
 | 2915 | UDP | tksocket | TK Socket |
 | 2916 | TCP | elvin-server | Elvin Server |
-> IANA assigned this well-formed service name as a rep
 | 2916 | TCP | elvin_server | Elvin Server |
 | 2916 | UDP | elvin-server | Elvin Server |
-> IANA assigned this well-formed service name as a rep
 | 2916 | UDP | elvin_server | Elvin Server |
 | 2917 | TCP | elvin-client | Elvin Client |
-> IANA assigned this well-formed service name as a rep
 | 2917 | TCP | elvin_client | Elvin Client |
 | 2917 | UDP | elvin-client | Elvin Client |
-> IANA assigned this well-formed service name as a rep
 | 2917 | UDP | elvin_client | Elvin Client |
 | 2918 | TCP | kastenchasepad | Kasten Chase Pad |
 | 2918 | UDP | kastenchasepad | Kasten Chase Pad |
@@ -5504,36 +5424,26 @@
 | 3013 | TCP | gilatskysurfer | Gilat Sky Surfer |
 | 3013 | UDP | gilatskysurfer | Gilat Sky Surfer |
 | 3014 | TCP | broker-service | Broker Service |
-> IANA assigned this well-formed service name as a r
 | 3014 | TCP | broker_service | Broker Service |
 | 3014 | UDP | broker-service | Broker Service |
-> IANA assigned this well-formed service name as a r
 | 3014 | UDP | broker_service | Broker Service |
 | 3015 | TCP | nati-dstp | NATI DSTP |
 | 3015 | UDP | nati-dstp | NATI DSTP |
 | 3016 | TCP | notify-srvr | Notify Server |
-> IANA assigned this well-formed service name as a re
 | 3016 | TCP | notify_srvr | Notify Server |
 | 3016 | UDP | notify-srvr | Notify Server |
-> IANA assigned this well-formed service name as a re
 | 3016 | UDP | notify_srvr | Notify Server |
 | 3017 | TCP | event-listener | Event Listener |
-> IANA assigned this well-formed service name as a r
 | 3017 | TCP | event_listener | Event Listener |
 | 3017 | UDP | event-listener | Event Listener |
-> IANA assigned this well-formed service name as a r
 | 3017 | UDP | event_listener | Event Listener |
 | 3018 | TCP | srvc-registry | Service Registry |
-> IANA assigned this well-formed service name as a
 | 3018 | TCP | srvc_registry | Service Registry |
 | 3018 | UDP | srvc-registry | Service Registry |
-> IANA assigned this well-formed service name as a
 | 3018 | UDP | srvc_registry | Service Registry |
 | 3019 | TCP | resource-mgr | Resource Manager |
-> IANA assigned this well-formed service name as a
 | 3019 | TCP | resource_mgr | Resource Manager |
 | 3019 | UDP | resource-mgr | Resource Manager |
-> IANA assigned this well-formed service name as a
 | 3019 | UDP | resource_mgr | Resource Manager |
 | 3020 | TCP | cifs | CIFS |
 | 3020 | UDP | cifs | CIFS |
@@ -5544,32 +5454,24 @@
 | 3023 | TCP | magicnotes | magicnotes |
 | 3023 | UDP | magicnotes | magicnotes |
 | 3024 | TCP | nds-sso | NDS_SSO |
-> IANA assigned this well-formed service name as a replacem
 | 3024 | TCP | nds_sso | NDS_SSO |
 | 3024 | UDP | nds-sso | NDS_SSO |
-> IANA assigned this well-formed service name as a replacem
 | 3024 | UDP | nds_sso | NDS_SSO |
 | 3025 | TCP | arepa-raft | Arepa Raft |
 | 3025 | UDP | arepa-raft | Arepa Raft |
 | 3026 | TCP | agri-gateway | AGRI Gateway |
 | 3026 | UDP | agri-gateway | AGRI Gateway |
 | 3027 | TCP | LiebDevMgmt-C | LiebDevMgmt_C |
-> IANA assigned this well-formed service name as a re
 | 3027 | TCP | LiebDevMgmt_C | LiebDevMgmt_C |
 | 3027 | UDP | LiebDevMgmt-C | LiebDevMgmt_C |
-> IANA assigned this well-formed service name as a re
 | 3027 | UDP | LiebDevMgmt_C | LiebDevMgmt_C |
 | 3028 | TCP | LiebDevMgmt-DM | LiebDevMgmt_DM |
-> IANA assigned this well-formed service name as a r
 | 3028 | TCP | LiebDevMgmt_DM | LiebDevMgmt_DM |
 | 3028 | UDP | LiebDevMgmt-DM | LiebDevMgmt_DM |
-> IANA assigned this well-formed service name as a r
 | 3028 | UDP | LiebDevMgmt_DM | LiebDevMgmt_DM |
 | 3029 | TCP | LiebDevMgmt-A | LiebDevMgmt_A |
-> IANA assigned this well-formed service name as a re
 | 3029 | TCP | LiebDevMgmt_A | LiebDevMgmt_A |
 | 3029 | UDP | LiebDevMgmt-A | LiebDevMgmt_A |
-> IANA assigned this well-formed service name as a re
 | 3029 | UDP | LiebDevMgmt_A | LiebDevMgmt_A |
 | 3030 | TCP | arepa-cas | Arepa Cas |
 | 3030 | UDP | arepa-cas | Arepa Cas |
@@ -5612,10 +5514,8 @@
 | 3049 | TCP | nsws | NSWS |
 | 3049 | UDP | nsws | NSWS |
 | 3050 | TCP | gds-db | gds_db |
-> IANA assigned this well-formed service name as a replaceme
 | 3050 | TCP | gds_db | gds_db |
 | 3050 | UDP | gds-db | gds_db |
-> IANA assigned this well-formed service name as a replaceme
 | 3050 | UDP | gds_db | gds_db |
 | 3051 | TCP | galaxy-server | Galaxy Server |
 | 3051 | UDP | galaxy-server | Galaxy Server |
@@ -5676,10 +5576,8 @@
 | 3079 | TCP | lv-frontpanel | LV Front Panel |
 | 3079 | UDP | lv-frontpanel | LV Front Panel |
 | 3080 | TCP | stm-pproc | stm_pproc |
-> IANA assigned this well-formed service name as a replac
 | 3080 | TCP | stm_pproc | stm_pproc |
 | 3080 | UDP | stm-pproc | stm_pproc |
-> IANA assigned this well-formed service name as a replac
 | 3080 | UDP | stm_pproc | stm_pproc |
 | 3081 | TCP | tl1-lv | TL1-LV |
 | 3081 | UDP | tl1-lv | TL1-LV |
@@ -6284,10 +6182,8 @@
 | 3395 | TCP | dyna-lm | Dyna License Manager (Elam) |
 | 3395 | UDP | dyna-lm | Dyna License Manager (Elam) |
 | 3396 | TCP | printer-agent | Printer Agent |
-> IANA assigned this well-formed service name as a re
 | 3396 | TCP | printer_agent | Printer Agent |
 | 3396 | UDP | printer-agent | Printer Agent |
-> IANA assigned this well-formed service name as a re
 | 3396 | UDP | printer_agent | Printer Agent |
 | 3397 | TCP | cloanto-lm | Cloanto License Manager |
 | 3397 | UDP | cloanto-lm | Cloanto License Manager |
@@ -7240,10 +7136,8 @@
 | 3875 | TCP | pnbscada | PNBSCADA |
 | 3875 | UDP | pnbscada | PNBSCADA |
 | 3876 | TCP | dl-agent | DirectoryLockdown Agent |
-> IANA assigned this well-formed service na
 | 3876 | TCP | dl_agent | DirectoryLockdown Agent |
 | 3876 | UDP | dl-agent | DirectoryLockdown Agent |
-> IANA assigned this well-formed service na
 | 3876 | UDP | dl_agent | DirectoryLockdown Agent |
 | 3877 | TCP | xmpcr-interface | XMPCR Interface Port |
 | 3877 | UDP | xmpcr-interface | XMPCR Interface Port |
@@ -7292,10 +7186,8 @@
 | 3899 | TCP | itv-control | ITV Port |
 | 3899 | UDP | itv-control | ITV Port |
 | 3900 | TCP | udt-os | Unidata UDT OS |
-> IANA assigned this well-formed service name as a r
 | 3900 | TCP | udt_os | Unidata UDT OS |
 | 3900 | UDP | udt-os | Unidata UDT OS |
-> IANA assigned this well-formed service name as a r
 | 3900 | UDP | udt_os | Unidata UDT OS |
 | 3901 | TCP | nimsh | NIM Service Handler |
 | 3901 | UDP | nimsh | NIM Service Handler |
@@ -7372,10 +7264,8 @@
 | 3937 | TCP | dvbservdsc | DVB Service Discovery |
 | 3937 | UDP | dvbservdsc | DVB Service Discovery |
 | 3938 | TCP | dbcontrol-agent | Oracle dbControl Agent po |
-> IANA assigned this well-formed service 
 | 3938 | TCP | dbcontrol_agent | Oracle dbControl Agent po |
 | 3938 | UDP | dbcontrol-agent | Oracel dbControl Agent po |
-> IANA assigned this well-formed service 
 | 3938 | UDP | dbcontrol_agent | Oracel dbControl Agent po |
 | 3939 | TCP | aamp | Anti-virus Application Management Port |
 | 3939 | UDP | aamp | Anti-virus Application Management Port |
@@ -7472,10 +7362,8 @@
 | 3985 | TCP | mapper-mapethd | MAPPER TCP/IP server |
 | 3985 | UDP | mapper-mapethd | MAPPER TCP/IP server |
 | 3986 | TCP | mapper-ws-ethd | MAPPER workstation server |
-> IANA assigned this well-formed service 
 | 3986 | TCP | mapper-ws_ethd | MAPPER workstation server |
 | 3986 | UDP | mapper-ws-ethd | MAPPER workstation server |
-> IANA assigned this well-formed service 
 | 3986 | UDP | mapper-ws_ethd | MAPPER workstation server |
 | 3987 | TCP | centerline | Centerline |
 | 3987 | UDP | centerline | Centerline |
@@ -7620,10 +7508,8 @@
 | 4059 | TCP | dlms-cosem | DLMS/COSEM |
 | 4059 | UDP | dlms-cosem | DLMS/COSEM |
 | 4060 | TCP | dsmeter-iatc | DSMETER Inter-Agent Transfer Channel |
-> IANA assigned this well-form
 | 4060 | TCP | dsmeter_iatc | DSMETER Inter-Agent Transfer Channel |
 | 4060 | UDP | dsmeter-iatc | DSMETER Inter-Agent Transfer Channel |
-> IANA assigned this well-form
 | 4060 | UDP | dsmeter_iatc | DSMETER Inter-Agent Transfer Channel |
 | 4061 | TCP | ice-location | Ice Location Service (TCP) |
 | 4061 | UDP | ice-location | Ice Location Service (TCP) |
@@ -7634,10 +7520,8 @@
 | 4064 | TCP | ice-srouter | Ice Firewall Traversal Service (SSL) |
 | 4064 | UDP | ice-srouter | Ice Firewall Traversal Service (SSL) |
 | 4065 | TCP | avanti-cdp | Avanti Common Data |
-> IANA assigned this well-formed service name as
 | 4065 | TCP | avanti_cdp | Avanti Common Data |
 | 4065 | UDP | avanti-cdp | Avanti Common Data |
-> IANA assigned this well-formed service name as
 | 4065 | UDP | avanti_cdp | Avanti Common Data |
 | 4066 | TCP | pmas | Performance Measurement and Analysis |
 | 4066 | UDP | pmas | Performance Measurement and Analysis |
@@ -7763,16 +7647,12 @@
 | 4131 | TCP | stars | Global Maintech Stars |
 | 4131 | UDP | stars | Global Maintech Stars |
 | 4132 | TCP | nuts-dem | NUTS Daemon |
-> IANA assigned this well-formed service name as a repl
 | 4132 | TCP | nuts_dem | NUTS Daemon |
 | 4132 | UDP | nuts-dem | NUTS Daemon |
-> IANA assigned this well-formed service name as a repl
 | 4132 | UDP | nuts_dem | NUTS Daemon |
 | 4133 | TCP | nuts-bootp | NUTS Bootp Server |
-> IANA assigned this well-formed service name as 
 | 4133 | TCP | nuts_bootp | NUTS Bootp Server |
 | 4133 | UDP | nuts-bootp | NUTS Bootp Server |
-> IANA assigned this well-formed service name as 
 | 4133 | UDP | nuts_bootp | NUTS Bootp Server |
 | 4134 | TCP | nifty-hmi | NIFTY-Serve HMI protocol |
 | 4134 | UDP | nifty-hmi | NIFTY-Serve HMI protocol |
@@ -7787,10 +7667,8 @@
 | 4139 | TCP | thrtx | Imperfect Networks Server |
 | 4139 | UDP | thrtx | Imperfect Networks Server |
 | 4140 | TCP | cedros-fds | Cedros Fraud Detection System |
-> IANA assigned this well-formed serv
 | 4140 | TCP | cedros_fds | Cedros Fraud Detection System |
 | 4140 | UDP | cedros-fds | Cedros Fraud Detection System |
-> IANA assigned this well-formed serv
 | 4140 | UDP | cedros_fds | Cedros Fraud Detection System |
 | 4141 | TCP | oirtgsvc | Workflow Server |
 | 4141 | UDP | oirtgsvc | Workflow Server |
@@ -7811,16 +7689,12 @@
 | 4150 | TCP | PowerAlert-nsa | PowerAlert Network Shutdown Agent |
 | 4150 | UDP | PowerAlert-nsa | PowerAlert Network Shutdown Agent |
 | 4151 | TCP | menandmice-noh | Men & Mice Remote Control |
-> IANA assigned this well-formed service 
 | 4151 | TCP | menandmice_noh | Men & Mice Remote Control |
 | 4151 | UDP | menandmice-noh | Men & Mice Remote Control |
-> IANA assigned this well-formed service 
 | 4151 | UDP | menandmice_noh | Men & Mice Remote Control |
 | 4152 | TCP | idig-mux | iDigTech Multiplex |
-> IANA assigned this well-formed service name as
 | 4152 | TCP | idig_mux | iDigTech Multiplex |
 | 4152 | UDP | idig-mux | iDigTech Multiplex |
-> IANA assigned this well-formed service name as
 | 4152 | UDP | idig_mux | iDigTech Multiplex |
 | 4153 | TCP | mbl-battd | MBL Remote Battery Monitoring |
 | 4153 | UDP | mbl-battd | MBL Remote Battery Monitoring |
@@ -7880,16 +7754,13 @@
 | 4183 | TCP | gmmp | General Metaverse Messaging Protocol |
 | 4183 | UDP | gmmp | General Metaverse Messaging Protocol |
 | 4184 | TCP | universe-suite | UNIVERSE SUITE MESSAGE SERVICE |
-> IANA assigned this well-formed ser
 | 4184 | TCP | universe_suite | UNIVERSE SUITE MESSAGE SERVICE |
 | 4184 | UDP | universe-suite | UNIVERSE SUITE MESSAGE SERVICE |
-> IANA assigned this well-formed ser
 | 4184 | UDP | universe_suite | UNIVERSE SUITE MESSAGE SERVICE |
 | 4185 | TCP | wcpp | Woven Control Plane Protocol |
 | 4185 | UDP | wcpp | Woven Control Plane Protocol |
 | 4186 | TCP | boxbackupstore | Box Backup Store Service |
 | 4187 | TCP | csc-proxy | Cascade Proxy |
-> IANA assigned this well-formed service name as a re
 | 4187 | TCP | csc_proxy | Cascade Proxy |
 | 4188 | TCP | vatata | Vatata Peer to Peer Protocol |
 | 4188 | UDP | vatata | Vatata Peer to Peer Protocol |
@@ -7993,7 +7864,6 @@
 | 4359 | TCP | omabcastltkm | OMA BCAST Long-Term Key Messages |
 | 4359 | UDP | omabcastltkm | OMA BCAST Long-Term Key Messages |
 | 4360 | TCP | matrix-vnet | Matrix VNet Communication Protocol |
-> IANA assigned this well-formed
 | 4360 | TCP | matrix_vnet | Matrix VNet Communication Protocol |
 | 4361 | UDP | nacnl | NavCom Discovery and Control Port |
 | 4362 | UDP | afore-vdp-disc | AFORE vNode Discovery protocol |
@@ -8002,10 +7872,8 @@
 | 4369 | TCP | epmd | Erlang Port Mapper Daemon |
 | 4369 | UDP | epmd | Erlang Port Mapper Daemon |
 | 4370 | TCP | elpro-tunnel | ELPRO V2 Protocol Tunnel |
-> IANA assigned this well-formed service n
 | 4370 | TCP | elpro_tunnel | ELPRO V2 Protocol Tunnel |
 | 4370 | UDP | elpro-tunnel | ELPRO V2 Protocol Tunnel |
-> IANA assigned this well-formed service n
 | 4370 | UDP | elpro_tunnel | ELPRO V2 Protocol Tunnel |
 | 4371 | TCP | l2c-control | LAN2CAN Control |
 | 4371 | UDP | l2c-disc | LAN2CAN Discovery |
@@ -8346,10 +8214,8 @@
 | 4845 | TCP | wcr-remlib | WordCruncher Remote Library Service |
 | 4845 | UDP | wcr-remlib | WordCruncher Remote Library Service |
 | 4846 | TCP | contamac-icm | Contamac ICM Service |
-> IANA assigned this well-formed service name 
 | 4846 | TCP | contamac_icm | Contamac ICM Service |
 | 4846 | UDP | contamac-icm | Contamac ICM Service |
-> IANA assigned this well-formed service name 
 | 4846 | UDP | contamac_icm | Contamac ICM Service |
 | 4847 | TCP | wfc | Web Fresh Communication |
 | 4847 | UDP | wfc | Web Fresh Communication |
@@ -8392,7 +8258,6 @@
 | 4900 | TCP | hfcs | HFSQL Client/Server Database Engine |
 | 4900 | UDP | hfcs | HFSQL Client/Server Database Engine |
 | 4901 | TCP | flr-agent | FileLocator Remote Search Agent |
-> IANA assigned this well-formed se
 | 4901 | TCP | flr_agent | FileLocator Remote Search Agent |
 | 4902 | TCP | magiccontrol | magicCONROL RF and Data Interface |
 | 4912 | TCP | lutap | Technicolor LUT Access Protocol |
@@ -8606,10 +8471,8 @@
 | 5137 | TCP | ctsd | MyCTS server port |
 | 5137 | UDP | ctsd | MyCTS server port |
 | 5145 | TCP | rmonitor-secure | RMONITOR SECURE |
-> IANA assigned this well-formed service name as a 
 | 5145 | TCP | rmonitor_secure | RMONITOR SECURE |
 | 5145 | UDP | rmonitor-secure | RMONITOR SECURE |
-> IANA assigned this well-formed service name as a 
 | 5145 | UDP | rmonitor_secure | RMONITOR SECURE |
 | 5146 | TCP | social-alarm | Social Alarm Service |
 | 5150 | TCP | atmp | Ascend Tunnel Management Protocol |
@@ -8635,10 +8498,8 @@
 | 5164 | TCP | vpa | Virtual Protocol Adapter |
 | 5164 | UDP | vpa-disc | Virtual Protocol Adapter Discovery |
 | 5165 | TCP | ife-icorp | ife_1corp |
-> IANA assigned this well-formed service name as a replac
 | 5165 | TCP | ife_icorp | ife_1corp |
 | 5165 | UDP | ife-icorp | ife_1corp |
-> IANA assigned this well-formed service name as a replac
 | 5165 | UDP | ife_icorp | ife_1corp |
 | 5166 | TCP | winpcs | WinPCS Service Connection |
 | 5166 | UDP | winpcs | WinPCS Service Connection |
@@ -9292,10 +9153,8 @@
 | 6300 | TCP | bmc-grx | BMC GRX |
 | 6300 | UDP | bmc-grx | BMC GRX |
 | 6301 | TCP | bmc-ctd-ldap | BMC CONTROL-D LDAP SERVER |
-> IANA assigned this well-formed service 
 | 6301 | TCP | bmc_ctd_ldap | BMC CONTROL-D LDAP SERVER |
 | 6301 | UDP | bmc-ctd-ldap | BMC CONTROL-D LDAP SERVER |
-> IANA assigned this well-formed service 
 | 6301 | UDP | bmc_ctd_ldap | BMC CONTROL-D LDAP SERVER |
 | 6306 | TCP | ufmp | Unified Fabric Management Protocol |
 | 6306 | UDP | ufmp | Unified Fabric Management Protocol |
@@ -9361,16 +9220,12 @@
 | 6443 | TCP | sun-sr-https | Service Registry Default HTTPS Domain |
 | 6443 | UDP | sun-sr-https | Service Registry Default HTTPS Domain |
 | 6444 | TCP | sge-qmaster | Grid Engine Qmaster Service |
-> IANA assigned this well-formed servic
 | 6444 | TCP | sge_qmaster | Grid Engine Qmaster Service |
 | 6444 | UDP | sge-qmaster | Grid Engine Qmaster Service |
-> IANA assigned this well-formed servic
 | 6444 | UDP | sge_qmaster | Grid Engine Qmaster Service |
 | 6445 | TCP | sge-execd | Grid Engine Execution Service |
-> IANA assigned this well-formed serv
 | 6445 | TCP | sge_execd | Grid Engine Execution Service |
 | 6445 | UDP | sge-execd | Grid Engine Execution Service |
-> IANA assigned this well-formed serv
 | 6445 | UDP | sge_execd | Grid Engine Execution Service |
 | 6446 | TCP | mysql-proxy | MySQL Proxy |
 | 6446 | UDP | mysql-proxy | MySQL Proxy |
@@ -9403,46 +9258,32 @@
 | 6500 | TCP | boks | BoKS Master |
 | 6500 | UDP | boks | BoKS Master |
 | 6501 | TCP | boks-servc | BoKS Servc |
-> IANA assigned this well-formed service name as a repla
 | 6501 | TCP | boks_servc | BoKS Servc |
 | 6501 | UDP | boks-servc | BoKS Servc |
-> IANA assigned this well-formed service name as a repla
 | 6501 | UDP | boks_servc | BoKS Servc |
 | 6502 | TCP | boks-servm | BoKS Servm |
-> IANA assigned this well-formed service name as a repla
 | 6502 | TCP | boks_servm | BoKS Servm |
 | 6502 | UDP | boks-servm | BoKS Servm |
-> IANA assigned this well-formed service name as a repla
 | 6502 | UDP | boks_servm | BoKS Servm |
 | 6503 | TCP | boks-clntd | BoKS Clntd |
-> IANA assigned this well-formed service name as a repla
 | 6503 | TCP | boks_clntd | BoKS Clntd |
 | 6503 | UDP | boks-clntd | BoKS Clntd |
-> IANA assigned this well-formed service name as a repla
 | 6503 | UDP | boks_clntd | BoKS Clntd |
 | 6505 | TCP | badm-priv | BoKS Admin Private Port |
-> IANA assigned this well-formed service na
 | 6505 | TCP | badm_priv | BoKS Admin Private Port |
 | 6505 | UDP | badm-priv | BoKS Admin Private Port |
-> IANA assigned this well-formed service na
 | 6505 | UDP | badm_priv | BoKS Admin Private Port |
 | 6506 | TCP | badm-pub | BoKS Admin Public Port |
-> IANA assigned this well-formed service nam
 | 6506 | TCP | badm_pub | BoKS Admin Public Port |
 | 6506 | UDP | badm-pub | BoKS Admin Public Port |
-> IANA assigned this well-formed service nam
 | 6506 | UDP | badm_pub | BoKS Admin Public Port |
 | 6507 | TCP | bdir-priv | BoKS Dir Server, Private Port |
-> IANA assigned this well-formed serv
 | 6507 | TCP | bdir_priv | BoKS Dir Server, Private Port |
 | 6507 | UDP | bdir-priv | BoKS Dir Server, Private Port |
-> IANA assigned this well-formed serv
 | 6507 | UDP | bdir_priv | BoKS Dir Server, Private Port |
 | 6508 | TCP | bdir-pub | BoKS Dir Server, Public Port |
-> IANA assigned this well-formed servi
 | 6508 | TCP | bdir_pub | BoKS Dir Server, Public Port |
 | 6508 | UDP | bdir-pub | BoKS Dir Server, Public Port |
-> IANA assigned this well-formed servi
 | 6508 | UDP | bdir_pub | BoKS Dir Server, Public Port |
 | 6509 | TCP | mgcs-mfp-port | MGCS-MFP Port |
 | 6509 | UDP | mgcs-mfp-port | MGCS-MFP Port |
@@ -9474,7 +9315,6 @@
 | 6566 | TCP | sane-port | SANE Control Port |
 | 6566 | UDP | sane-port | SANE Control Port |
 | 6568 | TCP | canit-store | CanIt Storage Manager |
-> IANA assigned this well-formed service name
 | 6568 | TCP | canit_store | CanIt Storage Manager |
 | 6568 | UDP | rp-reputation | Roaring Penguin IP Address Reputation Collection |
 | 6579 | TCP | affiliate | Affiliate |
@@ -9522,16 +9362,12 @@
 | 6671 | TCP | p4p-portal | P4P Portal Service |
 | 6671 | UDP | p4p-portal | P4P Portal Service |
 | 6672 | TCP | vision-server | vision_server |
-> IANA assigned this well-formed service name as a re
 | 6672 | TCP | vision_server | vision_server |
 | 6672 | UDP | vision-server | vision_server |
-> IANA assigned this well-formed service name as a re
 | 6672 | UDP | vision_server | vision_server |
 | 6673 | TCP | vision-elmd | vision_elmd |
-> IANA assigned this well-formed service name as a repl
 | 6673 | TCP | vision_elmd | vision_elmd |
 | 6673 | UDP | vision-elmd | vision_elmd |
-> IANA assigned this well-formed service name as a repl
 | 6673 | UDP | vision_elmd | vision_elmd |
 | 6678 | TCP | vfbp | Viscount Freedom Bridge Protocol |
 | 6678 | UDP | vfbp-disc | Viscount Freedom Bridge Discovery |
@@ -10521,10 +10357,8 @@
 | 9612 | UDP | streamcomm-ds | StreamComm User Directory |
 | 9614 | TCP | iadt-tls | iADT Protocol over TLS |
 | 9616 | TCP | erunbook-agent | eRunbook Agent |
-> IANA assigned this well-formed service name as a r
 | 9616 | TCP | erunbook_agent | eRunbook Agent |
 | 9617 | TCP | erunbook-server | eRunbook Server |
-> IANA assigned this well-formed service name as a 
 | 9617 | TCP | erunbook_server | eRunbook Server |
 | 9618 | TCP | condor | Condor Collector Service |
 | 9618 | UDP | condor | Condor Collector Service |
@@ -10629,10 +10463,8 @@
 | 10002 | TCP | documentum | EMC-Documentum Content Server Product |
 | 10002 | UDP | documentum | EMC-Documentum Content Server Product |
 | 10003 | TCP | documentum-s | EMC-Documentum Content Server Product |
-> IANA assigned this well-for
 | 10003 | TCP | documentum_s | EMC-Documentum Content Server Product |
 | 10003 | UDP | documentum-s | EMC-Documentum Content Server Product |
-> IANA assigned this well-for
 | 10003 | UDP | documentum_s | EMC-Documentum Content Server Product |
 | 10004 | TCP | emcrmirccd | EMC Replication Manager Client |
 | 10005 | TCP | emcrmird | EMC Replication Manager Server |
@@ -11080,10 +10912,8 @@
 | 20014 | TCP | opendeploy | OpenDeploy Listener |
 | 20014 | UDP | opendeploy | OpenDeploy Listener |
 | 20034 | TCP | nburn-id | NetBurner ID Port |
-> IANA assigned this well-formed service name as 
 | 20034 | TCP | nburn_id | NetBurner ID Port |
 | 20034 | UDP | nburn-id | NetBurner ID Port |
-> IANA assigned this well-formed service name as 
 | 20034 | UDP | nburn_id | NetBurner ID Port |
 | 20046 | TCP | tmophl7mts | TMOP HL7 Message Transfer Service |
 | 20046 | UDP | tmophl7mts | TMOP HL7 Message Transfer Service |
@@ -11206,10 +11036,8 @@
 | 24321 | UDP | ild | Isolv Local Directory |
 | 24322 | UDP | hid | Transport of Human Interface Device data streams |
 | 24386 | TCP | intel-rci | Intel RCI |
-> IANA assigned this well-formed service name as a replac
 | 24386 | TCP | intel_rci | Intel RCI |
 | 24386 | UDP | intel-rci | Intel RCI |
-> IANA assigned this well-formed service name as a replac
 | 24386 | UDP | intel_rci | Intel RCI |
 | 24465 | TCP | tonidods | Tonido Domain Server |
 | 24465 | UDP | tonidods | Tonido Domain Server |
@@ -11330,21 +11158,16 @@
 | 31620 | TCP | lm-mon | lm mon |
 | 31620 | UDP | lm-mon | lm mon |
 | 31685 | TCP | dsx-monitor | DS Expert Monitor |
-> IANA assigned this well-formed service name as 
 | 31685 | TCP | dsx_monitor | DS Expert Monitor |
 | 31765 | TCP | gamesmith-port | GameSmith Port |
 | 31765 | UDP | gamesmith-port | GameSmith Port |
 | 31948 | TCP | iceedcp-tx | Embedded Device Configuration Protocol TX |
-> IANA assigned this well
 | 31948 | TCP | iceedcp_tx | Embedded Device Configuration Protocol TX |
 | 31948 | UDP | iceedcp-tx | Embedded Device Configuration Protocol TX |
-> IANA assigned this well
 | 31948 | UDP | iceedcp_tx | Embedded Device Configuration Protocol TX |
 | 31949 | TCP | iceedcp-rx | Embedded Device Configuration Protocol RX |
-> IANA assigned this well
 | 31949 | TCP | iceedcp_rx | Embedded Device Configuration Protocol RX |
 | 31949 | UDP | iceedcp-rx | Embedded Device Configuration Protocol RX |
-> IANA assigned this well
 | 31949 | UDP | iceedcp_rx | Embedded Device Configuration Protocol RX |
 | 32034 | TCP | iracinghelper | iRacing helper service |
 | 32034 | UDP | iracinghelper | iRacing helper service |
@@ -11447,7 +11270,6 @@
 | 38203 | TCP | agpolicy | AppGate Policy Server |
 | 38203 | UDP | agpolicy | AppGate Policy Server |
 | 38800 | TCP | sruth | Sruth is a service for the distribution of routinely- |
->       gener
 | 38865 | TCP | secrmmsafecopya | Security approval process for use of the secRMM SafeCopy program |
 | 39681 | TCP | turbonote-1 | TurboNote Default Port |
 | 39681 | UDP | turbonote-1 | TurboNote Default Port |
@@ -11505,10 +11327,8 @@
 | 44553 | UDP | rbr-debug | REALbasic Remote Debug |
 | 44600 | UDP | asihpi | AudioScience HPI |
 | 44818 | TCP | EtherNet-IP-2 | EtherNet/IP messaging |
-> IANA assigned this well-formed service name
 | 44818 | TCP | EtherNet/IP-2 | EtherNet/IP messaging |
 | 44818 | UDP | EtherNet-IP-2 | EtherNet/IP messaging |
-> IANA assigned this well-formed service name
 | 44818 | UDP | EtherNet/IP-2 | EtherNet/IP messaging |
 | 44900 | TCP | m3da | M3DA is used for efficient machine-to-machine communications |
 | 44900 | UDP | m3da-disc | M3DA Discovery is used for efficient machine-to-machine communica |
