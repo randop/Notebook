@@ -33,5 +33,3 @@ MMA events are sanctioned by state athletic commissions in the US and equivalent
 - **Key Features**: Octagon branding, strict weigh-ins (with same-day checks in some cases), fighter ranking system, and medical/safety standards enforced via athletic commissions. The promotion emphasizes entertainment alongside competition, with walkouts, entrances, and highlight-reel finishes.
 
 UFC operates under the oversight of local athletic commissions for each event location. It does not create the sport's rules but adheres to and influences them through its scale.
-
-This covers the factual structure, rules, and operational distinctions between MMA as the sport and UFC as its leading promoter.
