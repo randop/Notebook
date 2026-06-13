@@ -19,6 +19,8 @@
 
 MMA events are sanctioned by state athletic commissions in the US and equivalent bodies elsewhere. Fighter safety protocols include medical suspensions, pre/post-fight exams, and anti-doping testing (e.g., USADA or similar).
 
+## UFC
+
 **UFC (Ultimate Fighting Championship)** is a professional MMA promotion company, not the sport itself. It organizes, markets, and broadcasts events featuring MMA bouts under the Unified Rules (with minor variations).
 
 ### Structure of UFC
