@@ -3507,4 +3507,52 @@ source:         RIPE # Filtered
 % This query was served by the RIPE Database Query Service version 1.120 (DEXTER)
 
 
+Whois IP 80.94.95.242
+Updated 4 days ago
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '80.94.95.0 - 80.94.95.255'
+
+% Abuse contact for '80.94.95.0 - 80.94.95.255' is 'email@bunea.eu'
+
+inetnum:        80.94.95.0 - 80.94.95.255
+netname:        UNMANAGED-LTD
+country:        GB
+admin-c:        PB23091-RIPE
+tech-c:         PB23091-RIPE
+status:         ASSIGNED PA
+mnt-by:         UNMANAGED
+mnt-by:         ro-btel2-1-mnt
+created:        2024-01-26T20:28:48Z
+last-modified:  2024-04-18T22:23:55Z
+source:         RIPE
+
+person:         UNMANAGED LTD NOC - NETWORK OPERATIONS CENTER
+address:        Business First Northampton, Brindley Close, Rushden, England, NN10 6EN
+phone:          +44 (0) 333 305 0020
+nic-hdl:        PB23091-RIPE
+mnt-by:         UNMANAGED
+created:        2020-07-26T21:11:55Z
+last-modified:  2024-09-12T20:00:36Z
+source:         RIPE # Filtered
+
+% Information related to '80.94.95.0/24AS204428'
+
+route:          80.94.95.0/24
+origin:         AS204428
+mnt-by:         UNMANAGED
+mnt-by:         ro-btel2-1-mnt
+created:        2022-11-15T14:14:48Z
+last-modified:  2022-11-15T14:14:48Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.122.1 (BUSA)
+
 
