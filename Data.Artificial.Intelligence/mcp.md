@@ -79,3 +79,61 @@ This setup enables the AI system to dynamically access up-to-date external conte
 MCP clients are typically integrated directly into host applications as libraries or built-in modules. SDKs and reference implementations exist in languages such as Python and TypeScript to facilitate building or extending client support. The protocol emphasizes modularity, with each client dedicated to one server for isolation and scalability.
 
 The MCP client does not itself expose capabilities; it consumes those published by servers and facilitates their integration into the host's AI workflows.
+
+---
+
+**MCP (Model Context Protocol)** is an open standard (introduced by Anthropic in late 2024) that lets LLM-powered applications (hosts/clients) connect to external tools, data sources, and services in a standardized way. It acts like a "USB-C for AI agents."
+
+Securing MCP is critical because it expands the attack surface: AI agents can dynamically discover and invoke tools, often with access to sensitive data or actions. Poorly secured MCP servers can lead to prompt injection, unauthorized access, token leakage, tool poisoning, privilege escalation, and more.
+
+### Key Security Principles for MCP
+Follow these foundational practices:
+
+- **Least Privilege**: Grant each MCP server and tool the *minimum* permissions needed. Use scoped credentials (e.g., narrow OAuth scopes like `mail.readonly`). Avoid sharing tokens across servers.
+- **User Consent & Control**: Always require explicit user approval for data access or actions. Provide clear UIs for reviewing authorizations.
+- **Sandboxing & Isolation**: Run servers in containers, restrict filesystem/network access, and prefer `stdio` transport for local servers.
+- **Treat Tool Schemas & Descriptions as Untrusted**: Inspect/pin them before use. They are potential injection surfaces.
+
+### Core Security Controls for MCP Servers
+1. **Authentication & Authorization (OAuth 2.1 Recommended)**  
+   - Use **OAuth 2.1** with features like Protected Resource Metadata (`.well-known/oauth-protected-resource`), dynamic client registration, and resource indicators to bind tokens to specific servers.
+   - Respond to unauthorized requests with HTTP 401 and proper `WWW-Authenticate` headers.
+   - For enterprise: Add **mutual TLS (mTLS)** for strong client authentication.
+   - Example (Python with uvicorn for mTLS):
+     ```python
+     import ssl
+     import uvicorn
+     ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+     ssl_context.load_cert_chain("server.crt", "server.key")
+     ssl_context.load_verify_locations("client_ca.crt")
+     ssl_context.verify_mode = ssl.CERT_REQUIRED
+     uvicorn.run("app:app", ssl_context=ssl_context)
+     ```
+
+2. **Credential Protection**  
+   - Never hard-code or expose tokens in prompts/environment variables. Use secret managers with short-lived, scoped credentials.
+   - Implement token validation, revocation, and rotation.
+
+3. **Transport Security**  
+   - Always use HTTPS. For remote servers, enforce mTLS where possible.
+
+4. **Prompt Injection & Tool Safety Defenses**  
+   - Sanitize/guard user inputs and external content.
+   - Use structured data extraction instead of raw outputs.
+   - Add policy enforcement layers (e.g., parameter scoping, human-in-the-loop for high-risk actions).
+
+5. **Monitoring, Logging & Auditing**  
+   - Log every tool invocation with context.
+   - Implement runtime guardrails, rate limiting, and anomaly detection.
+
+### Additional Best Practices & Tools
+- **OWASP MCP Security Cheat Sheet**: Excellent reference for detailed dos/don’ts.
+- Consider libraries/packages like `mcp-secure` (adds cryptographic passports, message signing, replay protection) or secure proxies/control planes (e.g., from n8n, Speakeasy, 42Crunch, Clerk).
+- For production remote servers: Follow GitHub’s guide on scalable, secure MCP setups.
+- Sandbox high-risk tools and verify manifests/signatures.
+
+### Common Pitfalls to Avoid
+- Over-privileged credentials or broad scopes.
+- Exposing servers without auth (default-open ports).
+- Dynamic registration without verification.
+- Passing raw tokens or sensitive data in LLM contexts.
