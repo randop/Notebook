@@ -1,6 +1,15 @@
 # Write large file on a USB flash drive using Linux
 > This is slower but will directly put data on the disk and will allow instant eject.
 
+```shell
+dd if=/home/randop/Downloads/artix-base-s6-20260402-x86_64.iso \
+	of=/dev/sdc \
+	bs=16k \
+	oflag=direct \
+	conv=sync \
+	status=progress
+```
+
 ```bash
 dd if=/home/randop/Downloads/OpenMandriva-Lx-x86-64-rolling-3702.img \
 	of=/dev/sdc \
