@@ -3555,4 +3555,69 @@ source:         RIPE
 
 % This query was served by the RIPE Database Query Service version 1.122.1 (BUSA)
 
+Whois IP 46.62.73.122
+Updated 1 second ago
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '46.62.64.0 - 46.62.127.255'
+
+% Abuse contact for '46.62.64.0 - 46.62.127.255' is 'email@kursktelecom.ru'
+
+inetnum:        46.62.64.0 - 46.62.127.255
+netname:        KURSKTELECOM3-NET
+descr:          Kursktelecom, ISP in Kursk city
+country:        RU
+admin-c:        KTK46-RIPE
+tech-c:         KTK46-RIPE
+status:         ASSIGNED PA
+mnt-by:         KURSKTELECOM-MNT
+created:        2011-11-01T11:11:45Z
+last-modified:  2014-06-23T08:21:09Z
+source:         RIPE # Filtered
+
+role:           KURSKTELECOM NOC
+address:        Limited liability company Kursktelecom
+address:        K MARKSA 70B
+address:        305021
+address:        KURSK
+address:        Russian Federation
+phone:          +7 4712 394088
+phone:          +7 4712 394090
+fax-no:         +7 4712 394089
+remarks:        Emails of contact
+remarks:        -----------------------------------------------------------
+remarks:        Routing and peering issues: email@kursktelecom.ru
+remarks:        SPAM issues: email@kursktelecom.ru
+remarks:        Network security issues: email@kursktelecom.ru
+remarks:        Mail issues: email@kursktelecom.ru
+remarks:        General information: email@kursktelecom.ru
+remarks:        -----------------------------------------------------------
+admin-c:        DN1308-RIPE
+tech-c:         DN1308-RIPE
+tech-c:         IK1308-RIPE
+nic-hdl:        KTK46-RIPE
+mnt-by:         KURSKTELECOM-MNT
+created:        2007-07-29T00:42:46Z
+last-modified:  2016-11-23T11:44:27Z
+source:         RIPE # Filtered
+abuse-mailbox:  email@kursktelecom.ru
+
+% Information related to '46.62.64.0/18AS42277'
+
+route:          46.62.64.0/18
+descr:          Kursktelecom
+origin:         AS42277
+mnt-by:         KURSKTELECOM-MNT
+created:        2013-04-22T05:07:43Z
+last-modified:  2014-06-23T08:21:24Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.123 (BUSA)
 
