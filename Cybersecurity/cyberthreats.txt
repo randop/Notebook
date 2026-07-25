@@ -3621,3 +3621,95 @@ source:         RIPE
 
 % This query was served by the RIPE Database Query Service version 1.123 (BUSA)
 
+Whois IP 142.112.48.163
+Updated 1 second ago
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2026, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       142.112.0.0 - 142.127.255.255
+CIDR:           142.112.0.0/12
+NetName:        BELL-ICNEN21
+NetHandle:      NET-142-112-0-0-1
+Parent:         NET142 (NET-142-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       
+Organization:   Bell Canada (LINX)
+RegDate:        1993-04-05
+Updated:        2013-05-27
+Ref:            https://rdap.arin.net/registry/ip/142.112.0.0
+
+
+
+OrgName:        Bell Canada
+OrgId:          LINX
+Address:        160 Elgin Street
+City:           Ottawa
+StateProv:      ON
+PostalCode:     K1G-3J4
+Country:        CA
+RegDate:        1990-03-09
+Updated:        2026-04-09
+Ref:            https://rdap.arin.net/registry/entity/LINX
+
+
+OrgAbuseHandle: ABAI1-ARIN
+OrgAbuseName:   Abuse Business abuse issues
+OrgAbusePhone:  +1-877-877-2426 
+OrgAbuseEmail:  email@bell.ca
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABAI1-ARIN
+
+OrgRoutingHandle: IRRAD-ARIN
+OrgRoutingName:   IRR Admin
+OrgRoutingPhone:  +1-888-788-2355 
+OrgRoutingEmail:  email@bell.ca
+OrgRoutingRef:    https://rdap.arin.net/registry/entity/IRRAD-ARIN
+
+OrgTechHandle: SOCEV-ARIN
+OrgTechName:   SOC-Events
+OrgTechPhone:  +1-888-570-8125 
+OrgTechEmail:  email@bell.ca
+OrgTechRef:    https://rdap.arin.net/registry/entity/SOCEV-ARIN
+
+OrgTechHandle: DHANJ1-ARIN
+OrgTechName:   Dhanji, Shaffiq 
+OrgTechPhone:  +1-416-353-9801 
+OrgTechEmail:  email@bell.ca
+OrgTechRef:    https://rdap.arin.net/registry/entity/DHANJ1-ARIN
+
+OrgAbuseHandle: ABUSE1127-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-877-877-2426 
+OrgAbuseEmail:  email@bell.ca
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE1127-ARIN
+
+OrgTechHandle: ANR1-ARIN
+OrgTechName:   Automated Network Resolution
+OrgTechPhone:  +1-877-877-2426 
+OrgTechEmail:  email@bell.ca
+OrgTechRef:    https://rdap.arin.net/registry/entity/ANR1-ARIN
+
+RTechHandle: SYSAD1-ARIN
+RTechName:   NOC technical Support
+RTechPhone:  +1-800-565-0567 
+RTechEmail:  email@bell.ca
+RTechRef:    https://rdap.arin.net/registry/entity/SYSAD1-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2026, American Registry for Internet Numbers, Ltd.
+#
+
