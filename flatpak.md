@@ -175,3 +175,58 @@ flatpak list --user | grep ungoogled_chromium
   Look for `socket=pulseaudio` under the sockets section.
 - Test audio (e.g., play a video in the browser or simulate a Google Voice call). If issues persist, ensure your sound server is running (`systemctl --user status pipewire-pulse` or `pulseaudio --check`).
 
+---
+
+## Repair
+**1. Admin privilege repair**
+
+```sh
+sudo flatpak repair
+```
+
+For a user install instead of system:
+
+```sh
+flatpak repair --user
+```
+
+This re-verifies and re-downloads any objects that fail checksum. Can take a while on a large repo.
+
+**2. If repair doesn't clear it, run ostree fsck directly and delete bad objects**
+
+```sh
+sudo ostree fsck --repo=/var/lib/flatpak/repo --delete
+```
+
+`--delete` removes corrupted objects instead of just reporting them, so the next pull re-fetches them cleanly.
+
+For a user-level repo:
+
+```sh
+ostree fsck --repo=$HOME/.local/share/flatpak/repo --delete
+```
+
+**3. Clear stale pull cache**
+
+Corruption often comes from an interrupted pull leaving partial data in the tmp cache:
+
+```sh
+sudo rm -rf /var/tmp/flatpak-cache-*
+sudo rm -rf /var/lib/flatpak/repo/tmp/*
+```
+
+**4. Retry the actual operation**
+
+```sh
+sudo flatpak update
+# or
+sudo flatpak install <remote> <app-id>
+```
+
+**5. If a specific ref is still broken (nuclear option for that app only)**
+
+```sh
+sudo flatpak uninstall --delete-data <app-id>
+sudo flatpak install <remote> <app-id>
+```
+
