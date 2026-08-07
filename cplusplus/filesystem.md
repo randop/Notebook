@@ -14,3 +14,57 @@ No CVE exists for `std::filesystem::canonical` itself — it's a standard librar
 
 **The safe pattern** (from Snyk's writeup): canonicalize your base path once, canonicalize `base / user_input` with `weakly_canonical`, then check the result is still prefixed by the canonical base — using `std::filesystem::path` comparison, not naive string `starts_with` (which fails on things like `/base` vs `/base-evil`).
 
+---
+
+Component-wise containment check + post-open verification. String prefix checks are broken (`/base` matches `/base-evil`); this uses path iterators.
+
+```cpp
+#include <filesystem>
+#include <system_error>
+#include <optional>
+
+namespace fs = std::filesystem;
+
+// Returns resolved path if it's safely contained within base_dir, else nullopt.
+// base_dir must already exist.
+std::optional<fs::path> safe_resolve(const fs::path& base_dir,
+                                      const fs::path& user_input) {
+    std::error_code ec;
+
+    // Reject absolute paths outright — user_input should always be relative.
+    if (user_input.is_absolute()) {
+        return std::nullopt;
+    }
+
+    fs::path base_canonical = fs::canonical(base_dir, ec);
+    if (ec) return std::nullopt; // base itself invalid — fail closed
+
+    fs::path candidate = fs::weakly_canonical(base_canonical / user_input, ec);
+    if (ec) return std::nullopt;
+
+    // Component-wise prefix check, NOT string prefix check.
+    auto base_it  = base_canonical.begin();
+    auto cand_it  = candidate.begin();
+    for (; base_it != base_canonical.end(); ++base_it, ++cand_it) {
+        if (cand_it == candidate.end() || *cand_it != *base_it) {
+            return std::nullopt; // escaped base_dir
+        }
+    }
+
+    return candidate;
+}
+```
+
+**Why each piece matters:**
+
+- `is_absolute()` reject — otherwise `user_input = "/etc/passwd"` bypasses `base_dir` entirely since `path / absolute_path` discards the left side. This is the #1 way people get bitten.
+- `fs::canonical` on `base_dir` (must exist) vs `fs::weakly_canonical` on the joined candidate (may not exist yet, e.g. writing a new Maildir file).
+- Component iteration, not `candidate.string().starts_with(base.string())` — the string version lets `/var/mail` match `/var/mailicious`.
+- Fail closed on any `error_code` — don't let a canonicalization error fall through to "assume safe."
+
+**What this does NOT fix — TOCTOU:**
+
+`weakly_canonical` resolves against the filesystem *at call time*. Between this check and your actual `open()`, an attacker with write access to any intermediate directory in the path can swap a symlink and redirect you outside `base_dir`. For vibemail's Maildir writes, this matters if any path component is attacker-influenced and the process doesn't own every directory in the chain.
+
+Real fix for that is race-free traversal with `openat(2)` + `O_NOFOLLOW` per component (reject if any component is a symlink), or open with `O_NOFOLLOW | O_DIRECTORY` walking one segment at a time, rather than trusting a single resolved path string. 
+
