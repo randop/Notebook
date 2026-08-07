@@ -68,3 +68,153 @@ std::optional<fs::path> safe_resolve(const fs::path& base_dir,
 
 Real fix for that is race-free traversal with `openat(2)` + `O_NOFOLLOW` per component (reject if any component is a symlink), or open with `O_NOFOLLOW | O_DIRECTORY` walking one segment at a time, rather than trusting a single resolved path string. 
 
+---
+
+Race-free path resolution using `openat` + `O_NOFOLLOW` per component. No single resolved-string check can be race-free — the kernel has to refuse the symlink at each step, atomically, as part of the actual open.
+
+```cpp
+// safe_path_open.hpp
+#pragma once
+
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <string>
+#include <string_view>
+#include <vector>
+#include <optional>
+
+class safe_fd {
+public:
+    safe_fd() noexcept : fd_(-1) {}
+    explicit safe_fd(int fd) noexcept : fd_(fd) {}
+    safe_fd(const safe_fd&) = delete;
+    safe_fd& operator=(const safe_fd&) = delete;
+    safe_fd(safe_fd&& other) noexcept : fd_(other.fd_) { other.fd_ = -1; }
+    safe_fd& operator=(safe_fd&& other) noexcept {
+        if (this != &other) { reset(); fd_ = other.fd_; other.fd_ = -1; }
+        return *this;
+    }
+    ~safe_fd() { reset(); }
+
+    int get() const noexcept { return fd_; }
+    int release() noexcept { int f = fd_; fd_ = -1; return f; }
+    void reset(int fd = -1) noexcept {
+        if (fd_ >= 0) ::close(fd_);
+        fd_ = fd;
+    }
+    explicit operator bool() const noexcept { return fd_ >= 0; }
+
+private:
+    int fd_;
+};
+
+// Rejects: absolute paths, "..", ".", empty segments, embedded NUL.
+// Anything not on this allowlist path shape returns nullopt.
+inline std::optional<std::vector<std::string>>
+split_untrusted_relpath(std::string_view input) {
+    if (input.empty() || input.front() == '/') return std::nullopt;
+    if (input.find('\0') != std::string_view::npos) return std::nullopt;
+
+    std::vector<std::string> parts;
+    size_t start = 0;
+    while (start <= input.size()) {
+        size_t slash = input.find('/', start);
+        std::string_view part = (slash == std::string_view::npos)
+            ? input.substr(start)
+            : input.substr(start, slash - start);
+
+        if (part.empty() || part == "." || part == "..") {
+            return std::nullopt;
+        }
+        parts.emplace_back(part);
+
+        if (slash == std::string_view::npos) break;
+        start = slash + 1;
+    }
+    return parts;
+}
+
+// base_fd: already-open, trusted directory fd — opened once at startup
+// from a path YOU control, never from attacker input.
+// untrusted_relpath: the attacker-influenced part (mailbox name, etc).
+// final_flags: e.g. O_RDONLY, or O_WRONLY|O_CREAT|O_EXCL for new mail files.
+//
+// Every intermediate component is opened with O_DIRECTORY|O_NOFOLLOW, so
+// if any path segment is (or becomes) a symlink, the open fails instead
+// of following it. This closes the TOCTOU window that a single
+// canonical()/weakly_canonical() check leaves open, because there is no
+// separate "check" step — the refusal happens inside the same syscall
+// that does the traversal.
+inline safe_fd open_within(int base_fd,
+                            std::string_view untrusted_relpath,
+                            int final_flags,
+                            mode_t create_mode = 0600,
+                            bool allow_leaf_symlink = false) {
+    auto parts = split_untrusted_relpath(untrusted_relpath);
+    if (!parts) return safe_fd{};
+
+    int dup_fd = ::dup(base_fd);
+    if (dup_fd < 0) return safe_fd{};
+    safe_fd cur(dup_fd);
+
+    for (size_t i = 0; i < parts->size(); ++i) {
+        bool is_leaf = (i + 1 == parts->size());
+        const std::string& comp = (*parts)[i];
+
+        int flags = is_leaf
+            ? (final_flags | O_CLOEXEC | (allow_leaf_symlink ? 0 : O_NOFOLLOW))
+            : (O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC | O_RDONLY);
+
+        int next_fd = ::openat(cur.get(), comp.c_str(), flags, create_mode);
+        if (next_fd < 0) return safe_fd{};
+
+        struct stat st{};
+        if (::fstat(next_fd, &st) != 0) {
+            ::close(next_fd);
+            return safe_fd{};
+        }
+        if (!is_leaf && !S_ISDIR(st.st_mode)) {
+            ::close(next_fd);
+            return safe_fd{};
+        }
+        if (is_leaf && !allow_leaf_symlink && S_ISLNK(st.st_mode)) {
+            ::close(next_fd);
+            return safe_fd{};
+        }
+
+        cur.reset(next_fd);
+    }
+
+    return cur;
+}
+```
+
+**Usage for a Maildir-style store:**
+
+```cpp
+int maildir_base = ::open("/var/vibemail/maildir", O_DIRECTORY | O_CLOEXEC);
+// maildir_base opened once, from a trusted config path, never from network input.
+
+safe_fd f = open_within(maildir_base,
+                         user_mailbox + "/new/" + generated_filename,
+                         O_WRONLY | O_CREAT | O_EXCL);
+if (!f) {
+    // reject — either escape attempt, symlink, or legitimate error
+}
+```
+
+**What this guarantees vs. the `canonical`/`weakly_canonical` approach:**
+
+| | string/path check | this |
+|---|---|---|
+| `../../etc/passwd` | blocked (rejected before syscall) | blocked (rejected before syscall) |
+| symlink swapped in *after* the check, *before* the open | **vulnerable** | blocked — no separate check exists to race |
+| symlink swapped mid-traversal (one dir deep is later replaced) | vulnerable | blocked per-component |
+| absolute path in input | must remember to check | rejected by `split_untrusted_relpath` |
+
+**Caveats:**
+- POSIX-only (fine for Artix/Linux; won't compile on Windows).
+- Doesn't defend against hardlink attacks the way symlink defense does — if that matters for your threat model (multi-user box, shared writable dirs), also check `st_nlink == 1` on the leaf before trusting it's not a hardlink alias.
+- If different components can live on different mounts and that matters to you, add a `st_dev` continuity check across the walk.
+
