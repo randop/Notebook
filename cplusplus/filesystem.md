@@ -218,3 +218,216 @@ if (!f) {
 - Doesn't defend against hardlink attacks the way symlink defense does — if that matters for your threat model (multi-user box, shared writable dirs), also check `st_nlink == 1` on the leaf before trusting it's not a hardlink alias.
 - If different components can live on different mounts and that matters to you, add a `st_dev` continuity check across the walk.
 
+---
+
+The strongest practical version: `openat2(RESOLVE_NO_SYMLINKS | RESOLVE_BENEATH)` as the primary path (kernel-atomic, closes the whole class of TOCTOU races in one syscall), falling back to the manual per-component walker for older kernels, plus the additional checks that matter: hardlink aliasing, mount-crossing, resource-exhaustion via pathological input, and setuid/setgid paranoia.
+
+```cpp
+// safe_path_open.hpp
+#pragma once
+
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <sys/syscall.h>
+#include <linux/openat2.h>
+#include <string>
+#include <string_view>
+#include <vector>
+#include <optional>
+#include <cstring>
+
+class safe_fd {
+public:
+    safe_fd() noexcept : fd_(-1) {}
+    explicit safe_fd(int fd) noexcept : fd_(fd) {}
+    safe_fd(const safe_fd&) = delete;
+    safe_fd& operator=(const safe_fd&) = delete;
+    safe_fd(safe_fd&& o) noexcept : fd_(o.fd_) { o.fd_ = -1; }
+    safe_fd& operator=(safe_fd&& o) noexcept {
+        if (this != &o) { reset(); fd_ = o.fd_; o.fd_ = -1; }
+        return *this;
+    }
+    ~safe_fd() { reset(); }
+    int get() const noexcept { return fd_; }
+    int release() noexcept { int f = fd_; fd_ = -1; return f; }
+    void reset(int fd = -1) noexcept { if (fd_ >= 0) ::close(fd_); fd_ = fd; }
+    explicit operator bool() const noexcept { return fd_ >= 0; }
+private:
+    int fd_;
+};
+
+namespace safe_path_detail {
+
+// Resource-exhaustion limits — tune per application. These stop pathological
+// input (thousands of components, absurdly long names) from wasting syscalls
+// or triggering pathname length edge cases in the kernel.
+inline constexpr size_t kMaxComponents   = 32;
+inline constexpr size_t kMaxComponentLen = 255; // matches typical NAME_MAX
+inline constexpr size_t kMaxTotalLen     = 4096;
+
+inline std::optional<std::vector<std::string>>
+split_untrusted_relpath(std::string_view input) {
+    if (input.empty() || input.size() > kMaxTotalLen) return std::nullopt;
+    if (input.front() == '/') return std::nullopt;
+    if (input.find('\0') != std::string_view::npos) return std::nullopt;
+
+    std::vector<std::string> parts;
+    size_t start = 0;
+    while (start <= input.size()) {
+        size_t slash = input.find('/', start);
+        std::string_view part = (slash == std::string_view::npos)
+            ? input.substr(start)
+            : input.substr(start, slash - start);
+
+        if (part.empty() || part == "." || part == "..") return std::nullopt;
+        if (part.size() > kMaxComponentLen) return std::nullopt;
+        // Reject raw control characters — defense against terminal/log
+        // injection if names ever get echoed into logs or shells.
+        for (unsigned char c : part) {
+            if (c < 0x20 || c == 0x7f) return std::nullopt;
+        }
+
+        parts.emplace_back(part);
+        if (parts.size() > kMaxComponents) return std::nullopt;
+
+        if (slash == std::string_view::npos) break;
+        start = slash + 1;
+    }
+    return parts;
+}
+
+// Rejects symlinks, requires single hardlink count (no aliasing), and
+// optionally pins the filesystem (st_dev) so traversal can't cross a
+// mount point onto attacker-controlled or lower-trust storage.
+inline bool leaf_is_acceptable(int fd, bool is_dir_expected,
+                                dev_t expected_dev, bool enforce_dev) {
+    struct stat st{};
+    if (::fstat(fd, &st) != 0) return false;
+    if (S_ISLNK(st.st_mode)) return false;
+    if (is_dir_expected && !S_ISDIR(st.st_mode)) return false;
+    if (!is_dir_expected && st.st_nlink > 1) return false; // hardlink alias
+    if ((st.st_mode & (S_ISUID | S_ISGID)) != 0) return false; // paranoia
+    if (enforce_dev && st.st_dev != expected_dev) return false;
+    return true;
+}
+
+#ifdef __NR_openat2
+inline bool openat2_available() {
+    static const bool avail = [] {
+        struct open_how how{};
+        how.flags = O_RDONLY;
+        long r = ::syscall(__NR_openat2, AT_FDCWD, ".", &how, sizeof(how));
+        if (r >= 0) { ::close((int)r); return true; }
+        return errno != ENOSYS;
+    }();
+    return avail;
+}
+
+inline int do_openat2(int dirfd, const char* path, uint64_t flags,
+                       uint64_t resolve, mode_t mode) {
+    struct open_how how{};
+    how.flags = flags;
+    how.mode = mode;
+    how.resolve = resolve;
+    return (int)::syscall(__NR_openat2, dirfd, path, &how, sizeof(how));
+}
+#endif
+
+} // namespace safe_path_detail
+
+// base_fd: trusted, opened once at startup from a config path — never
+// from attacker input.
+// untrusted_relpath: attacker-influenced component (mailbox/user/filename).
+// final_flags: e.g. O_RDONLY, or O_WRONLY|O_CREAT|O_EXCL for new mail.
+// enforce_single_mount: reject traversal that crosses filesystem boundaries
+// (recommended true for Maildir-style stores under one volume).
+inline safe_fd open_within(int base_fd,
+                            std::string_view untrusted_relpath,
+                            int final_flags,
+                            mode_t create_mode = 0600,
+                            bool enforce_single_mount = true) {
+    using namespace safe_path_detail;
+
+    auto parts = split_untrusted_relpath(untrusted_relpath);
+    if (!parts) return safe_fd{};
+
+    struct stat base_st{};
+    if (::fstat(base_fd, &base_st) != 0) return safe_fd{};
+    dev_t base_dev = base_st.st_dev;
+
+#ifdef __NR_openat2
+    // Fast path: kernel-atomic symlink/traversal refusal. RESOLVE_BENEATH
+    // guarantees the resolved path never leaves base_fd's subtree, and
+    // RESOLVE_NO_SYMLINKS refuses any symlink anywhere in the path — both
+    // enforced inside one syscall, so there is no window between check
+    // and use for an attacker to exploit.
+    if (openat2_available()) {
+        std::string joined;
+        for (size_t i = 0; i < parts->size(); ++i) {
+            if (i) joined += '/';
+            joined += (*parts)[i];
+        }
+        int fd = do_openat2(base_fd, joined.c_str(),
+                             final_flags | O_CLOEXEC,
+                             RESOLVE_BENEATH | RESOLVE_NO_SYMLINKS | RESOLVE_NO_MAGICLINKS,
+                             create_mode);
+        if (fd < 0) return safe_fd{};
+        bool wants_dir = (final_flags & O_DIRECTORY) != 0;
+        if (!leaf_is_acceptable(fd, wants_dir, base_dev, enforce_single_mount)) {
+            ::close(fd);
+            return safe_fd{};
+        }
+        return safe_fd(fd);
+    }
+#endif
+
+    // Fallback: manual per-component walk with O_NOFOLLOW at each step.
+    // Not quite as strong as openat2 (a symlink swapped in the split
+    // second between our openat and fstat of the SAME component is not
+    // racy — O_NOFOLLOW+fstat on the fd it returned is atomic per step —
+    // but sibling components can't be re-verified after the fact).
+    int dup_fd = ::dup(base_fd);
+    if (dup_fd < 0) return safe_fd{};
+    safe_fd cur(dup_fd);
+
+    for (size_t i = 0; i < parts->size(); ++i) {
+        bool is_leaf = (i + 1 == parts->size());
+        const std::string& comp = (*parts)[i];
+
+        int flags = is_leaf
+            ? (final_flags | O_CLOEXEC | O_NOFOLLOW)
+            : (O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC | O_RDONLY);
+
+        int next_fd = ::openat(cur.get(), comp.c_str(), flags, create_mode);
+        if (next_fd < 0) return safe_fd{};
+
+        if (!leaf_is_acceptable(next_fd, !is_leaf, base_dev, enforce_single_mount)) {
+            ::close(next_fd);
+            return safe_fd{};
+        }
+        cur.reset(next_fd);
+    }
+    return cur;
+}
+```
+
+**What this closes vs. what it can't:**
+
+| Attack | Covered |
+|---|---|
+| `../../etc/passwd`, absolute paths | yes — rejected before any syscall |
+| Symlink swapped between check and open (TOCTOU) | yes — `openat2` refusal is inside the atomic resolve; fallback path refuses per-component with no gap |
+| Hardlink aliasing a leaf file to a sensitive target | yes — `st_nlink > 1` rejected on non-dir leaves |
+| Crossing a mount point mid-traversal onto other storage | yes — `st_dev` pinned when `enforce_single_mount=true` |
+| Resource exhaustion via huge/deep paths | yes — component count, length, total length capped |
+| Control-character / log-injection via filenames | yes — rejected in the split step |
+| setuid/setgid leaf abuse | yes — bits rejected defensively |
+
+**What it does not and cannot cover:**
+- Bugs in the kernel's own path resolution (openat2 itself, filesystem drivers).
+- Misuse *after* you get the fd back — e.g. leaking it across a fork to a lower-privilege or attacker-controlled process, or writing attacker-controlled data through it insecurely.
+- Anything upstream of this function: if `untrusted_relpath` was already decoded, normalized, or concatenated unsafely before reaching here, this can't undo that.
+- Non-Linux targets — `openat2` is Linux 5.6+ only (fine for Artix, but no Windows/BSD path here).
+- Physical, side-channel, or supply-chain attacks — out of scope for any single function.
+
