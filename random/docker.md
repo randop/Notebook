@@ -103,3 +103,12 @@ docker run --name elasticsearch -d -p 9200:9200 -p 9300:9300 -e "discovery.type=
 docker run --name sync -d -p 8384:8384 -p 22000:22000 -v /datapool:/var/syncthing syncthing/syncthing:latest
 docker run --name sync -d -p 8384:8384 -p 22000:22000 -v /c/Users/Rax/datapool:/var/syncthing syncthing/syncthing:latest
 ```
+
+
+## DHI (Docker Hardened Images)
+Docker's line of secure-by-default container base images, launched in 2025 as a paid tier and made free/open-source on December 17, 2025, as Docker's response to supply chain attacks, offering the catalog of over 1,000 images previously only available as a premium feature.
+
+- **Ultra-minimal**: Built on Alpine or Debian, with no shell, no package manager, and running as a non-root user by default.
+- **Security-focused**: Claims up to 95% reduction in attack surface and near-zero known CVEs, with SLSA Build Level 3 compliance and signed SBOM attestations.
+- **Naming**: images live under `dhi.io/<name>`, e.g. `dhi.io/mongodb:8-dev` have separate dev-variant images with shell access and root user for building/debugging, distinct from the locked-down runtime images.
+- **Tiers**: Community (free), Select (SLA-backed CVE fixes, FIPS/STIG variants), and Enterprise (unlimited customization + Extended Lifecycle Support).
