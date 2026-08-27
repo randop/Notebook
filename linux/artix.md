@@ -37,3 +37,9 @@ tail -f -n 150 /var/log/<name>/current
 # example:
 tail -f -n 150 /var/log/dhcpcd/current
 ```
+
+### Check service status
+```shell
+# s6-svstat /run/service/<name>
+s6-svstat /run/service/dhcpcd-srv
+```
