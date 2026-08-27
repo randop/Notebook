@@ -4,7 +4,7 @@
 #
 #  scanner.sh
 #
-#  Copyright © 2010 — 2025 Randolph Ledesma
+#  Copyright © 2010 — 2026 Randolph Ledesma
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 # limitations under the License.
 #
 
+# required debian packages:
+# sudo apt install -y --no-install-recommends sane-utils imagemagick
+#
+# or arch packages:
+# sudo pacman -Syy sane imagemagick
+
 set -euo pipefail
 
-cat << EOF
+cat <<EOF
 
 [38;5;111m ███████╗  ██████╗  █████╗  ███╗   ██╗ ███╗   ██╗ ███████╗ ██████╗ [39m
 [38;5;111m ██╔════╝ ██╔════╝ ██╔══██╗ ████╗  ██║ ████╗  ██║ ██╔════╝ ██╔══██╗[39m
@@ -32,7 +38,7 @@ cat << EOF
 
 EOF
 
-echo -e "Image Scannner version 1.0 (2023-12-29 build 5)\nInitializing...\n"
+echo -e "Image Scannner version 1.1 (2026-08-27 build 1)\nInitializing...\n"
 
 echo -e "$(/usr/bin/scanimage -L)\n"
 
@@ -88,13 +94,13 @@ export NOWTS="$(date '+%Y-%m-%dT%H-%M-%S')"
 
 i=0
 
-for i in $(seq -f "%05g" 1 5000)
-do
-  filename="${NOWTS}_${i}.jpg"
-  echo "File: ${filename}"
-  /usr/bin/scanimage -d pixma:04A91912_4B8E1E -p -v --format=jpeg --gamma=auto --mode=auto --resolution=600 -o "${HOME}/Documents/scans/${filename}"
-  read -n 1 -s -r -p "Press any key to continue"
-  echo -e "\n"
+for i in $(seq -f "%05g" 1 5000); do
+    filename="${NOWTS}_${i}.jpg"
+    echo "File: ${filename}"
+    /usr/bin/scanimage -d pixma:04A91912_4B8E1E -p -v --format=jpeg --gamma=auto --mode=auto --resolution=600 -o "${HOME}/Documents/scans/${filename}"
+    convert "${HOME}/Documents/scans/${filename}" -flip "${HOME}/Documents/scans/${filename}"
+    read -n 1 -s -r -p "Press any key to continue"
+    echo -e "\n"
 done
 
 echo "DONE!"
