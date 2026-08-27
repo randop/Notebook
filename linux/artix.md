@@ -25,3 +25,15 @@ s6-rc -u change sshd
 s6-rc -d change sshd
 ```
 
+### Check catch-all service logs
+```shell
+tail -f -n 150 /run/uncaught-logs/current
+```
+
+### Follow a service log
+```shell
+tail -f -n 150 /var/log/<name>/current
+
+# example:
+tail -f -n 150 /var/log/dhcpcd/current
+```
