@@ -9,12 +9,20 @@ wget -qO- https://get.pnpm.io/install.sh | sh -
 
 ## Install the LTS version of Node.js:
 ```sh
-pnpm env use --global lts
+pnpm runtime set node lts -g
 ```
 
 ### Install the latest version of Node.js:
 ```sh
-pnpm env use --global latest
+pnpm runtime set node latest -g
+```
+
+### Install a specific major version:
+```sh
+pnpm runtime set node 22 -g
+
+# Check the active Node version
+node -v
 ```
 
 ## Commands
