@@ -3,18 +3,18 @@
 
 ```bash
 dd if=$HOME/Downloads/omarchy-4.0.4.iso \
-	of=/dev/sdc \
-	bs=120k \
-	oflag=direct \
-	conv=sync \
-	status=progress
+  of=/dev/sdc \
+  bs=120k \
+  oflag=direct \
+  conv=sync \
+  status=progress
 
 dd if=$HOME/Downloads/artix-base-s6-20260402-x86_64.iso \
-	of=/dev/sdc \
-	bs=16k \
-	oflag=direct \
-	conv=sync \
-	status=progress
+  of=/dev/sdc \
+  bs=16k \
+  oflag=direct \
+  conv=sync \
+  status=progress
 
 dd if=archlinux-x86_64.iso \
   of=/dev/sdc \
@@ -24,44 +24,44 @@ dd if=archlinux-x86_64.iso \
   status=progress
 
 dd if=$HOME/Downloads/OpenMandriva-Lx-x86-64-rolling-3702.img \
-	of=/dev/sdc \
-	bs=16k \
-	oflag=direct \
-	conv=sync \
-	status=progress
+  of=/dev/sdc \
+  bs=16k \
+  oflag=direct \
+  conv=sync \
+  status=progress
 
 dd if=rhel-baseos-9.0-x86_64-dvd.iso \
-	of=/run/media/randop/BOOTKIT/rhel-baseos-9.0-x86_64-dvd.iso \
-	oflag=sync \
-	bs=120k \
-	status=progress
+  of=/run/media/randop/BOOTKIT/rhel-baseos-9.0-x86_64-dvd.iso \
+  oflag=sync \
+  bs=120k \
+  status=progress
 
 dd if=OracleLinux-R9-U0-x86_64-dvd.iso \
-	of=/dev/sdb \
-	conv=sync \
-	oflag=sync \
-	bs=16k \
-	status=progress
+  of=/dev/sdb \
+  conv=sync \
+  oflag=sync \
+  bs=16k \
+  status=progress
 
 dd if=Rocky-9.0-x86_64-dvd.iso \
-	of=/run/media/randop/Ventoy/Rocky-9.0-x86_64-dvd.iso \
-	bs=120k \
-	oflag=direct \
-	status=progress
+  of=/run/media/randop/Ventoy/Rocky-9.0-x86_64-dvd.iso \
+  bs=120k \
+  oflag=direct \
+  status=progress
 
 dd if=Rocky-9.0-x86_64-dvd.iso \
-	of=/dev/sda \
-	bs=120k \
-	oflag=direct \
-	conv=sync \
+  of=/dev/sda \
+  bs=120k \
+  oflag=direct \
+  conv=sync \
   status=progress
 
 dd if=debian-live-11.7.0-amd64-kde-nonfree.iso \
-	of=/dev/sda \
-	bs=120k \
-	oflag=direct \
-	conv=sync \
-	status=progress
+  of=/dev/sda \
+  bs=120k \
+  oflag=direct \
+  conv=sync \
+  status=progress
 
 dd if=$HOME/Downloads/OracleLinux-R10-U0-x86_64-dvd.iso \
   of=/dev/sdc \
