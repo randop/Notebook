@@ -13,4 +13,5 @@ git config --global alias.brdate 'branch --sort=-committerdate'
 git config --global alias.mgm 'merge --no-ff --no-commit'
 git config --global alias.dfc 'diff-tree --no-commit-id --name-only -r'
 git config --global alias.au '!git ls-files -v | grep "^[[:lower:]]"'
+git config --global alias.lg 'log --pretty=format:"%H%n%B%n---"'
 ```
