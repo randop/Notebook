@@ -43,4 +43,7 @@ monitor.bluez.rules = [
 ]
 EOF
 systemctl --user restart wireplumber pipewire pipewire-pulse
+
+# workaround to keep transmitter awake by silent background audio
+ffplay -f lavfi -i "sine=frequency=1:sample_rate=48000" -af "volume=0.001" -nodisp -loop 0
 ```
