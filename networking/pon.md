@@ -1,4 +1,6 @@
-# PON
+# Passive Optical Network (PON)
+
+It is a fiber-optic access technology that delivers high-speed internet (and sometimes TV/voice) from a central point to multiple users using only passive components (no powered electronics) between the provider and the customer.
 
 | Feature              | **EPON**                  | **GPON**                      | **XPON**                          |
 |----------------------|---------------------------|-------------------------------|-----------------------------------|
