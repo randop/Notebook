@@ -9,10 +9,12 @@ Private DNS provider hostnames
 - **dns.adguard-dns.com**      → adguard dns (default)
 - **family.adguard-dns.com**   → adguard family protection
 - **dns.adguard.com**          → adguard (older/common alternative)
-- **dns.mullvad.net**          → mullvad dns (default)
-- **adblock.dns.mullvad.net**  → mullvad + adblocking
-- **base.dns.mullvad.net**    → mullvad + adblock + malware
-- **family.dns.mullvad.net**  → mullvad + family filter
+- **dns.mullvad.net**          → ordinary dns provider (194.242.2.2)
+- **adblock.dns.mullvad.net**  → filtering protection against Ads + Trackers (194.242.2.3)
+- **base.dns.mullvad.net**    → filtering protection against Ads + Trackers + Malware (194.242.2.4)
+- **extended.dns.mullvad.net**    → filtering protection against Ads + Trackers + Malware + Social Media (194.242.2.5)
+- **family.dns.mullvad.net**  → filtering protection against Ads + Trackers + Malware + Adult + Gambling (194.242.2.6)
+- **all.dns.mullvad.net**  → filtering protection against Ads + Trackers + Malware + Adult + Gambling + Social media (194.242.2.9)
 - **p0.freedns.controld.com** → control d (default/unfiltered)
 - **p1.freedns.controld.com** → control d + malware
 - **p2.freedns.controld.com** → control d + ads + trackers + malware
